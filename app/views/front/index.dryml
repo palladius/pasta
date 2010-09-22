@@ -1,0 +1,27 @@
+<page title="Home">
+  <body: class="front-page"/>
+  <content:>
+	<%= render :partial => "layouts/model_links" %>
+    <header class="content-header">
+	<%= render :partial => "front/pre_title" %>
+      <h1>Welcome to <app-name/> Matrix</h1>
+      <section class="welcome-message">
+		<%= render :partial => "pasta_sauces/matrix2" %>
+		<%= render :partial => "pasta_sauces/matrix" %>
+		<%= render :partial => "pasta_sauces/list" %>
+          <i>To customise this page: edit app/views/front/index.dryml</i>
+        <% if User.count == 0 -%>
+          <h3 style="margin-top: 20px;">There are no user accounts - please provide the details of the site administrator</h3>
+          <do with="&User.new"><% this.exempt_from_edit_checks = true %>
+            <signup-form/>
+          </do>
+        <% end -%>
+		<%= render :partial => "users/list" %>
+      </section>
+    </header>
+
+    <section class="content-body">
+		<%= render :partial => "pasta_sauces/list" %>
+    </section>
+  </content:>
+</page>

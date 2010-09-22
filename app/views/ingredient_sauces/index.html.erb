@@ -1,0 +1,23 @@
+<% title "Ingredient Sauces" %>
+
+<table>
+  <tr>
+    <th>Necessary</th>
+    <th>Notes</th>
+    <th>Sauce</th>
+    <th>Ingredient</th>
+  </tr>
+  <% for ingredient_sauce in @ingredient_sauces %>
+    <tr>
+      <td><%=h ingredient_sauce.necessary %></td>
+      <td><%=h ingredient_sauce.notes %></td>
+      <td><%=h ingredient_sauce.sauce_id %></td>
+      <td><%=h ingredient_sauce.ingredient_id %></td>
+      <td><%= link_to "Show", ingredient_sauce %></td>
+      <td><%= link_to "Edit", edit_ingredient_sauce_path(ingredient_sauce) %></td>
+      <td><%= link_to "Destroy", ingredient_sauce, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Ingredient Sauce", new_ingredient_sauce_path %></p>

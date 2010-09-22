@@ -1,0 +1,20 @@
+<% title "Ingredient" %>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @ingredient.name %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%=h @ingredient.description %>
+</p>
+<p>
+  <strong>Tags:</strong>
+  <%=h @ingredient.tags %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_ingredient_path(@ingredient) %> |
+  <%= link_to "Destroy", @ingredient, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", ingredients_path %>
+</p>

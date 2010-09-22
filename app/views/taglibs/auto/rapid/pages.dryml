@@ -1,0 +1,539 @@
+<!-- AUTOMATICALLY GENERATED FILE - DO NOT EDIT -->
+
+<!-- ====== Main Navigation ====== -->
+
+<def tag="main-nav">
+  <navigation class="main-nav" merge-attrs param="default">
+    <nav-item href="#{base_url}/">Home</nav-item>
+    <nav-item with="&Pasta"><ht key="pastas.nav_item">Tipo di Pastas</ht></nav-item>
+    <nav-item with="&PastaSauce"><ht key="pasta_sauces.nav_item">Pasta Sauces</ht></nav-item>
+    <nav-item with="&Sauce"><ht key="sauces.nav_item">Condimentos</ht></nav-item>
+  </navigation>
+</def>
+
+
+
+
+<!-- ====== PastaSauce Pages ====== -->
+
+<def tag="index-page" for="PastaSauce">
+  <page merge title="#{ht 'pasta_sauces.index.title', :default=>['Pasta Sauces'] }">
+    <body: class="index-page pasta-sauce" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="pasta_sauces.index.heading">
+            Pasta Sauces
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="pasta_sauces.collection.count" count="&this.size">
+            There <count prefix="are"/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="pasta_sauces.actions.new">New Pasta Sauce</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="PastaSauce">
+  <page merge title="#{ht 'pasta_sauces.new.title', :default=>[' New Pasta Sauce'] }">
+    <body: class="new-page pasta-sauce" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="pasta_sauces.new.heading">
+            New Pasta Sauce
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'pasta_sauces.actions.create', :default=>['Create Pasta Sauce']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="PastaSauce">
+  <page merge title="#{ht 'pasta_sauces.show.title', :default=>['Pasta Sauce'] }">
+
+    <body: class="show-page pasta-sauce" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="pasta_sauces.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="appropriate" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="pasta_sauces.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit Pasta Sauce
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="vote, notes, pasta, sauce" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="PastaSauce">
+  <page merge title="#{ht 'pasta_sauces.edit.title', :default=>['Edit Pasta Sauce'] }">
+
+    <body: class="edit-page pasta-sauce" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="pasta_sauces.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit <type-name/>
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'pasta_sauces.actions.delete', :default=>['Remove This Pasta Sauce']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== Pasta Pages ====== -->
+
+<def tag="index-page" for="Pasta">
+  <page merge title="#{ht 'pastas.index.title', :default=>['Tipo di Pastas'] }">
+    <body: class="index-page pasta" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="pastas.index.heading">
+            Tipo di Pastas
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="pastas.collection.count" count="&this.size">
+            There <count prefix="are"/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="pastas.actions.new">New Tipo di Pasta</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Pasta">
+  <page merge title="#{ht 'pastas.new.title', :default=>[' New Tipo di Pasta'] }">
+    <body: class="new-page pasta" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="pastas.new.heading">
+            New Tipo di Pasta
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'pastas.actions.create', :default=>['Create Tipo di Pasta']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Pasta">
+  <page merge title="#{ht 'pastas.show.title', :default=>['Tipo di Pasta'] }">
+
+    <body: class="show-page pasta" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="pastas.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="active" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="pastas.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit Tipo di Pasta
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <view:description param="description"/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Pasta">
+  <page merge title="#{ht 'pastas.edit.title', :default=>['Edit Tipo di Pasta'] }">
+
+    <body: class="edit-page pasta" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="pastas.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit <type-name/>
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'pastas.actions.delete', :default=>['Remove This Tipo di Pasta']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== Sauce Pages ====== -->
+
+<def tag="index-page" for="Sauce">
+  <page merge title="#{ht 'sauces.index.title', :default=>['Condimentos'] }">
+    <body: class="index-page sauce" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="sauces.index.heading">
+            Condimentos
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="sauces.collection.count" count="&this.size">
+            There <count prefix="are"/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="sauces.actions.new">New Condimento</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Sauce">
+  <page merge title="#{ht 'sauces.new.title', :default=>[' New Condimento'] }">
+    <body: class="new-page sauce" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="sauces.new.heading">
+            New Condimento
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'sauces.actions.create', :default=>['Create Condimento']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Sauce">
+  <page merge title="#{ht 'sauces.show.title', :default=>['Condimento'] }">
+
+    <body: class="show-page sauce" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="sauces.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="active" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="sauces.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit Condimento
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <view:description param="description"/>
+            <field-list fields="color" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Sauce">
+  <page merge title="#{ht 'sauces.edit.title', :default=>['Edit Condimento'] }">
+
+    <body: class="edit-page sauce" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="sauces.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit <type-name/>
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'sauces.actions.delete', :default=>['Remove This Condimento']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== User Pages ====== -->
+
+<def tag="index-page" for="User">
+  <page merge title="#{ht 'users.index.title', :default=>['Users'] }">
+    <body: class="index-page user" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="users.index.heading">
+            Users
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="users.collection.count" count="&this.size">
+            There <count prefix="are"/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="User">
+  <page merge title="#{ht 'users.new.title', :default=>[' New User'] }">
+    <body: class="new-page user" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="users.new.heading">
+            New User
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'users.actions.create', :default=>['Create User']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="User">
+  <page merge title="#{ht 'users.show.title', :default=>['User'] }">
+
+    <body: class="show-page user" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="users.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="administrator" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="users.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit User
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="email_address, state" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="User">
+  <page merge title="#{ht 'users.edit.title', :default=>['Edit User'] }">
+
+    <body: class="edit-page user" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="users.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit <type-name/>
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'users.actions.delete', :default=>['Remove This User']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="signup-page" polymorphic/>
+<def tag="signup-page" for="User">
+  
+  <page title="#{ht 'users.signup.title', :default=>['Signup']}" merge>  
+
+    <body: class="lifecycle-start-page signup-page" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="users.signup.heading">
+            Signup
+          </ht>
+        </h2>
+      </header>
+
+      <section param="content-body">
+        <signup-form param="form"/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+<def tag="reset-password-page" polymorphic/>
+<def tag="reset-password-page" for="User">
+  <page title="#{ht 'users.reset_password.title', :default=>['Reset Password']}" merge>
+
+    <body: class="lifecycle-transition-page reset-password-page" param/>
+
+    <content:>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="users.reset_password.heading">
+            Reset Password
+          </ht>
+        </h2>
+      </header>
+
+      <section param="content-body">
+        <reset-password-form param="form"/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+

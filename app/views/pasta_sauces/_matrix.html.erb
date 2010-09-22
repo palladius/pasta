@@ -1,0 +1,29 @@
+<h1>Paste/Sauces (Matrix)</h1>
+<% 
+	@pastas = Pasta.all
+	@sauces = Sauce.all
+	
+	# def cella_pasta_sauce(pasta,sauce)
+	#   ps = PastaSauce.find_by_pasta_id_and_sauce_id(pasta.id,sauce.id)
+	#   #return ps.appropriate if ps 
+	#   return image_tag(ps.appropriate ? 'green.png' : 'red.png', :height => 12 ) if ps	
+	#   ''
+	# end
+%>
+<table border="1" cellspacing="5" cellpadding="5" >
+
+ <tr>
+		<th>PASTA</th>
+	<% @sauces.each{ |s| %>
+ 		<th> <%= s.to_s[0,5] %> </th>
+	<%	} %>
+ </tr>
+<% @pastas.each{ |p| %>
+	<tr>
+		<td><b><%= p %></b></td>
+		<% @sauces.each{ |s| %>
+			<td><%= cell_pasta_sauce(p,s) %></td>
+		<%	} %>
+	 </tr>
+<%	} %>
+</table>

@@ -1,0 +1,2 @@
+module IngredientSaucesHelper
+end

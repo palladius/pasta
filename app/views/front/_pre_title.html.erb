@@ -1,0 +1,11 @@
+<!-- This partial is in app/views/front/_pre_title.html.erb caro Ric! -->
+<div class='pre_title_riccardo' >
+<% current_user = User.find(session[:user].split(':')[1]) || nil %>
+
+<%= link_to(current_user,current_user) rescue "NoCurrentUser: #{$!}" %>
+ (likes: <font color='green' class='likes'><%=current_user.likes %></font>;
+ dislikes: <font color='red' class='dislikes'><%=current_user.dislikes %></font>)
+<pre>
+<%#= ENV.inspect %>
+</pre>
+</div>

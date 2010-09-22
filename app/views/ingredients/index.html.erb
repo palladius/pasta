@@ -1,0 +1,19 @@
+<% title "Ingredients" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Tags</th>
+  </tr>
+  <% for ingredient in @ingredients %>
+    <tr>
+      <td><%=h ingredient.name %></td>
+      <td><%= visualize_tags( ingredient.tags ) %></td>
+      <td><%= link_to "Show", ingredient %></td>
+      <td><%= link_to "Edit", edit_ingredient_path(ingredient) %></td>
+      <td><%= link_to "Destroy", ingredient, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Ingredient", new_ingredient_path %></p>
