@@ -1,8 +1,9 @@
 This proof of concept was created and deployed in two hours.
 This makes me REALLY proud. All the rest is nothing.
-The app itself is REALLY stupid.
+The app itself is REALLY simple.
 
-== HOW IT WORKS ==
+HOW IT WORKS
+============
 
 At the moment, it is a matrix of possible PASTAs and SAUCEs.
 Italians are not happy to put any sauce with any pasta, there is a matrix which is coded in our DNA
