@@ -27,6 +27,7 @@ BAD_CONDIMENTS = [
 #  %w{tagliatelle    pesto },
 ]
 GOOD_CONDIMENTS = [
+  %w{ agnolotti      burro_salvia bolognese brodo }, # http://it.wikipedia.org/wiki/Agnolotti_piemontesi
   %w{ bucatini       amatriciana pomodoro },
 #  %w {bigoli         luganega },
 #  %w {conchiglie     pomodoro bolognese piselli },
@@ -35,11 +36,12 @@ GOOD_CONDIMENTS = [
   %w{ gnocchi        sorrentina dun_laoghaire quattro_formaggi },
   %w{ gramigna       salsiccia bolognese },
   %w{ orecchiette    pesto nero_di_seppia piselli },
-  %w{ pappardelle    bolognese cinghiale boscaiola } ,
+  %w{ paccheri       bolognese }, # http://it.wikipedia.org/wiki/Paccheri
+  %w{ pappardelle    bolognese cinghiale boscaiola funghi } ,  # http://it.wikipedia.org/wiki/Pappardelle
   %w{ penne          aglio_olio amatriciana bolognese puttanesca radicchio quattro_formaggi piselli } ,
   %w{ spaghetti      aglio_olio amatriciana bolognese carbonara nero_di_seppia pesto pomodoro puttanesca scoglio tonno },
   %w{ strozzapreti   canocchie cinghiale pesto ragu },
-  %w{ tagliatelle    bolognese gamberetti_zucchine nero_di_seppia panna_funghi},
+  %w{ tagliatelle    bolognese funghi gamberetti_zucchine nero_di_seppia panna_funghi prosciutto tartufo }, # http://it.wikipedia.org/wiki/Tagliatelle
   %w{ tagliolini     scoglio gamberetti_zucchine nero_di_seppia panna_funghi },
   %w{ tortellini     brodo panna },
   %w{ tortelloni     pomodoro burro_salvia },
