@@ -11,9 +11,9 @@ and non-italians simply have to learn the hard way, via this application for ins
 Install
 =======
 
-	mkdir gittume
-	cd gittume
-	git clone git@github.com:palladius/pasta.git
+	cd /path/to/yourdir
+	git clone https://github.com/palladius/pasta.git
+	cd pasta
 	rake db:migrate
 	rake db:seed
 	
