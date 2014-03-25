@@ -3,9 +3,11 @@
 
 require(File.join(File.dirname(__FILE__), 'config', 'boot'))
 
+# ERROR: 'rake/rdoctask' is obsolete and no longer supported. Use 'rdoc/task' (available in RDoc 2.4.2+) instead.
+
 require 'rake'
 require 'rake/testtask'
-require 'rake/rdoctask'
+require 'rdoc/task'
 
 require 'tasks/rails'
 

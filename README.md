@@ -14,8 +14,7 @@ Install
 	cd /path/to/yourdir
 	git clone https://github.com/palladius/pasta.git
 	cd pasta
-	rake db:migrate
-	rake db:seed
+	make install
 	
 	
 Credits
