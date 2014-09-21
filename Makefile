@@ -6,3 +6,6 @@ install:
 	rake db:seed
 	touch make_install.touch
 
+docker-run:
+	sudo docker build -t riccpasta .
+	sudo docker run --name riccardo-pasta -d riccpasta
