@@ -1,0 +1,5 @@
+
+# created from: training/sinatra
+# docker pull training/sinatra
+#
+## This is very difficult, i'm failing as Hobo doesnt play well with ruby1.9
