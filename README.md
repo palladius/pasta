@@ -11,16 +11,17 @@ and non-italians simply have to learn the hard way, via this application for ins
 Install
 =======
 
+Make sure you are using `Ruby 1.8` and old Gems which still work with this Ruby/Hobo installation :/
+
 	cd /path/to/yourdir
 	git clone https://github.com/palladius/pasta.git
 	cd pasta
 	make install
-	
-	
+
 Credits
 -------
 
--	DHH for Rails
--	Ryan Bates for Nifty stuff.
--	HOBO people for creating Hobo (which actually Im starting to hate, but still I used extensively)
+- DHH for Rails
+- Ryan Bates for Nifty stuff.
+- HOBO people for creating Hobo (which actually Im starting to hate, but still I used extensively)
 - [Pamela](https://www.facebook.com/pamela.emydio) for her patience that morning..
