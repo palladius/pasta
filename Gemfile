@@ -6,3 +6,8 @@ source 'https://rubygems.org'
 gem 'rails', '2.3.18'
 gem 'sqlite3'
 gem 'hobo'
+#gem 'event-calendar'
+gem 'rdoc'
+
+#gem "dryml", :git => "git://github.com/Hobo/hobo.git"
+#gem "hobo", :git => "git://github.com/Hobo/hobo.git"

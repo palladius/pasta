@@ -44,7 +44,7 @@ class Sauce < ActiveRecord::Base
     return "all'" if name =~ /^[aeiou]/ 
     # altri singolari
     return 'allo' if name =~ /scoglio/
-    return "al"   if name =~ /[ouù]$/
+    return "al"   if name =~ /[ou]$/     # removed &ugrave;
     "alla"
   end
   # --- Permissions --- #

@@ -84,7 +84,7 @@
     <content: param>
           <header param="content-header">
             <h2 param="heading">
-              <ht key="pasta_sauces.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+              <ht key="pasta_sauces.show.heading" name="&this.respond_to?(:to_s) ? this.to_s : ''">
                 <name/>
               </ht>
             </h2>
@@ -204,7 +204,7 @@
     <content: param>
           <header param="content-header">
             <h2 param="heading">
-              <ht key="pastas.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+              <ht key="pastas.show.heading" name="&this.respond_to?(:to_s) ? this.to_s : ''">
                 <name/>
               </ht>
             </h2>
@@ -324,7 +324,7 @@
     <content: param>
           <header param="content-header">
             <h2 param="heading">
-              <ht key="sauces.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+              <ht key="sauces.show.heading" name="&this.respond_to?(:to_s) ? this.to_s : ''">
                 <name/>
               </ht>
             </h2>
@@ -442,7 +442,7 @@
     <content: param>
           <header param="content-header">
             <h2 param="heading">
-              <ht key="users.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+              <ht key="users.show.heading" name="&this.respond_to?(:to_s) ? this.to_s : ''">
                 <name/>
               </ht>
             </h2>

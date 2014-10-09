@@ -78,8 +78,8 @@ ActiveRecord::Schema.define(:version => 20100909210410) do
     t.datetime "updated_at"
     t.string   "state",                                   :default => "active"
     t.datetime "key_timestamp"
-    t.string   "likes"
-    t.string   "dislikes"
+    t.string   "likes",                                   :default => "chocolate, salmon, @meat"
+    t.string   "dislikes",                                :default => "@vegetables, @tin_tuna"
   end
 
   add_index "users", ["state"], :name => "index_users_on_state"
