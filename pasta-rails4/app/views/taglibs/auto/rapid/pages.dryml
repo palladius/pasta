@@ -6,8 +6,348 @@
 <def tag="main-nav">
   <navigation class="main-nav" merge-attrs param="default">
     <nav-item href="#{base_url}/">Home</nav-item>
+    <nav-item with="&Pasta"><ht key="pasta.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&PastaSauce"><ht key="pasta_sauce.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Sauce"><ht key="sauce.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
   </navigation>
 </def>
+
+
+
+
+<!-- ====== PastaSauce Pages ====== -->
+
+<def tag="index-page" for="PastaSauce">
+  <page merge title="#{ht 'pasta_sauce.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page pasta-sauce" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="pasta_sauce.index.heading">
+          <model-name-human model="&model"/>
+        </ht>
+      </h2>
+
+      <p param="count" if>
+        <ht key="pasta_sauce.collection.count" count="&collection_count">
+          <count summary/>
+        </ht>
+      </p>
+    </content-header:>
+
+    <content-body: param>
+      <a action="new" to="&model" param="new-link">
+        <ht key="pasta_sauce.actions.new">New Pasta sauce</ht>
+      </a>
+
+      <page-nav param="top-page-nav"/>
+
+      <collection param/>
+
+      <page-nav param="bottom-page-nav"/>
+
+
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="PastaSauce">
+  <page merge title="#{ht 'pasta_sauce.new.title', :default=>[' New Pasta sauce'] }">
+    <body: class="new-page pasta-sauce" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="pasta_sauce.new.heading">
+          New Pasta sauce
+        </ht>
+      </h2>
+    </content-header:>
+
+    <content-body: param>
+      <form param>
+        <submit: label="#{ht 'pasta_sauce.actions.create', :default=>['Create Pasta sauce']}"/>
+      </form>
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="PastaSauce">
+  <page merge title="#{ht 'pasta_sauce.show.title', :default=>['Pasta sauce'], :name => name(:no_wrapper => true) }" without-aside >
+
+    <body: class="show-page pasta-sauce" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="pasta_sauce.show.heading" name="#{name(:no_wrapper => true)}">
+          Pasta sauce <name/>
+        </ht>
+      </h2>
+
+      <record-flags fields="appropriate" param/>
+
+      <a action="edit" if="&can_edit?" param="edit-link">
+        <ht key="pasta_sauce.actions.edit" name="#{name(:no_wrapper => true)}">
+          Edit Pasta sauce
+        </ht>
+      </a>
+    </content-header:>
+
+    <content-body: param>
+      <field-list fields="vote, notes, pasta, sauce" param/>
+    </content-body:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="PastaSauce">
+  <page merge title="#{ht 'pasta_sauce.edit.title', :default=>['Edit Pasta sauce'], :name => name(:no_wrapper => true) }">
+
+    <body: class="edit-page pasta-sauce" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="pasta_sauce.edit.heading" name="#{name(:no_wrapper => true)}">
+          Edit Pasta sauce
+        </ht>
+      </h2>
+      <delete-button label="#{ht 'pasta_sauce.actions.delete', :default=>['Remove This Pasta sauce']}" param/>
+    </content-header:>
+
+    <content-body: param>
+      <form param/>
+    </content-body:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== Pasta Pages ====== -->
+
+<def tag="index-page" for="Pasta">
+  <page merge title="#{ht 'pasta.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page pasta" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="pasta.index.heading">
+          <model-name-human model="&model"/>
+        </ht>
+      </h2>
+
+      <p param="count" if>
+        <ht key="pasta.collection.count" count="&collection_count">
+          <count summary/>
+        </ht>
+      </p>
+    </content-header:>
+
+    <content-body: param>
+      <a action="new" to="&model" param="new-link">
+        <ht key="pasta.actions.new">New Pasta</ht>
+      </a>
+
+      <page-nav param="top-page-nav"/>
+
+      <collection param/>
+
+      <page-nav param="bottom-page-nav"/>
+
+
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Pasta">
+  <page merge title="#{ht 'pasta.new.title', :default=>[' New Pasta'] }">
+    <body: class="new-page pasta" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="pasta.new.heading">
+          New Pasta
+        </ht>
+      </h2>
+    </content-header:>
+
+    <content-body: param>
+      <form param>
+        <submit: label="#{ht 'pasta.actions.create', :default=>['Create Pasta']}"/>
+      </form>
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Pasta">
+  <page merge title="#{ht 'pasta.show.title', :default=>['Pasta'], :name => name(:no_wrapper => true) }" without-aside >
+
+    <body: class="show-page pasta" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="pasta.show.heading" name="#{name(:no_wrapper => true)}">
+          Pasta <name/>
+        </ht>
+      </h2>
+
+      <record-flags fields="" param/>
+
+      <a action="edit" if="&can_edit?" param="edit-link">
+        <ht key="pasta.actions.edit" name="#{name(:no_wrapper => true)}">
+          Edit Pasta
+        </ht>
+      </a>
+    </content-header:>
+
+    <content-body: param>
+      <view:description param="description" />
+    </content-body:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Pasta">
+  <page merge title="#{ht 'pasta.edit.title', :default=>['Edit Pasta'], :name => name(:no_wrapper => true) }">
+
+    <body: class="edit-page pasta" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="pasta.edit.heading" name="#{name(:no_wrapper => true)}">
+          Edit Pasta
+        </ht>
+      </h2>
+      <delete-button label="#{ht 'pasta.actions.delete', :default=>['Remove This Pasta']}" param/>
+    </content-header:>
+
+    <content-body: param>
+      <form param/>
+    </content-body:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== Sauce Pages ====== -->
+
+<def tag="index-page" for="Sauce">
+  <page merge title="#{ht 'sauce.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page sauce" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="sauce.index.heading">
+          <model-name-human model="&model"/>
+        </ht>
+      </h2>
+
+      <p param="count" if>
+        <ht key="sauce.collection.count" count="&collection_count">
+          <count summary/>
+        </ht>
+      </p>
+    </content-header:>
+
+    <content-body: param>
+      <a action="new" to="&model" param="new-link">
+        <ht key="sauce.actions.new">New Sauce</ht>
+      </a>
+
+      <page-nav param="top-page-nav"/>
+
+      <collection param/>
+
+      <page-nav param="bottom-page-nav"/>
+
+
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Sauce">
+  <page merge title="#{ht 'sauce.new.title', :default=>[' New Sauce'] }">
+    <body: class="new-page sauce" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="sauce.new.heading">
+          New Sauce
+        </ht>
+      </h2>
+    </content-header:>
+
+    <content-body: param>
+      <form param>
+        <submit: label="#{ht 'sauce.actions.create', :default=>['Create Sauce']}"/>
+      </form>
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Sauce">
+  <page merge title="#{ht 'sauce.show.title', :default=>['Sauce'], :name => name(:no_wrapper => true) }" without-aside >
+
+    <body: class="show-page sauce" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="sauce.show.heading" name="#{name(:no_wrapper => true)}">
+          Sauce <name/>
+        </ht>
+      </h2>
+
+      <record-flags fields="active" param/>
+
+      <a action="edit" if="&can_edit?" param="edit-link">
+        <ht key="sauce.actions.edit" name="#{name(:no_wrapper => true)}">
+          Edit Sauce
+        </ht>
+      </a>
+    </content-header:>
+
+    <content-body: param>
+      <view:description param="description" />
+      <field-list fields="color" param/>
+    </content-body:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Sauce">
+  <page merge title="#{ht 'sauce.edit.title', :default=>['Edit Sauce'], :name => name(:no_wrapper => true) }">
+
+    <body: class="edit-page sauce" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="sauce.edit.heading" name="#{name(:no_wrapper => true)}">
+          Edit Sauce
+        </ht>
+      </h2>
+      <delete-button label="#{ht 'sauce.actions.delete', :default=>['Remove This Sauce']}" param/>
+    </content-header:>
+
+    <content-body: param>
+      <form param/>
+    </content-body:>
+
+  </page>
+</def>
+
 
 
 
@@ -86,7 +426,7 @@
         </ht>
       </h2>
 
-      <record-flags fields="" param/>
+      <record-flags fields="administrator" param/>
 
       <a action="edit" if="&can_edit?" param="edit-link">
         <ht key="user.actions.edit" name="#{name(:no_wrapper => true)}">
@@ -96,6 +436,7 @@
     </content-header:>
 
     <content-body: param>
+      <field-list fields="email_address, state" param/>
     </content-body:>
 
   </page>

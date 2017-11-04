@@ -60,4 +60,16 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  map.resources :ingredient_sauces
+  map.resources :ingredients
+
+  map.calendar '/calendar/:year/:month', :controller => 'calendar', :action => 'index', :year => Time.zone.now.year, :month => Time.zone.now.month
+
+  map.site_search  'search', :controller => 'front', :action => 'search'
+  map.root :controller => 'front', :action => 'index'
+
+  Hobo.add_routes(map)
+  map.connect ':controller/:action/:id'
+  map.connect ':controller/:action/:id.:format'
 end

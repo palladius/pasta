@@ -1,0 +1,20 @@
+<% form_for @ingredient_sauce do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :necessary %><br />
+    <%= f.check_box :necessary %>
+  </p>
+  <p>
+    <%= f.label :notes %><br />
+    <%= f.text_area :notes %>
+  </p>
+  <p>
+    <%= f.label :sauce_id %><br />
+    <%= f.text_field :sauce_id %>
+  </p>
+  <p>
+    <%= f.label :ingredient_id %><br />
+    <%= f.text_field :ingredient_id %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

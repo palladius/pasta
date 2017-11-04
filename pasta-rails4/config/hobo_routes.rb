@@ -25,6 +25,18 @@ PastaRails4::Application.routes.draw do
   get 'forgot_password(.:format)' => 'users#forgot_password', :as => 'user_forgot_password'
   post 'forgot_password(.:format)' => 'users#forgot_password', :as => 'user_forgot_password_post'
 
+
+  # Resource routes for controller sauces
+  resources :sauces
+
+
+  # Resource routes for controller pasta_sauces
+  resources :pasta_sauces
+
+
+  # Resource routes for controller pastas
+  resources :pastas
+
   namespace :concerns do
 
   end

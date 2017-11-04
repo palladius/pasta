@@ -1,10 +1,46 @@
 <!-- AUTOMATICALLY GENERATED FILE - DO NOT EDIT -->
 
 
-<def tag="form" for="User">
+<def tag="form" for="PastaSauce">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="appropriate, vote, notes, pasta, sauce" param/>
+    <div param="actions">
+      <submit label="#{ht 'pasta_sauce.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="Pasta">
   <form merge param="default">
     <error-messages param/>
     <field-list fields="" param/>
+    <div param="actions">
+      <submit label="#{ht 'pasta.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="Sauce">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="name, description, active, color" param/>
+    <div param="actions">
+      <submit label="#{ht 'sauce.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="User">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="name, email_address, administrator, state" param/>
     <div param="actions">
       <submit label="#{ht 'user.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>

@@ -58,6 +58,7 @@ GEM
       actionpack
       hobo_support (= 2.2.6)
     erubis (2.7.0)
+    event-calendar (2.3.3)
     execjs (2.7.0)
     ffi (1.9.18)
     globalid (0.4.1)
@@ -199,6 +200,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
+  event-calendar
   hobo (= 2.2.6)
   hobo_bootstrap (= 2.2.6)
   hobo_bootstrap_ui (= 2.2.6)
