@@ -1,0 +1,17 @@
+<!-- Global taglib - these are the tags for your front / main site -->
+
+<include gem="hobo_rapid"/>
+
+<include gem='hobo_jquery'/>
+
+<include gem='hobo_bootstrap'/>
+
+<include gem='hobo_jquery_ui'/>
+
+<include gem='hobo_bootstrap_ui'/>
+
+<include src="taglibs/auto/rapid/cards"/>
+<include src="taglibs/auto/rapid/pages"/>
+<include src="taglibs/auto/rapid/forms"/>
+
+<include src="application"/>
