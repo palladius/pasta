@@ -6,6 +6,17 @@ install:
 	rake db:seed
 	touch make_install.touch
 
+prep:
+	sudo apt install passenger
+	rvm use --install 1.9.3 
+	bundle install
+	rake db:migrate
+	rake db:seed
+	touch prep
+	
+run: prep
+	script/server
+
 docker-run:
 	sudo docker build -t riccpasta .
 	sudo docker run --name riccardo-pasta -d riccpasta
