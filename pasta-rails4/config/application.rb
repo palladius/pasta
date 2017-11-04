@@ -8,10 +8,6 @@ Bundler.require(*Rails.groups)
 
 module PastaRails4
   class Application < Rails::Application
-    # Hobo: Named routes have changed in Hobo 2.0.   Set to false to emit both the 2.0 and 1.3 names.
-    config.hobo.dont_emit_deprecated_routes = true
-    # Hobo: the front subsite loads front.css & front.js
-    config.assets.precompile += %w(front.css front.js ajax-loader.gif)
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

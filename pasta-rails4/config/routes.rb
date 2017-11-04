@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-  get ENV['RAILS_RELATIVE_URL_ROOT'] => 'front#index' if ENV['RAILS_RELATIVE_URL_ROOT']
-  root :to => 'front#index'
-  get 'users/:id/reset_password_from_email/:key' => 'users#reset_password', :as => 'reset_password_from_email'
-  get 'users/:id/accept_invitation_from_email/:key' => 'users#accept_invitation', :as => 'accept_invitation_from_email'
-  get 'users/:id/activate_from_email/:key' => 'users#activate', :as => 'activate_from_email'
-  post 'search' => 'front#search', :as => 'site_search_post'
-  get 'search' => 'front#search', :as => 'site_search'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -60,16 +53,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
-  map.resources :ingredient_sauces
-  map.resources :ingredients
-
-  map.calendar '/calendar/:year/:month', :controller => 'calendar', :action => 'index', :year => Time.zone.now.year, :month => Time.zone.now.month
-
-  map.site_search  'search', :controller => 'front', :action => 'search'
-  map.root :controller => 'front', :action => 'index'
-
-  Hobo.add_routes(map)
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
 end
