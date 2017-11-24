@@ -7,15 +7,14 @@
 
 ruby "1.8.7"
 
-
 gem 'rails', '2.3.18'
 gem 'sqlite3'
 gem 'hobo'
 
 # 20171104 JSON 1.8 required: https://stackoverflow.com/questions/21477087/why-does-passenger-says-that-my-gem-json-cant-be-found-when-my-gem-list-show
 # 20171113 doesnt work: https://stackoverflow.com/questions/21095098/why-wont-bundler-install-json-gem
-#gem 'json'
-gem 'json', github: 'flori/json', branch: 'v1.8'
+gem 'json'
+#gem 'json', github: 'flori/json', branch: 'v1.8'
 
 
 
