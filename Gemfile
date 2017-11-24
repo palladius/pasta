@@ -13,7 +13,7 @@ gem 'hobo'
 gem 'json'
 
 #gem 'event-calendar'
-gem 'rdoc'
+#gem 'rdoc'
 
 #gem "dryml", :git => "git://github.com/Hobo/hobo.git"
 #gem "hobo", :git => "git://github.com/Hobo/hobo.git"
