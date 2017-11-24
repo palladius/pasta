@@ -11,7 +11,7 @@ require 'rake/testtask'
 
 ############# RDOCS:
 # NEWER:
-require 'rdoc/task'
+#require 'rdoc/task'
 # OLDER:
 #require 'rake/rdoctask'
 
