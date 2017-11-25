@@ -1,12 +1,10 @@
 GIT
-  remote: git://github.com/flori/json.git
-  revision: 7f4cfd853f2c919d854fb95548a19980feff17e8
-  branch: v1.8
+  remote: git://github.com/Hobo/will_paginate.git
+  revision: e2bfe0a07c9fd1c6d7bf914e25db5182697ae7c2
   specs:
-    json (1.8.6)
+    will_paginate (3.0.4.hobo)
 
 GEM
-  remote: https://rubygems.org/
   specs:
     actionmailer (2.3.18)
       actionpack (= 2.3.18)
@@ -18,19 +16,16 @@ GEM
     activeresource (2.3.18)
       activesupport (= 2.3.18)
     activesupport (2.3.18)
-    dryml (1.1.0)
-      actionpack (>= 2.2.2, < 3.0.0)
-      hobosupport (= 1.1.0)
-    hobo (1.1.0)
-      dryml (= 1.1.0)
-      hobofields (= 1.1.0)
-      hobosupport (= 1.1.0)
-      rails (>= 2.2.2, < 3.0.0)
-      will_paginate (~> 2, >= 2.3.11)
-    hobofields (1.1.0)
-      hobosupport (= 1.1.0)
-      rails (>= 2.2.2, < 3.0.0)
-    hobosupport (1.1.0)
+    hobo (1.0.0)
+      hobofields (= 1.0.0)
+      hobosupport (= 1.0.0)
+      rails (>= 2.2.2)
+      will_paginate (>= 2.3.11)
+    hobofields (1.0.0)
+      hobosupport (= 1.0.0)
+      rails (>= 2.2.2)
+    hobosupport (1.0.0)
+    json (1.8.6)
     rack (1.1.6)
     rails (2.3.18)
       actionmailer (= 2.3.18)
@@ -41,16 +36,19 @@ GEM
       rake (>= 0.8.3)
     rake (10.3.2)
     sqlite3 (1.3.9)
-    will_paginate (2.3.16)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  hobo
-  json!
+  hobo (= 1.0)
+  json
   rails (= 2.3.18)
   sqlite3
+  will_paginate!
+
+RUBY VERSION
+   ruby 1.8.7p376
 
 BUNDLED WITH
    1.16.0
