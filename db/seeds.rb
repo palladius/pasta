@@ -6,6 +6,8 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
 
+
+
 #require '~/lib/ric.rb'
 class Array
   def head
@@ -18,37 +20,43 @@ class Array
   end
 end
 
-SEED_VER = '1.2'
+SEED_VER = '1.3-20171114'
 DESTROY_ALL_BEFORE_SEEDING = true
 
 BAD_CONDIMENTS = [
   %w{spaghetti      bolognese },
   %w{pappardelle    salmone carbonara },
+  %w{risotto        bolognese }, # pure blasphemy!
 #  %w{tagliatelle    pesto },
 ]
+
 GOOD_CONDIMENTS = [
   %w{ agnolotti      burro_salvia bolognese brodo }, # http://it.wikipedia.org/wiki/Agnolotti_piemontesi
   %w{ bucatini       amatriciana pomodoro },
-#  %w {bigoli         luganega },
-#  %w {conchiglie     pomodoro bolognese piselli },
+  %w{ bigoli         luganega },
+  %w{ chitarre       caspio }, # caviar and beans
+  %w{ conchiglie     pomodoro bolognese piselli },
   %w{ fusilli        bolognese pesto radicchio },
   %w{ garganelli     boscaiola nero_di_seppia bolognese quattro_formaggi },
   %w{ gnocchi        sorrentina dun_laoghaire quattro_formaggi },
   %w{ gramigna       salsiccia bolognese },
+  %w{ linguine       pesto },
   %w{ orecchiette    pesto nero_di_seppia piselli },
   %w{ paccheri       bolognese }, # http://it.wikipedia.org/wiki/Paccheri
   %w{ pappardelle    bolognese cinghiale boscaiola funghi } ,  # http://it.wikipedia.org/wiki/Pappardelle
   %w{ penne          aglio_olio amatriciana bolognese puttanesca radicchio quattro_formaggi piselli } ,
-  %w{ spaghetti      aglio_olio amatriciana bolognese carbonara nero_di_seppia pesto pomodoro puttanesca scoglio tonno },
+  %w{ risotto        funghi zafferano frutti_di_mare },
+  %w{ spaghetti      aglio_olio amatriciana bolognese carbonara nero_di_seppia pesto pomodoro puttanesca scoglio tonno frutti_di_mare },
   %w{ strozzapreti   canocchie cinghiale pesto ragu },
-  %w{ tagliatelle    bolognese funghi gamberetti_zucchine nero_di_seppia panna_funghi prosciutto tartufo }, # http://it.wikipedia.org/wiki/Tagliatelle
-  %w{ tagliolini     scoglio gamberetti_zucchine nero_di_seppia panna_funghi },
+  %w{ tagliatelle    bolognese funghi gamberetti_zucchine nero_di_seppia panna_funghi prosciutto burro_e_tartufo }, # http://it.wikipedia.org/wiki/Tagliatelle
+  %w{ tagliolini     scoglio gamberetti_zucchine nero_di_seppia panna_funghi burro_e_tartufo },
   %w{ tortellini     brodo panna },
   %w{ tortelloni     pomodoro burro_salvia },
  ]
  
 INGREDIENTS = {
-  :eggs         => 'protein,animal',
+  # sets the type of an ingredient
+  :eggs         => 'protein, animal',
 
   :bacon        => "meat, fat",
   :pancetta     => "meat, fat",
@@ -61,7 +69,8 @@ INGREDIENTS = {
   :cheddar      => 'cheese',
   :cream        => 'milk', 
 
-  :oil          => 'fat, condiment', 
+  :butter       => 'fat, condiment, animal_fat', 
+  :oil          => 'fat, condiment, vegetarian_fat', 
 
   :pesto        => 'sauce' ,
   :garlic       => 'spice',
@@ -69,7 +78,6 @@ INGREDIENTS = {
   :black_pepper => 'spice',
   :onions       => 'spice, vegetable', 
   :sage         => 'spice',
-
 
   :cucumbers    => 'vegetable',
   :mushrooms    => 'vegetable',
