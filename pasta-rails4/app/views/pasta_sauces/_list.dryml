@@ -1,9 +1,0 @@
-<h1>Paste e sughi (List)</h1>
-
-<ul>
-<% PastaSauce.all.each do |ps| %>
-	<li>
-	<%= ps.to_html() %>
-	</li>
-<% end %>
-</ul>

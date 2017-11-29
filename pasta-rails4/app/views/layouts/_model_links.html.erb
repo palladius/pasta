@@ -1,9 +1,0 @@
-<% current_user = User.find(session[:user].split(':')[1]) || nil %>
-	<div align='center' class='pasta_entities' >
-  [<% ApplicationHelper::PastaModels.each{ |entity| %>
-	<%= entity %> | 
-	<%# = link_to( entity.to_s.tableize,entity.to_s.tableize ) %>
-  <% } %>]
-	</div>
-
-Hi, <%= current_user rescue "NoCurrentUser: #{$!}" %>
