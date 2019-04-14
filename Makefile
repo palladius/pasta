@@ -23,11 +23,12 @@ run: prep
 	script/server
 
 docker-run:
-	sudo docker build -t riccpasta .
-	sudo docker run --name riccardo-pasta -d riccpasta
+	docker build -t riccpasta .
+	docker run --name riccardo-pasta -d riccpasta
 
 # This is only iomportant within the Docker image.. for quick installation. Ignore this on parent world.
 # You need to see Inception to get this :)
 install-within-docker:
 	apt -y install vim git 
 	ln -s /root/.rbenv/versions/1.8.7-p375/bin/bundle /usr/bin/
+
