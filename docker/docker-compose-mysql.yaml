@@ -1,0 +1,20 @@
+# TODO(ricc): prendi da qui: https://stackoverflow.com/questions/39907266/docker-compose-rails-with-mysql
+version: '2'
+services:
+  database:
+    image: mysql
+    volumes:
+      - ./data/pgdata:/pgdata
+    env_file:
+      - '.env'
+  web:
+    links:
+      - database
+    build: .
+    volumes:
+      - .:/opt/pasta
+    ports:
+      - '3000:3000'
+    command: [bundle, exec, puma]
+    env_file:
+      - '.env'

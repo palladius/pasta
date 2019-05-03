@@ -32,7 +32,7 @@
 # hobo: i would say 0.9.106 as it coincides with rails 2.3.5 (nov 2009): https://rubygems.org/gems/hobo/versions
 source 'https://rubygems.org'
 
-ruby "1.8.7"
+#ruby "1.8.7"
 
 gem 'rails', '2.3.18'
 gem 'sqlite3'
