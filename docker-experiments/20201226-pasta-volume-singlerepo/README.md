@@ -1,6 +1,6 @@
-Now - the SeptoberVintage with Volume is a reality since this morning. YAYAYAY!
+Copied from Septober -> to be adapted yet.
 
-Unfortunately it's a big `pugnatt` to have TWO repos once of development and one for here.
-I'd rather consolidate in a single repo as today a few times I was commiting n th wrong one.
-Let's copy EVERYTHING of 01-.../ but let's use the normal repo ~(basically ../../  instead od github-repo/ ).
-
+Goal is to be able to develope with agility this:
+* run container
+* edit code
+* see changes from within container.

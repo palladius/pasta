@@ -13,7 +13,7 @@
 # gem "rack", '1.0.1',
 #     :git => 'git://github.com/rack/rack.git',
 #     :ref => '4cc6af9b4f0b633b076f27d3a76bf86ebf9fe64e'
-# gem 'i18n'
+gem 'i18n'
 # gem 'tmail'
 # gem 'rails_dm_datastore'
 # gem 'activerecord-nulldb-adapter'
@@ -32,10 +32,12 @@
 # hobo: i would say 0.9.106 as it coincides with rails 2.3.5 (nov 2009): https://rubygems.org/gems/hobo/versions
 source 'https://rubygems.org'
 
-#ruby "1.8.7"
+ruby "1.8.7"
 
 gem 'rails', '2.3.18'
 gem 'sqlite3'
+
+
 
 ######################################
 # HOBO
@@ -62,3 +64,7 @@ gem 'json'
 #gem "dryml", :git => "git://github.com/Hobo/hobo.git"
 #gem "hobo", :git => "git://github.com/Hobo/hobo.git"
 #########################################################
+
+
+gem 'lolcat' # added in 2020 to give spark of color to my life.
+gem 'rake', '~> 0.8.7' # 2020 see this: https://stackoverflow.com/questions/53505250/running-ruby-1-8-7-in-docker

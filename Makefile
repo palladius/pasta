@@ -1,5 +1,7 @@
 APPNAME = riccpasta
 VERSION = $(shell cat VERSION)
+GCP_PROJECT = pasta-188214
+
 
 tests:
 	@echo "1. DB in developments contains pastas.. if not run rake dbLseed"
@@ -24,8 +26,12 @@ prep:
 run: prep
 	script/server
 
-docker-run:
-	docker run --name riccardo-pasta -d $(APPNAME):v$(VERSION)
+docker-run: # docker-build
+#	docker run --name riccardo-pasta -d $(APPNAME):v$(VERSION)
+	docker run -it -p 8080:8080 $(APPNAME):v$(VERSION) ./entrypoint-8080.sh
+
+docker-run-bash: # docker-build
+	docker run -it -p 8080:8080 $(APPNAME):v$(VERSION) bash
 
 # This is only iomportant within the Docker image.. for quick installation. Ignore this on parent world.
 # You need to see Inception to get this :)
@@ -35,3 +41,9 @@ install-within-docker:
 
 docker-build: 
 	docker build -t $(APPNAME):v$(VERSION) .
+
+docker-push: # docker-build
+	docker tag $(APPNAME):v$(VERSION) gcr.io/$(GCP_PROJECT)/$(APPNAME):v$(VERSION) 
+	docker push gcr.io/$(GCP_PROJECT)/$(APPNAME):v$(VERSION) 
+
+
