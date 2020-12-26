@@ -1,0 +1,7 @@
+DATABASE_HOST=35.198.182.127
+DATABASE_PORT=3306
+DATABASE_NAME=septober
+DATABASE_USER=septoberuser
+DATABASE_PASSWORD=comeDirebbeIlBergonz
+MESSAGGIO_OCCASIONALE=Benvenuto da un ENV File creato da GIC . Perche a noi la qualita ha rotto il cazzo!!
+RAILS_ENV=production
