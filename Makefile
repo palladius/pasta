@@ -41,6 +41,7 @@ install-within-docker:
 
 docker-build: 
 	docker build -t $(APPNAME):v$(VERSION) .
+	touch ok-built.$(APPNAME):v$(VERSION).touch
 
 docker-push: # docker-build
 	docker tag $(APPNAME):v$(VERSION) gcr.io/$(GCP_PROJECT)/$(APPNAME):v$(VERSION) 

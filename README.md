@@ -8,8 +8,7 @@ and non-italians simply have to learn the hard way, via this application for ins
 
 *NOTE*: From this app, you may infer trivially that [Spaghetti Bolognese dont exist](http://www.palladius.it/index.php?option=com_content&view=article&id=177:spaghetti-bolognese-dont-exist&catid=30:english-contents&Itemid=67)!
 
-Install
-=======
+## Install
 
 Make sure you are using `Ruby 1.8` and old Gems which still work with this Ruby/Hobo installation :/ (see `Dockerfile` for updates).
 
@@ -18,8 +17,18 @@ Make sure you are using `Ruby 1.8` and old Gems which still work with this Ruby/
 	cd pasta
 	make install
 
-Credits
--------
+## Dockerization
+
+Dockerizing my app offers a solution to finding how to run my application on bloody 1.8.7 / 2.3.18.
+Unfortunately ruby 1.8 version doesnt exist (is not suppored / is hard to find) in Dockerhub.
+Scraping oldest dockerhub versions I could find `1.9.3p551` as earliest version.
+
+Some good readings to resuscitate old ruby versions:
+
+* http://iwantmyreal.name/bringing-dead-projects-back-to-life-with-docker 
+* https://stackoverflow.com/questions/53505250/running-ruby-1-8-7-in-docker
+
+## Credits
 
 - DHH for Rails
 - Ryan Bates for Nifty stuff.
