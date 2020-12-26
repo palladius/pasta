@@ -1,23 +1,32 @@
-##############################################
-# Getting there....
-# .. 	git@github.com:palladius/gce-recipes.git
-# under gce-recipes/gke/docker-apps/pasta/Dockerfile
-##############################################
+FROM ruby:2.3-slim
 
-# TODO, but ideally: 
-# install rvm
-# Select ruby1.8
-# select # gem -v
-#1.8.25
-# ruby -v
-#ruby 1.9.3p484 (2013-11-22 revision 43786) [x86_64-linux]
+RUN apt-get update \
+ && apt-get install -qq -y --no-install-recommends \
+    build-essential \
+    nodejs \
+    libpq-dev \
+    git \
+    tzdata \
+    libxml2-dev \
+    libxslt-dev \
+    libsqlite3-dev \
+    ssh \
+ && rm -rf /var/lib/apt/lists/*
 
-FROM palladius/septober:v1.2
-#RUN  mkdir /pasta/
+ENV APP_HOME /opt/pasta
 
+RUN mkdir -p $APP_HOME
+WORKDIR $APP_HOME
 
+# change to . if you move Dockerfile to /
+ADD . $APP_HOME
 
-#################################################
-# Also consider using: 
-# docker pull training/sinatra
-## This is very difficult, i'm failing as Hobo doesnt play well with ruby1.9
+RUN bundle install
+
+ENV GEM_HOME /opt/pasta/vendor/bundle
+ENV PATH $GEM_HOME/bin:$PATH
+ENV BUNDLE_PATH $GEM_HOME
+ENV BUNDLE_BIN $BUNDLE_PATH/bin
+ENV DESCRIPTION "This experiment was tried in 2019. Not sure it works today"
+
+EXPOSE 8080

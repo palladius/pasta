@@ -1,3 +1,5 @@
+APPNAME = riccpasta
+VERSION = $(shell cat VERSION)
 
 tests:
 	@echo "1. DB in developments contains pastas.. if not run rake dbLseed"
@@ -23,8 +25,7 @@ run: prep
 	script/server
 
 docker-run:
-	docker build -t riccpasta .
-	docker run --name riccardo-pasta -d riccpasta
+	docker run --name riccardo-pasta -d $(APPNAME):v$(VERSION)
 
 # This is only iomportant within the Docker image.. for quick installation. Ignore this on parent world.
 # You need to see Inception to get this :)
@@ -32,3 +33,5 @@ install-within-docker:
 	apt -y install vim git 
 	ln -s /root/.rbenv/versions/1.8.7-p375/bin/bundle /usr/bin/
 
+docker-build: 
+	docker build -t $(APPNAME):v$(VERSION) .
