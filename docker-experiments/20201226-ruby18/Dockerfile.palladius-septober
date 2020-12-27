@@ -3,7 +3,7 @@ FROM palladius/septober:v1.2
 
 # i dont know what i did there but its a pretty GOOD image and it works with septober.. so it should with pasta too!
 
-RUN gem install hobo
+#RUN gem install hobo
 
 ADD . /
 #WORKDIR /app

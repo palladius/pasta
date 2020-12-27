@@ -13,3 +13,5 @@ gem 'rake', '0.8.7'         # WORKS ALONE
 gem 'sqlite3'               # error
 gem 'rails', '2.3.18'
 gem 'lolcat'                # requires ruby 1.9.3
+
+# gem 'hobo'

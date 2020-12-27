@@ -1,0 +1,17 @@
+
+# test gemfile to see if it builds stuff I care about :)
+
+source 'https://rubygems.org'
+
+ruby '1.8.7'
+
+#require 'rubygems'
+
+ # apt-get install ruby-bundler
+
+gem 'rake', '0.8.7'         # WORKS ALONE
+gem 'sqlite3'               # error
+gem 'rails', '2.3.18'
+gem 'lolcat'                # requires ruby 1.9.3
+
+# gem 'hobo'
