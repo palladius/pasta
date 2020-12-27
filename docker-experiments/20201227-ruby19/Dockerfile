@@ -1,0 +1,39 @@
+FROM ruby:1.9
+
+ENV RICCARDO_CONFIG "My personal 1.9.3 docker installation to run my old 2.3.18 rails installations"
+
+# ruby-bundler added by riccardo
+RUN apt-get update && \
+    apt-get install -y software-properties-common vim
+#     apt-add-repository ppa:brightbox/ruby-ng && \
+#     apt-get update && \
+#     apt-get install -y ruby1.9 rubygems1.9 ruby-switch ruby-bundler
+# RUN ruby-switch --set ruby1.9
+#RUN apt-get install -y  vim
+RUN echo 'gem: --no-rdoc --no-ri' >> "$HOME/.gemrc"
+
+# Configure Bundler to install everything globally
+#ENV GEM_HOME /usr/local/bundle
+#ENV PATH $GEM_HOME/bin:$PATH
+
+# Riccardo part..
+#RUN gem install rake -v 0.8.7
+#RUN apt-get install -y ruby-bundler
+#RUN gem install bundler 
+#RUN bundle config --global path "$GEM_HOME" && \
+#    bundle config --global bin "$GEM_HOME/bin"
+
+#ENV BUNDLE_APP_CONFIG $GEM_HOME
+
+ADD . /app/
+
+#RUN bundle install
+
+WORKDIR /app
+
+RUN bundle install
+# Creates it for you to play
+RUN rails test-rails-2.3.18
+
+#CMD [ "irb" ]
+CMD [ "./rubume.sh" ]

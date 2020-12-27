@@ -1,0 +1,36 @@
+# Copied from: https://github.com/bellbind/docker-ruby18-rails2/blob/master/Dockerfile
+
+FROM ubuntu:16.04
+#MAINTAINER bellbind
+
+WORKDIR /tmp
+RUN apt update
+RUN apt upgrade -y
+RUN apt install -y build-essential ruby-build autoconf subversion bison
+RUN apt install -y libyaml-dev libncurses5-dev libffi-dev libgdbm-dev
+RUN apt install -y pkg-config mecab mecab-ipadic-utf8 libmecab-dev wget sqlite3
+
+ENV PATH /root/.rbenv/shims:$PATH
+RUN rbenv install 1.8.7-p375
+RUN rbenv local 1.8.7-p375
+RUN rbenv rehash
+
+RUN echo 'gem: --no-rdoc --no-ri' >> "$HOME/.gemrc"
+
+RUN gem install rake -v 0.8.7
+RUN gem install rdoc -v 2.4.3
+RUN gem install mongrel
+#RUN gem install sqlite3
+RUN gem install rails -v 2.3.18
+RUN rbenv rehash
+
+
+WORKDIR /root
+RUN rbenv local 1.8.7-p375
+RUN rbenv rehash
+
+# just to test easily if it works
+RUN rails test-rails-2318
+
+CMD bash
+

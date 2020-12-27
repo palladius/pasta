@@ -1,6 +1,10 @@
 
+First Dockerfile is copied from this awesome chap - see credits.
 
-Copied from this awesome chap: 
+# Dockers
+
+* `Dockerfile`: provides a Ubuntu 14.04 with debian-installed rubies.
+* `Dockerfile.ru18ra2318`: provides a Ubuntu 16.04 with rbenv-installed rubies.
 
 # Credits
 

@@ -1,0 +1,26 @@
+
+# test gemfile to see if it builds stuff I care about :)
+
+source 'https://rubygems.org'
+
+#ruby '1.8.7'
+
+#require 'rubygems'
+
+ # apt-get install ruby-bundler
+
+gem 'rake', '0.8.7'         # maybe i should remove for ruby1.9
+gem 'sqlite3'               # error
+gem 'rails', '2.3.18'
+gem 'lolcat'                # requires ruby 1.9.3
+
+#########################################################
+# Gems needed for my stuff.
+#########################################################
+
+#########################################################
+# PASTA
+gem 'hobo', '1.0'
+gem 'will_paginate', '2.3.11' # minimum required by Hobo
+#gem 'json'                   # error:  Gem::InstallError: json requires Ruby version >= 2.0. An error occurred while installing json (2.5.1), and Bundler cannot continue.
+# /PASTA
