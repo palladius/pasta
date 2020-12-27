@@ -25,4 +25,4 @@ ADD . /app/
 WORKDIR /app
 
 #CMD [ "irb" ]
-CMD [ "./rubume.sh" ]
+CMD [ "./ruby-info.sh" ]
