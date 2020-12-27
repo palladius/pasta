@@ -31,7 +31,8 @@ ADD . /app/
 
 WORKDIR /app
 
-RUN bundle install
+#RUN bundle install
+RUN gem install rails '2.3.18'
 # Creates it for you to play
 RUN rails test-rails-2.3.18
 
