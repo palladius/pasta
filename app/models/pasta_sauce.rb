@@ -33,10 +33,12 @@ class PastaSauce < ActiveRecord::Base
   def to_html
     color = appropriate ? 'green' : 'red'
     #{}"<font color='#{color}'>#{to_s(false)}</font>"
-    "<font color='#{color}'>#{appropriate ? 'OK' : 'NO'}: </font>" +
-    "#{pasta.to_html} #{sauce.connettivo} #{sauce.to_html}" 
+    ret = "<font color='#{color}'>#{appropriate ? 'OK' : 'NO'}: </font>" +
+    "#{pasta.to_html} #{sauce.connettivo} #{sauce.to_html}"
     # +
     #     " <small>#{vote}%</small>"
+    ret.html_safe
+    
   end
   
   def self.seed(pasta,sauce,appropriate,notes)
