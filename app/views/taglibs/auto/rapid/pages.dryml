@@ -5,9 +5,9 @@
 <def tag="main-nav">
   <navigation class="main-nav" merge-attrs param="default">
     <nav-item href="#{base_url}/">Home</nav-item>
-    <nav-item with="&Pasta"><ht key="pastas.nav_item">Tipo di Pastas</ht></nav-item>
+    <nav-item with="&Pasta"><ht key="pastas.nav_item">Tipi di pasta</ht></nav-item>
     <nav-item with="&PastaSauce"><ht key="pasta_sauces.nav_item">Pasta Sauces</ht></nav-item>
-    <nav-item with="&Sauce"><ht key="sauces.nav_item">Condimentos</ht></nav-item>
+    <nav-item with="&Sauce"><ht key="sauces.nav_item">Condimenti</ht></nav-item>
   </navigation>
 </def>
 
@@ -137,14 +137,14 @@
 <!-- ====== Pasta Pages ====== -->
 
 <def tag="index-page" for="Pasta">
-  <page merge title="#{ht 'pastas.index.title', :default=>['Tipo di Pastas'] }">
+  <page merge title="#{ht 'pastas.index.title', :default=>['Tipi di pasta'] }">
     <body: class="index-page pasta" param/>
 
     <content: param>
       <header param="content-header">
         <h2 param="heading">
           <ht key="pastas.index.heading">
-            Tipo di Pastas
+            Tipi di pasta
           </ht>
         </h2>
 
@@ -257,14 +257,14 @@
 <!-- ====== Sauce Pages ====== -->
 
 <def tag="index-page" for="Sauce">
-  <page merge title="#{ht 'sauces.index.title', :default=>['Condimentos'] }">
+  <page merge title="#{ht 'sauces.index.title', :default=>['Condimenti'] }">
     <body: class="index-page sauce" param/>
 
     <content: param>
       <header param="content-header">
         <h2 param="heading">
           <ht key="sauces.index.heading">
-            Condimentos
+            Condimenti
           </ht>
         </h2>
 
