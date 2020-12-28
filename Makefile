@@ -13,9 +13,10 @@ install:
 	gem install will_paginate -v 2.3.11
 	# JP doc: https://jyamtan.hatenablog.com/entry/2019/06/11/234209
 	gem install sqlite3-ruby -v 1.2.5
+	#gem install lolcat # requires ruby193..
 	#rake gems:install
-	rake db:migrate
-	rake db:seed
+	#rake db:migrate
+	#rake db:seed
 	touch make_install.touch
 
 prep:

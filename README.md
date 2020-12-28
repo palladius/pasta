@@ -20,13 +20,15 @@ Make sure you are using `Ruby 1.8` and old Gems which still work with this Ruby/
 ## Dockerization
 
 Dockerizing my app offers a solution to finding how to run my application on bloody 1.8.7 / 2.3.18.
-Unfortunately ruby 1.8 version doesnt exist (is not suppored / is hard to find) in Dockerhub.
-Scraping oldest dockerhub versions I could find `1.9.3p551` as earliest version.
+See `docker-experiments` for some experiments which actually moved to github.com/palladius/rubies.
 
-Some good readings to resuscitate old ruby versions:
+I've been trying to run pasta over my Dockerfile.mecha-rbenv and it worked pretty well. I was able to
+make it start and also got a login. Unfortunately I got to the white red error in anything due to infinite
+500 redirect. Anyway the recipe was sth like this:
 
-* http://iwantmyreal.name/bringing-dead-projects-back-to-life-with-docker 
-* https://stackoverflow.com/questions/53505250/running-ruby-1-8-7-in-docker
+* hobo 1.0.0 or 1.1.0
+* sqlite: 1.2.5     # took a while!!!
+* script/server if it doesnt work for /, try /login
 
 ## Credits
 

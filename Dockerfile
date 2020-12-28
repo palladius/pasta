@@ -27,7 +27,8 @@ WORKDIR $APP_HOME
 # change to . if you move Dockerfile to /
 ADD . $APP_HOME
 
-RUN bundle install
+# This doesnt work!!
+#RUN bundle install
 
 ENV GEM_HOME /opt/pasta/vendor/bundle
 ENV PATH $GEM_HOME/bin:$PATH
@@ -35,7 +36,15 @@ ENV BUNDLE_PATH $GEM_HOME
 ENV BUNDLE_BIN $BUNDLE_PATH/bin
 ENV DESCRIPTION "This experiment was tried in 2019. Not sure it works today"
 
+# See from MAkefile: hobo should work both 1.1.0 and 1.0.0 maybe also 1.3.0: https://rubygems.org/gems/hobo/versions
+RUN gem install hobo 1.1.0
+#RUN gem install -v=2.3.18 rails
+RUN gem install will_paginate -v 2.3.11
+RUN gem install sqlite3-ruby -v 1.2.5
+
 EXPOSE 8080
 
-ENTRYPOINT [ "./entrypoint-8080.sh" ]
+# ./entrypoint-8080.sh doesnt work as requires lolcat
+ENTRYPOINT [ "script/server", "-p", "8080" ]
+
 CMD ["echo", "Ciao a tutti. Change CMD if you want to run bash or something.." ]

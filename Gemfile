@@ -1,71 +1,11 @@
-##########################################################
-# questo viene da una vecchia commit del Mac - da un vecchio disco - butta via nel caso
-##########################################################
-# # Critical default settings:
-# disable_system_gems
-# disable_rubygems
-# bundle_path '.gems/bundler_gems'
-
-# # List gems to bundle here:
-# gem 'rails', '3.0.pre',
-#      :git => 'git://github.com/rails/rails.git',
-#      :ref => '1b27f5c4f72384081083fa025b6b10e5ab02ae5e'
-# gem "rack", '1.0.1',
-#     :git => 'git://github.com/rack/rack.git',
-#     :ref => '4cc6af9b4f0b633b076f27d3a76bf86ebf9fe64e'
-# gem 'i18n'
-# gem 'tmail'
-# gem 'rails_dm_datastore'
-# gem 'activerecord-nulldb-adapter'
-# #######################################
-# #                                     #
-# #  You should be running Rails 2.3.5  #
-# #                                     #
-# #  http://rails-depot.appspot.com/    #
-# #                                     #
-# #######################################
-
-
-# NEEDS RUBY1.8!!!
-
-# rails: 2.3.5
-# hobo: i would say 0.9.106 as it coincides with rails 2.3.5 (nov 2009): https://rubygems.org/gems/hobo/versions
-source 'https://rubygems.org'
-
-#ruby "1.8.7"
-
-gem 'rails', '2.3.18'
-gem 'sqlite3'
-#gem 'mysql2','0.2.7'
-
-
-
-######################################
-# HOBO
-######################################
-# Hobo requires 1.0 to work with this pre-Neanderthal version.
-# This breaks will_paginate so you need hobo's fork :/
-# 
-######################################
-gem 'hobo', '1.0'
-gem 'will_paginate', '2.3.11' # minimum required by Hobo
-#gem 'hobo', :git => "git://github.com/Hobo/hobo.git"
-#gem "will_paginate", :git => "git://github.com/Hobo/will_paginate.git"
-######################################
-##################################################
-# JSON issues...
-##################################################
-# 20171104 JSON 1.8 required: https://stackoverflow.com/questions/21477087/why-does-passenger-says-that-my-gem-json-cant-be-found-when-my-gem-list-show
-# 20171113 doesnt work: https://stackoverflow.com/questions/21095098/why-wont-bundler-install-json-gem
-gem 'json'
-#gem 'json', github: 'flori/json', branch: 'v1.8'
-##################################################
-#gem 'event-calendar'
-#gem 'rdoc'
-#gem "dryml", :git => "git://github.com/Hobo/hobo.git"
-#gem "hobo", :git => "git://github.com/Hobo/hobo.git"
-#########################################################
-
-
-gem 'lolcat' # added in 2020 to give spark of color to my life.
-#gem 'rake', '~> 0.8.7' # 2020 see this: https://stackoverflow.com/questions/53505250/running-ruby-1-8-7-in-docker
+<!DOCTYPE html>
+<html lang=en>
+  <meta charset=utf-8>
+  <meta name=viewport content="initial-scale=1, minimum-scale=1, width=device-width">
+  <title>Error 404 (Not Found)!!1</title>
+  <style>
+    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding-right:205px}p{margin:11px 0 22px;overflow:hidden}ins{color:#777;text-decoration:none}a img{border:0}@media screen and (max-width:772px){body{background:none;margin-top:0;max-width:none;padding-right:0}}#logo{background:url(//www.google.com/images/branding/googlelogo/1x/googlelogo_color_150x54dp.png) no-repeat;margin-left:-5px}@media only screen and (min-resolution:192dpi){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat 0% 0%/100% 100%;-moz-border-image:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) 0}}@media only screen and (-webkit-min-device-pixel-ratio:2){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat;-webkit-background-size:100% 100%}}#logo{display:inline-block;height:54px;width:150px}
+  </style>
+  <a href=//www.google.com/><span id=logo aria-label=Google></span></a>
+  <p><b>404.</b> <ins>That’s an error.</ins>
+  <p>The requested URL <code>/hg/demos/rails/Gemfile</code> was not found on this server.  <ins>That’s all we know.</ins>
