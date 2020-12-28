@@ -8,9 +8,12 @@ tests:
 	echo 'Pasta.all.map{|x| x.name }' | script/console
 
 install:
-	sudo gem install -v=2.3.18 rails
-	sudo gem install hobo -v 1.0
-	sudo gem install will_paginate -v 2.3.11
+	gem install -v=2.3.18 rails
+	gem install hobo -v 1.0
+	gem install will_paginate -v 2.3.11
+	# JP doc: https://jyamtan.hatenablog.com/entry/2019/06/11/234209
+	gem install sqlite3-ruby -v 1.2.5
+	#rake gems:install
 	rake db:migrate
 	rake db:seed
 	touch make_install.touch
