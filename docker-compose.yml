@@ -3,42 +3,40 @@
 version: '2'
 services:
 
-  # Docs: https://hub.docker.com/r/bitnami/mariadb
-  mariadb:
-    image: 'docker.io/bitnami/mariadb:10.3-debian-10'
-    environment:
-      #- ALLOW_EMPTY_PASSWORD=yes
-      - MARIADB_ROOT_PASSWORD=thisIsClearlyNotGood4Prod
-      - MARIADB_USER=septober_user
-      - MARIADB_PASSWORD=thisIsClearlyNotGood4Prod
-      - MARIADB_DATABASE=septober_prod_test_oxymoron
-    ports:
-      - 3306:3306
+  # # Docs: https://hub.docker.com/r/bitnami/mariadb
+  # mariadb:
+  #   image: 'docker.io/bitnami/mariadb:10.3-debian-10'
+  #   environment:
+  #     #- ALLOW_EMPTY_PASSWORD=yes
+  #     - MARIADB_ROOT_PASSWORD=thisIsClearlyNotGood4Prod
+  #     - MARIADB_USER=septober_user
+  #     - MARIADB_PASSWORD=thisIsClearlyNotGood4Prod
+  #     - MARIADB_DATABASE=septober_prod_test_oxymoron
+  #   ports:
+  #     - 3306:3306
 
-  septober:
+  pasta:
     tty: true # Enables debugging capabilities when attached to this container.
-    #image: docker.io/bitnami/rails:6-debian-10
-    image: septober-ng:latest
-    # Wait for MariaDB to spin up correctly before injecting DB migrations..
+    image: riccpasta:v1.3.4
     command: >
      bash -c "
-       sleep 10 &&
-       bundle exec rake db:migrate && 
-       rake db:seed && 
+       echo Ciao a tutti da docker-compose con Volume. This is intended to DEVELOP pasta mounting current dir for dev reasons. 
+       echo To steal the session type: docker-compose exec pasta bash
        ./entrypoint-8080.sh
      "
+    #entrypoint: /bin/bash
     environment:
       - DATABASE_HOST=mariadb
       - DATABASE_PORT=3306
-      - DATABASE_NAME=septober_prod_test_oxymoron
-      - DATABASE_USER=septober_user
-      - DATABASE_PASSWORD='thisIsClearlyNotGood4Prod'
-      - ADMIN_PASSWORD='Ch4ngeM3Th1s1sGu3ss4ble'
-      - MESSAGGIO_OCCASIONALE='DockerCompose v1.3_20201228 test to cheaply deploy a MySQL PROD config. Connect with guest // seed-guest''
-      - RAILS_ENV=production
-    depends_on:
-      - mariadb
+      - DATABASE_NAME=pasta_prod
+      - DATABASE_USER=pasta_user
+      - DATABASE_PASSWORD='NoSpagBolPlease'
+      #- ADMIN_PASSWORD='Ch4ngeM3Th1s1sGu3ss4ble'
+      - MESSAGGIO_OCCASIONALE='DockerCompose v1.1_20201229 test to cheaply deploy a MySQL PROD config.'
+      - RAILS_ENV="development"
+#    depends_on:
+#      - mariadb
     ports:
       - 8080:8080
-#    volumes:
-#      - .:/app
+    volumes:
+      - .:/app
