@@ -3,21 +3,20 @@
 version: '2'
 services:
 
-  # # Docs: https://hub.docker.com/r/bitnami/mariadb
-  # mariadb:
-  #   image: 'docker.io/bitnami/mariadb:10.3-debian-10'
-  #   environment:
-  #     #- ALLOW_EMPTY_PASSWORD=yes
-  #     - MARIADB_ROOT_PASSWORD=thisIsClearlyNotGood4Prod
-  #     - MARIADB_USER=septober_user
-  #     - MARIADB_PASSWORD=thisIsClearlyNotGood4Prod
-  #     - MARIADB_DATABASE=septober_prod_test_oxymoron
-  #   ports:
-  #     - 3306:3306
+  # Docs: https://hub.docker.com/r/bitnami/mariadb
+  mariadb:
+    image: 'docker.io/bitnami/mariadb:10.3-debian-10'
+    environment:
+      - MARIADB_ROOT_PASSWORD=thisIsClearlyNotGood4ProdButLuckilyItsaF4ke£nvironm3nt
+      - MARIADB_USER=pasta_user
+      - MARIADB_PASSWORD=NoSpagBolPlease
+      - MARIADB_DATABASE=pasta_prod
+    ports:
+      - 3306:3306
 
   pasta:
     tty: true # Enables debugging capabilities when attached to this container.
-    image: riccpasta:v1.3.4
+    image: riccpasta:v1.3.7
     command: >
      bash -c "
        echo Ciao a tutti da docker-compose con Volume. This is intended to DEVELOP pasta mounting current dir for dev reasons. 
@@ -30,13 +29,13 @@ services:
       - DATABASE_PORT=3306
       - DATABASE_NAME=pasta_prod
       - DATABASE_USER=pasta_user
-      - DATABASE_PASSWORD='NoSpagBolPlease'
-      #- ADMIN_PASSWORD='Ch4ngeM3Th1s1sGu3ss4ble'
-      - MESSAGGIO_OCCASIONALE='DockerCompose v1.1_20201229 test to cheaply deploy a MySQL PROD config.'
-      - RAILS_ENV="development"
+      - DATABASE_PASSWORD=NoSpagBolPlease
+      - MESSAGGIO_OCCASIONALE=DockerCompose v1.1_20201229 test to cheaply deploy a MySQL PROD config.
+      #- RAILS_ENV=development
 #    depends_on:
 #      - mariadb
     ports:
       - 8080:8080
     volumes:
-      - .:/app
+#      - .:/app     # brand new one
+      - .:/opt/app # ovewrites the current one - no need to CD but possibly confusing
