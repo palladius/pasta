@@ -63,6 +63,6 @@ verbose_echo "Now Calling your custom Args script you gave me as CMD: '$*'"
 
 verbose_echo "And now finally calling rails server on port $MYPORT"
 # runs on all IPs and port ~8080.
-bundle exec rails s -b 0.0.0.0 -p $MYPORT
+script/server -b 0.0.0.0 -p $MYPORT
 
 echo "[$APP_NAME-v$VER-entrypoint] END. You should NEVER see this I guess,"
