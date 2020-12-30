@@ -38,4 +38,5 @@ services:
       - 8080:8080
     volumes:
 #      - .:/app     # brand new one
-      - .:/opt/app # ovewrites the current one - no need to CD but possibly confusing
+      - .:/opt/pasta # ovewrites the current one - no need to CD but possibly confusing
+#      ENV APP_HOME /opt/pasta
