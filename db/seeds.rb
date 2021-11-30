@@ -46,7 +46,7 @@ GOOD_CONDIMENTS = [
   %w{ pappardelle    bolognese cinghiale boscaiola funghi } ,  # http://it.wikipedia.org/wiki/Pappardelle
   %w{ penne          aglio_olio amatriciana bolognese puttanesca radicchio quattro_formaggi piselli } ,
   %w{ risotto        funghi zafferano frutti_di_mare },
-  %w{ spaghetti      aglio_olio amatriciana bolognese carbonara nero_di_seppia pesto pomodoro puttanesca scoglio tonno frutti_di_mare },
+  %w{ spaghetti      aglio_olio amatriciana carbonara nero_di_seppia pesto pomodoro puttanesca scoglio tonno frutti_di_mare },
   %w{ strozzapreti   canocchie cinghiale pesto ragu },
   %w{ tagliatelle    bolognese funghi gamberetti_zucchine nero_di_seppia panna_funghi prosciutto burro_e_tartufo }, # http://it.wikipedia.org/wiki/Tagliatelle
   %w{ tagliolini     scoglio gamberetti_zucchine nero_di_seppia panna_funghi burro_e_tartufo },
