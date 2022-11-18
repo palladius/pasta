@@ -30,6 +30,10 @@ make it start and also got a login. Unfortunately I got to the white red error i
 * sqlite: 1.2.5     # took a while!!!
 * script/server if it doesnt work for /, try /login
 
+Consider using `palladius/ror5-pasta.git` instead.
+
+Starting to create a new Pasta on RoR7 with Ruby3 under `pasta-ror7/`.. see other readme
+
 ## Credits
 
 - DHH for Rails

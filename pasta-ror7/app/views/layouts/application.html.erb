@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PastaRor7</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+  <body class='bg-light'>
+    <div class="container bg-white border pb-3">
+      <%= render 'layouts/navigation' %>
+      <% flash.each do |type, msg| %>
+        <% if type == 'alert' %>
+          <%= content_tag :div, msg, class: "alert alert-danger", role: :alert %>
+          <% else %>
+          <%= content_tag :div, msg, class: "alert alert-primary", role: :alert %>
+        <% end %>
+      <% end %>
+      <%= yield %>
+    </div>
+
+  </body>
+</html>
