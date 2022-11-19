@@ -1,0 +1,2 @@
+class Sauce < ApplicationRecord
+end

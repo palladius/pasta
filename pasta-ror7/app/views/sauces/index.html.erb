@@ -1,0 +1,32 @@
+<h1>Sauce</h1>
+
+<table class='table'>
+  <thead>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Active</th>
+    
+    <th colspan=3>Actions</th>
+  </thead>
+  <tbody>
+    <% @sauces.each do |sauce| %>
+      <tr>
+        <td><%= sauce.name %></td>
+        <td><%= sauce.description %></td>
+        <td><%= sauce.active %></td>
+      
+        <td><%= link_to "Show", sauce_path(sauce) %></td>
+        <td><%= link_to "Edit", edit_sauce_path(sauce) %></td>
+        <td>
+          <%= link_to "Delete", sauce_path(sauce),
+            "data-turbo-method": :delete,
+            "data-turbo-confirm": "Are you sure?" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to "New sauce", new_sauce_path %>

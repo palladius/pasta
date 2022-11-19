@@ -13,6 +13,7 @@ Things you may want to cover:
 
 ```bash
 rails g scaffold pastas name:string description:text active:boolean # t.boolean  :active, :default => true
-
+# skipping users to use devise instead then add other stuff
+rails g scaffold sauces name:string description:text active:boolean # probably also here: , :default => true
 
 ```

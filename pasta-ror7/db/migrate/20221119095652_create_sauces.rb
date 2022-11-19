@@ -1,9 +1,8 @@
-class CreatePasta < ActiveRecord::Migration[7.0]
+class CreateSauces < ActiveRecord::Migration[7.0]
   def change
-    create_table :pasta do |t|
+    create_table :sauces do |t|
       t.string :name
       t.text :description
-      #t.boolean :active
       t.boolean :active, :default => true
 
       t.timestamps
