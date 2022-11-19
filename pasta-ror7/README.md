@@ -12,8 +12,15 @@ Things you may want to cover:
 ## copying from other app
 
 ```bash
-rails g scaffold pastas name:string description:text active:boolean # t.boolean  :active, :default => true
+rails g scaffold pastas name:string description:text active:boolean # boolean  :active, :default => true
 # skipping users to use devise instead then add other stuff
-rails g scaffold sauces name:string description:text active:boolean # probably also here: , :default => true
+rails g scaffold sauces name:string description:text active:boolean color:string #active, :default => true, color:default => 'rosso'
+
+rails g scaffold pasta_sauces appropriate:boolean vote:integer notes:text pasta_id:integer sauce_id:integer
+# Then change:
+# :appropriate, :boolean, :default => true
+# :vote, :integer, :default => 50
+#  add_index :pasta_sauces, [:sauce_id]
+#  add_index :pasta_sauces, [:pasta_id]
 
 ```

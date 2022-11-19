@@ -4,6 +4,7 @@ class CreateSauces < ActiveRecord::Migration[7.0]
       t.string :name
       t.text :description
       t.boolean :active, :default => true
+      t.string :color, :default => "rosso"
 
       t.timestamps
     end

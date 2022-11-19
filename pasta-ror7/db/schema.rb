@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_19_095652) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_19_100342) do
   create_table "pasta", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -19,10 +19,23 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_19_095652) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "pasta_sauces", force: :cascade do |t|
+    t.boolean "appropriate", default: true
+    t.integer "vote", default: 50
+    t.text "notes"
+    t.integer "pasta_id"
+    t.integer "sauce_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pasta_id"], name: "index_pasta_sauces_on_pasta_id"
+    t.index ["sauce_id"], name: "index_pasta_sauces_on_sauce_id"
+  end
+
   create_table "sauces", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.boolean "active", default: true
+    t.string "color", default: "rosso"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

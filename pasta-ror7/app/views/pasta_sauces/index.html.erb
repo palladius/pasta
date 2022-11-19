@@ -1,0 +1,36 @@
+<h1>Pasta sauce</h1>
+
+<table class='table'>
+  <thead>
+    <th>Appropriate</th>
+    <th>Vote</th>
+    <th>Notes</th>
+    <th>Pasta</th>
+    <th>Sauce</th>
+    
+    <th colspan=3>Actions</th>
+  </thead>
+  <tbody>
+    <% @pasta_sauces.each do |pasta_sauce| %>
+      <tr>
+        <td><%= pasta_sauce.appropriate %></td>
+        <td><%= pasta_sauce.vote %></td>
+        <td><%= pasta_sauce.notes %></td>
+        <td><%= pasta_sauce.pasta_id %></td>
+        <td><%= pasta_sauce.sauce_id %></td>
+      
+        <td><%= link_to "Show", pasta_sauce_path(pasta_sauce) %></td>
+        <td><%= link_to "Edit", edit_pasta_sauce_path(pasta_sauce) %></td>
+        <td>
+          <%= link_to "Delete", pasta_sauce_path(pasta_sauce),
+            "data-turbo-method": :delete,
+            "data-turbo-confirm": "Are you sure?" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to "New pasta sauce", new_pasta_sauce_path %>

@@ -1,0 +1,2 @@
+class PastaSauce < ApplicationRecord
+end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pasta_sauces
   resources :sauces
   resources :pasta
   root to: 'welcome#index'
