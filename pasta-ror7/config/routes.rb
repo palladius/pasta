@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :pasta_sauces
   resources :sauces
   resources :pastas # broken
-  root to: 'sauces#index'
+  root to: 'pasta_sauces#index'
   get 'welcome/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

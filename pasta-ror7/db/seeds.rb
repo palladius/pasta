@@ -28,7 +28,7 @@ BAD_CONDIMENTS = [
   %w{spaghetti      bolognese },
   %w{pappardelle    salmone carbonara },
   %w{risotto        bolognese }, # pure blasphemy!
-#  %w{tagliatelle    pesto },
+  %w{tortellini     pesto },
 ]
 
 GOOD_CONDIMENTS = [
@@ -50,7 +50,7 @@ GOOD_CONDIMENTS = [
   %w{ spaghetti      aglio_olio amatriciana carbonara nero_di_seppia pesto pomodoro puttanesca scoglio tonno frutti_di_mare },
   %w{ strozzapreti   canocchie cinghiale pesto ragu },
   %w{ tagliatelle    bolognese funghi gamberetti_zucchine nero_di_seppia panna_funghi prosciutto burro_e_tartufo }, # http://it.wikipedia.org/wiki/Tagliatelle
-  %w{ tagliolini     scoglio gamberetti_zucchine nero_di_seppia panna_funghi burro_e_tartufo },
+  %w{ tagliolini     scoglio gamberetti_zucchine nero_di_seppia panna_funghi burro_e_tartufo salmone },
   %w{ tortellini     brodo panna },
   %w{ tortelloni     pomodoro burro_salvia },
  ]

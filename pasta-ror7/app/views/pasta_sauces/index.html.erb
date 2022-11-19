@@ -1,5 +1,12 @@
 <h1>Pasta sauce</h1>
 
+<p>Dear user who had not the luck to be born in Italy,. please observe the Gosepl of allowed and non-allowed pastas.
+
+<p>Would you have a panino with nutella and cauliflower? A coffee with milk and red wine? A pappardella al salmone with
+plenty of parimigiano reggiano on top? .. I thought so.
+
+<p>When in doubt... observe what you shall and what you shall NOT cook in the privacy of your home.
+
 <table class='table'>
   <thead>
     <th>Appropriate</th>
@@ -7,26 +14,12 @@
     <th>Notes</th>
     <th>Pasta</th>
     <th>Sauce</th>
-    
+
     <th colspan=3>Actions</th>
   </thead>
   <tbody>
     <% @pasta_sauces.each do |pasta_sauce| %>
-      <tr>
-        <td><%= pasta_sauce.appropriate %></td>
-        <td><%= pasta_sauce.vote %></td>
-        <td><%= pasta_sauce.notes %></td>
-        <td><%= pasta_sauce.pasta_id %></td>
-        <td><%= pasta_sauce.sauce_id %></td>
-      
-        <td><%= link_to "Show", pasta_sauce_path(pasta_sauce) %></td>
-        <td><%= link_to "Edit", edit_pasta_sauce_path(pasta_sauce) %></td>
-        <td>
-          <%= link_to "Delete", pasta_sauce_path(pasta_sauce),
-            "data-turbo-method": :delete,
-            "data-turbo-confirm": "Are you sure?" %>
-        </td>
-      </tr>
+      <%= render 'pasta_sauces/fancy_pasau', :pasta_sauce => pasta_sauce %><br/>
     <% end %>
   </tbody>
 </table>

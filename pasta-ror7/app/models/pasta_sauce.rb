@@ -28,17 +28,21 @@ class PastaSauce < ActiveRecord::Base
   def to_s(html_mode=true)
     html_mode ?
       to_html :
-      "#{appropriate ? 'OK' : 'NO'} { #{pasta.to_s} #{sauce.connettivo} #{sauce.to_s} }" rescue "PastaSauceBw error: (''#{$!}'')"
+      "#{appropriate_emoji} { #{pasta.to_s} #{sauce.connettivo} #{sauce.to_s} }" rescue "PastaSauceBw error: (''#{$!}'')"
   end
 
   def to_label
     "<b>LABEL</b>"
   end
 
+  def appropriate_emoji
+    appropriate ? '👍' : '⛔️'
+  end
+
   def to_html
     color = appropriate ? 'green' : 'red'
     #{}"<font color='#{color}'>#{to_s(false)}</font>"
-    ret = "<font color='#{color}'>#{appropriate ? 'OK' : 'NO'}: </font>" +
+    ret = "<font color='#{color}'>#{appropriate_emoji} </font>" +
     "#{pasta.to_html} #{sauce.connettivo} #{sauce.to_html}"
     # +
     #     " <small>#{vote}%</small>"
