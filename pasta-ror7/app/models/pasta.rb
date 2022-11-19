@@ -37,4 +37,8 @@ class Pasta < ApplicationRecord
     true
   end
 
+  def self.emoji
+    '🍝'
+  end
+
 end
