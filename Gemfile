@@ -34,7 +34,7 @@ source 'https://rubygems.org'
 
 #ruby "1.8.7"
 
-gem 'rails', '2.3.18'
+gem 'rails', '3.2.17'
 gem 'sqlite3'
 #gem 'mysql2','0.2.7'
 
