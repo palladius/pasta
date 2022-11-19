@@ -32,7 +32,7 @@ make it start and also got a login. Unfortunately I got to the white red error i
 
 Consider using `palladius/ror5-pasta.git` instead.
 
-Starting to create a new Pasta on RoR7 with Ruby3 under `pasta-ror7/`.. see other readme
+Starting to create a new Pasta on RoR7 with Ruby3 under `pasta-ror7/`.. see other readme.
 
 ## Credits
 
