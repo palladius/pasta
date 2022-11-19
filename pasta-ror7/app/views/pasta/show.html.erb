@@ -1,0 +1,9 @@
+<%= render @pastum %>
+
+<div>
+  <%= link_to "Edit", edit_pastum_path(@pastum) %> |
+  <%= link_to "Destroy", pastum_path(@pastum),
+    "data-turbo-method": :delete,
+    "data-turbo-confirm": "Are you sure?" %> |
+  <%= link_to "Back to pasta", pasta_path %>
+</div>

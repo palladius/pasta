@@ -21,6 +21,13 @@ GEM
       rails (>= 2.2.2)
     hobosupport (1.0.0)
     json (1.8.6)
+    lolcat (100.0.1)
+      manpages (~> 0.6.1)
+      optimist (~> 3.0.0)
+      paint (~> 2.1)
+    manpages (0.6.1)
+    optimist (3.0.1)
+    paint (2.2.1)
     rack (1.1.6)
     rails (2.3.18)
       actionmailer (= 2.3.18)
@@ -39,6 +46,7 @@ PLATFORMS
 DEPENDENCIES
   hobo (= 1.0)
   json
+  lolcat
   rails (= 2.3.18)
   sqlite3
   will_paginate (= 2.3.11)

@@ -5,20 +5,14 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
-
+* Ruby version: `3.1.2`
 * System dependencies
 
-* Configuration
 
-* Database creation
+## copying from other app
 
-* Database initialization
+```bash
+rails g scaffold pastas name:string description:text active:boolean # t.boolean  :active, :default => true
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
