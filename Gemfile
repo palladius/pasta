@@ -48,7 +48,7 @@ gem 'sqlite3'
 # 
 ######################################
 gem 'hobo', '1.0'
-gem 'will_paginate', '2.3.11' # minimum required by Hobo
+gem 'will_paginate', '3.0.5' # minimum required by Hobo
 #gem 'hobo', :git => "git://github.com/Hobo/hobo.git"
 #gem "will_paginate", :git => "git://github.com/Hobo/will_paginate.git"
 ######################################
