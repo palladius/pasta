@@ -25,10 +25,12 @@ SEED_VER = '1.3-20171114'
 DESTROY_ALL_BEFORE_SEEDING = true
 
 BAD_CONDIMENTS = [
-  %w{spaghetti      bolognese },
+  %w{spaghetti      bolognese }, # 🤢 Seriously you had finished all tagliatelle, fusilli, and penne in the house?!?
   %w{pappardelle    salmone carbonara },
   %w{risotto        bolognese }, # pure blasphemy!
-  %w{tortellini     pesto },
+  %w{tortellini     pesto },   # 🤮 Yuk! How can you even CONSIDER that?
+  %w{tagliatelle    chicken }, # so obvious its insulting to even write it down!
+  %w{fusilli        chicken }, # changing pasta won't make it any better.
 ]
 
 GOOD_CONDIMENTS = [

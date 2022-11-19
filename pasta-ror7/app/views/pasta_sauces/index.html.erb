@@ -1,28 +1,30 @@
-<h1>Pasta sauce</h1>
-
-<p>Dear user who had not the luck to be born in Italy,. please observe the Gosepl of allowed and non-allowed pastas.
-
-<p>Would you have a panino with nutella and cauliflower? A coffee with milk and red wine? A pappardella al salmone with
-plenty of parimigiano reggiano on top? .. I thought so.
-
-<p>When in doubt... observe what you shall and what you shall NOT cook in the privacy of your home.
+<h1>Pasta sauces</h1>
 
 <table class='table'>
   <thead>
-    <th>Appropriate</th>
-    <th>Vote</th>
-    <th>Notes</th>
-    <th>Pasta</th>
-    <th>Sauce</th>
-
-    <th colspan=3>Actions</th>
   </thead>
+  <tbody>
+  <td>
+      <%= image_tag "riccardo and GCP.jpeg", height: 200 %>
+
+    <td>
+      <p>Dear user who had not the luck to be born in Italy, please observe in awe and admiration the Gospel of allowed and non-allowed pastas.
+
+      <p><b>Why?!?</b> Would you have a panino with nutella and cauliflower? A coffee with milk and red wine? A pappardella al salmone with
+      plenty of parimigiano reggiano on top? .. I thought so.
+
+      <p>When in doubt... observe what you shall and what you shall NOT cook in the privacy of your home. Because yes,
+        the spirit of Italian Christams is watching you.
+
+  </tbody>
+</table>
+
+<table class='table'>
   <tbody>
     <% @pasta_sauces.each do |pasta_sauce| %>
       <%= render 'pasta_sauces/fancy_pasau', :pasta_sauce => pasta_sauce %><br/>
     <% end %>
-  </tbody>
-</table>
+
 
 <br>
 
