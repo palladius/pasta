@@ -1,0 +1,32 @@
+<h1>Pasta</h1>
+
+<table class='table'>
+  <thead>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Active</th>
+
+    <th colspan=3>Actions</th>
+  </thead>
+  <tbody>
+    <% @pasta.each do |pasta| %>
+      <tr>
+        <td><%= pasta.name %></td>
+        <td><%= pasta.description %></td>
+        <td><%= pasta.active %></td>
+
+        <td><%= link_to "Show", pasta_path(pasta) %></td>
+        <td><%= link_to "Edit", edit_pasta_path(pasta) %></td>
+        <td>
+          <%= link_to "Delete", pasta_path(pasta),
+            "data-turbo-method": :delete,
+            "data-turbo-confirm": "Are you sure?" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to "New pasta", new_pasta_path %>

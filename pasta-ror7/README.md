@@ -32,4 +32,8 @@ rails g scaffold ingredient_sauces necessary:boolean sauce_id:integer ingredient
       #       t.boolean :necessary, :default => true
 
 
+# TODO USERS:
+#    add_column :users, :likes,    :string, :default => 'chocolate, salmon, @meat'
+#    add_column :users, :dislikes, :string, :default => '@vegetables, @tin_tuna'
+
 ```
