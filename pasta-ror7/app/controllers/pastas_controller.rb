@@ -1,9 +1,9 @@
 class PastasController < ApplicationController
   before_action :set_pasta, only: %i[ show edit update destroy ]
 
-  # GET /pasta
+  # GET /pastas
   def index
-    @pasta = Pasta.all
+    @pastas = Pasta.all
   end
 
   # GET /pasta/1

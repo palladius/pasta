@@ -3,7 +3,4 @@ help:
 	cat Makefile
 
 db-recreate-DANGEOURS:
-	rake db:drop
-	bin/rails db:environment:set RAILS_ENV=development
-	rake db:migrate
-	rake db:seed
+	./destroy-and-recreate.sh
