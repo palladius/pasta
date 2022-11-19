@@ -174,6 +174,7 @@ INGREDIENTS.each{|ingredient, tags|
 
 
 # Sample users
+User.create( :name => 'ste' , :email => 'ste@example.com' , :likes => 'muller_thurgau', :dislikes => '@cheese' )
+User.create( :name => 'ric' , :email => 'ric@example.com' , :likes => 'chocolate, salmon', :dislikes => '@vegetable' )
 
-User.create( :name => 'ste' , :email_address => 'ste@example.com' , :likes => 'muller_thurgau', :dislikes => '@cheese' )
-User.create( :name => 'ric' , :email_address => 'ric@example.com' , :likes => 'chocolate, salmon', :dislikes => '@vegetable' )
+puts "All done 2022"

@@ -2,7 +2,7 @@ module ApplicationHelper
 
 
   PastaModels = [  Ingredient, IngredientSauce, Pasta, PastaSauce ] # Guest,
-  HiddenPastaModels = [ Event, User ] # Guest,
+  #HiddenPastaModels = [ Event, User ] # Guest,
 
   def visualize_tags(tags_string)
     tags_string.split(',').map{ |tag|
