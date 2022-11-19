@@ -1,0 +1,32 @@
+<h1>Ingredient</h1>
+
+<table class='table'>
+  <thead>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Tags</th>
+    
+    <th colspan=3>Actions</th>
+  </thead>
+  <tbody>
+    <% @ingredients.each do |ingredient| %>
+      <tr>
+        <td><%= ingredient.name %></td>
+        <td><%= ingredient.description %></td>
+        <td><%= ingredient.tags %></td>
+      
+        <td><%= link_to "Show", ingredient_path(ingredient) %></td>
+        <td><%= link_to "Edit", edit_ingredient_path(ingredient) %></td>
+        <td>
+          <%= link_to "Delete", ingredient_path(ingredient),
+            "data-turbo-method": :delete,
+            "data-turbo-confirm": "Are you sure?" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to "New ingredient", new_ingredient_path %>

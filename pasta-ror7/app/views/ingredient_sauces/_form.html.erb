@@ -1,0 +1,36 @@
+<%= form_with(model: ingredient_sauce) do |form| %>
+  <% if ingredient_sauce.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(ingredient_sauce.errors.count, "error") %> prohibited this ingredient_sauce from being saved:</h2>
+
+      <ul>
+        <% ingredient_sauce.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="mb-3 form-check">
+    <%= form.label :necessary, class: 'form-check-label' %>
+    <%= form.check_box :necessary, class: 'form-check-input' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :sauce_id, class: 'form-label' %>
+    <%= form.number_field :sauce_id, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :ingredient_id, class: 'form-label' %>
+    <%= form.number_field :ingredient_id, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :notes, class: 'form-label' %>
+    <%= form.text_area :notes, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

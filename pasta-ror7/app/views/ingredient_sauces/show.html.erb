@@ -1,0 +1,9 @@
+<%= render @ingredient_sauce %>
+
+<div>
+  <%= link_to "Edit", edit_ingredient_sauce_path(@ingredient_sauce) %> |
+  <%= link_to "Destroy", ingredient_sauce_path(@ingredient_sauce),
+    "data-turbo-method": :delete,
+    "data-turbo-confirm": "Are you sure?" %> |
+  <%= link_to "Back to ingredient sauces", ingredient_sauces_path %>
+</div>

@@ -1,0 +1,31 @@
+<%= form_with(model: ingredient) do |form| %>
+  <% if ingredient.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(ingredient.errors.count, "error") %> prohibited this ingredient from being saved:</h2>
+
+      <ul>
+        <% ingredient.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="mb-3">
+    <%= form.label :name, class: 'form-label' %>
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :description, class: 'form-label' %>
+    <%= form.text_area :description, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :tags, class: 'form-label' %>
+    <%= form.text_field :tags, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

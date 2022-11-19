@@ -17,13 +17,19 @@ rails g scaffold pastas name:string description:text active:boolean # boolean  :
 rails g scaffold sauces name:string description:text active:boolean color:string #active, :default => true, color:default => 'rosso'
 
 rails g scaffold pasta_sauces appropriate:boolean vote:integer notes:text pasta_id:integer sauce_id:integer
-
-rails g scaffold events name:string
-
 # Then change:
 # :appropriate, :boolean, :default => true
 # :vote, :integer, :default => 50
 #  add_index :pasta_sauces, [:sauce_id]
 #  add_index :pasta_sauces, [:pasta_id]
+
+rails g scaffold events name:string
+
+rails g scaffold ingredients name:string description:text tags:string
+
+rails g scaffold ingredient_sauces necessary:boolean sauce_id:integer ingredient_id:integer notes:text
+# Then change:
+      #       t.boolean :necessary, :default => true
+
 
 ```

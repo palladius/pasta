@@ -1,0 +1,2 @@
+class IngredientSauce < ApplicationRecord
+end

@@ -1,0 +1,9 @@
+<%= render @ingredient %>
+
+<div>
+  <%= link_to "Edit", edit_ingredient_path(@ingredient) %> |
+  <%= link_to "Destroy", ingredient_path(@ingredient),
+    "data-turbo-method": :delete,
+    "data-turbo-confirm": "Are you sure?" %> |
+  <%= link_to "Back to ingredients", ingredients_path %>
+</div>
