@@ -1,0 +1,9 @@
+<%= render @event %>
+
+<div>
+  <%= link_to "Edit", edit_event_path(@event) %> |
+  <%= link_to "Destroy", event_path(@event),
+    "data-turbo-method": :delete,
+    "data-turbo-confirm": "Are you sure?" %> |
+  <%= link_to "Back to events", events_path %>
+</div>

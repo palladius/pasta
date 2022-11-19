@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :events
   resources :pasta_sauces
   resources :sauces
   resources :pasta

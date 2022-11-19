@@ -17,6 +17,9 @@ rails g scaffold pastas name:string description:text active:boolean # boolean  :
 rails g scaffold sauces name:string description:text active:boolean color:string #active, :default => true, color:default => 'rosso'
 
 rails g scaffold pasta_sauces appropriate:boolean vote:integer notes:text pasta_id:integer sauce_id:integer
+
+rails g scaffold events name:string
+
 # Then change:
 # :appropriate, :boolean, :default => true
 # :vote, :integer, :default => 50
