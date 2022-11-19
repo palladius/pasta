@@ -1,4 +1,4 @@
-class CreatePasta < ActiveRecord::Migration[7.0]
+class CreatePastas < ActiveRecord::Migration[7.0]
   def change
     create_table :pastas do |t|
       t.string :name

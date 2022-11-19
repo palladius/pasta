@@ -1,9 +1,9 @@
+#!/bin/bash
 
-help:
-	cat Makefile
+set -e
+set -x
 
-db-recreate-DANGEOURS:
-	rake db:drop
+rake db:drop
 	bin/rails db:environment:set RAILS_ENV=development
 	rake db:migrate
 	rake db:seed
