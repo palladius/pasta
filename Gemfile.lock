@@ -20,7 +20,7 @@ GEM
       hobosupport (= 1.0.0)
       rails (>= 2.2.2)
     hobosupport (1.0.0)
-    json (1.8.6)
+    json (2.3.0)
     lolcat (100.0.1)
       manpages (~> 0.6.1)
       optimist (~> 3.0.0)
