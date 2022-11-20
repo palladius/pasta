@@ -7,7 +7,15 @@ Things you may want to cover:
 
 * Ruby version: `3.1.2`
 * System dependencies
+* Dockerization.
 
+## Dockerization
+
+I just fixed it. Try:
+
+```docker run -it -p 8080:8080 palladius/pastang:v0.5```
+
+ort something similar
 
 ## copying from other app
 

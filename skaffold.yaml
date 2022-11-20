@@ -1,0 +1,17 @@
+apiVersion: skaffold/v2beta29
+kind: Config
+metadata:
+  name: pasta
+build:
+  artifacts:
+  - image: skaf-pasta-ror7
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+    - deploy/k8s/*.yaml # deployment.yaml
+portForward:
+- resourceType: service
+  resourceName: skaf-pasta-ror7
+  port: 8080
