@@ -30,6 +30,7 @@ class User < ApplicationRecord
 
 
   # --- Permissions --- #
+  # Not sure these are needed at all...
 
   # def create_permitted?
   #   false

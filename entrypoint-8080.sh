@@ -35,18 +35,27 @@ if printenv RAILS_ENV | grep -q production ; then
     export RAILS_LOG_TO_STDOUT=yesplease
     export RAILS_ENV=production
     export RACK_ENV production
+    export RAILS_SERVE_STATIC_FILES=true
 
+    # https://www.digitalocean.com/community/tutorials/containerizing-a-ruby-on-rails-application-for-development-with-docker-compose
+    if [ -f tmp/pids/server.pid ]; then
+        rm tmp/pids/server.pid
+    fi
+
+    RAILS_ENV=production rails assets:precompile
     #source .env # Nope, already done my friend.
     #source .env
     #pleonastic as well
     #if [ -f .env.production ]; then
     #    source .env.production
     #fi
+    #https://www.digitalocean.com/community/tutorials/containerizing-a-ruby-on-rails-application-for-development-with-docker-compose
+    yarn install --check-files
 
     # Lets try to REMOVE them to make start FASTER.
     # You can always call CMD "bundle install && bundle exec rake db:migrate" no wait you cant
     #bundle install
-    #bundle exec rake db:migrate
+    bundle exec rake db:migrate db:seed
 
     #bundle exec rails s -b 0.0.0.0 -p $MYPORT
 else

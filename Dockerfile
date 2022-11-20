@@ -36,7 +36,7 @@ ENV DESCRIPTION "This experiment was tried in 2019. Not sure it works today"
 RUN gem install bundler
 # https://stackoverflow.com/questions/52051122/cant-find-gem-railties-0-a-with-executable-rails-gemgemnotfoundexceptio
 RUN bundle install --path vendor/bundle
-
+# or try: RUN bundle check || bundle install
 # Then I add the rest
 ADD . $APP_HOME
 
