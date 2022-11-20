@@ -1,3 +1,14 @@
 <li class="nav-item me-4">
-  <%= link_to "Home", root_path, class: 'nav-link' %>
+  <%= link_to "🏡 Home", root_path, class: 'nav-link' %>
+  <%= link_to "🍝 Pastas", pastas_path, class: 'nav-link' %>
+  <%= link_to "🍅 Sauces", pasta_sauces_path, class: 'nav-link' %>
+  <%= link_to "🍍 Ingredients", ingredients_path, class: 'nav-link' %>
+  <% if user_signed_in? %>
+    <%= link_to "🫡 Logout", '/auth/logout', class: 'nav-link' %>
+  <% else %>
+    <%= link_to "➕ SignUp", '/auth/register/signup', class: 'nav-link' %>
+    <%= link_to "🚪 Login", '/auth/login', class: 'nav-link' %>
+  <% end %>
 </li>
+
+<%#= render :partial => "layouts/model_links" %>
