@@ -21,3 +21,6 @@ docker-push: docker-build
 	docker tag pasta-ror7:v$(VERSION) palladius/pastang
 	docker push palladius/pastang
 
+find-interesting-changes:
+	echo These are things it took me a while to fix, and are important and hard to see changes..
+	rgrep Ric2022 .

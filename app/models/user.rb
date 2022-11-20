@@ -4,9 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # devise :database_authenticatable, :registerable, :timeoutable,
+  #        :recoverable, :rememberable, :trackable, :validatable
+
   # This gives admin rights to the first sign-up.
   # Just remove it if you don't want that
-  before_create { |user| user.admin = true if !Rails.env.test? && User.count == 0 }
+  #before_create { |user| user.admin = true if !Rails.env.test? && User.count == 0 }
 
 
   # --- Signup lifecycle --- #

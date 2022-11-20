@@ -1,3 +1,4 @@
+2022-11-20 ricc 0.8 Fixed devise and login!
 2022-11-20 ricc 0.7 Fixing prod!
 2022-11-20 ricc 0.6 dockerizing to SLIM. Size `~268 MB`
 2022-11-20 ricc 0.5 Dockerization works! `410 MB` image in https://hub.docker.com/repository/registry-1.docker.io/palladius/pastang/tags

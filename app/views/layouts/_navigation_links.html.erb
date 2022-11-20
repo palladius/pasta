@@ -3,12 +3,22 @@
   <%= link_to "🍝 Pastas", pastas_path, class: 'nav-link' %>
   <%= link_to "🍅 Sauces", pasta_sauces_path, class: 'nav-link' %>
   <%= link_to "🍍 Ingredients", ingredients_path, class: 'nav-link' %>
+  <%= link_to "🍅 Ingredient Sauces", ingredient_sauces_path, class: 'nav-link' %>
   <% if user_signed_in? %>
-    <%= link_to "🫡 Logout", '/auth/logout', class: 'nav-link' %>
+    <%= link_to "🫡 Logout", destroy_user_session_path, class: 'nav-link'  %>
+    <%= link_to "💣 Destroy", cancel_user_registration_path, class: 'nav-link'  %>
+
   <% else %>
-    <%= link_to "➕ SignUp", '/auth/register/signup', class: 'nav-link' %>
-    <%= link_to "🚪 Login", '/auth/login', class: 'nav-link' %>
+    <%= link_to "➕ SignUp", new_user_registration_path, class: 'nav-link' %>
+    <%= link_to "🚪 Login", user_session_path, class: 'nav-link' %>
   <% end %>
 </li>
 
 <%#= render :partial => "layouts/model_links" %>
+<!--
+  destroy_user_session_path     =>  '/auth/logout'
+  user_session_path             =>  '/auth/login'
+  new_user_registration_path    =>  '/auth/register/signup'
+  cancel_user_registration_path =>   /auth/register/cancel
+
+-->

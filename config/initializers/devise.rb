@@ -265,8 +265,15 @@ Devise.setup do |config|
   # The "*/*" below is required to match Internet Explorer requests.
   # config.navigational_formats = ['*/*', :html]
 
+  # Ric2022 - https://stackoverflow.com/questions/36646226/undefined-method-user-url-for-devise-sessionscontrollercreate
+  config.navigational_formats = ['*/*', :html, :turbo_stream]
+
+
   # The default HTTP method used to sign out a resource. Default is :delete.
-  config.sign_out_via = :delete
+  #config.sign_out_via = :delete
+  # https://stackoverflow.com/questions/6567863/no-route-matches-get-users-sign-out
+  config.sign_out_via = :get
+
 
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
