@@ -1,5 +1,5 @@
-#FROM ruby:3.1.2-slim
-FROM ruby:3.1.2
+FROM ruby:3.1.2-slim
+#FROM ruby:3.1.2
 
 # HAs Ubumntu, ruby1.8, ... and I trust the guy who built it :P
 #FROM palladius/septober:v1.2
