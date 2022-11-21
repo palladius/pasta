@@ -1,0 +1,43 @@
+# copying from bitnami: https://hub.docker.com/r/bitnami/rails/
+# I want my app to use the same vars as bitnami for further compatibility.
+version: '2'
+services:
+
+  # Docs: https://hub.docker.com/r/bitnami/mariadb
+  mariadb:
+    image: 'docker.io/bitnami/mariadb:10.3-debian-10'
+    environment:
+      - MARIADB_ROOT_PASSWORD=thisIsClearlyNotGood4ProdButLuckilyItsaF4ke£nvironm3nt
+      - MARIADB_USER=pasta_user
+      - MARIADB_PASSWORD=NoSpagBolPlease
+      - MARIADB_DATABASE=pasta_prod
+    ports:
+      - 3306:3306
+
+  pasta:
+    tty: true # Enables debugging capabilities when attached to this container.
+    #image: riccpasta:v1.3.7
+    image: palladius/pastang # :v0.8b
+    command: >
+     bash -c "
+       echo Ciao a tutti da docker-compose con Volume. This is intended to DEVELOP pasta mounting current dir for dev reasons.
+       echo To steal the session type: docker-compose exec pasta bash
+       ./entrypoint-8080.sh
+     "
+    #entrypoint: /bin/bash
+    environment:
+      - DATABASE_HOST=mariadb
+      - DATABASE_PORT=3306
+      - DATABASE_NAME=pasta_prod
+      - DATABASE_USER=pasta_user
+      - DATABASE_PASSWORD=NoSpagBolPlease
+      - MESSAGGIO_OCCASIONALE=DockerCompose v1.1_20201229 test to cheaply deploy a MySQL PROD config.
+      - RAILS_ENV=development
+#    depends_on:
+#      - mariadb
+    ports:
+      - 8080:8080
+    volumes:
+#      - .:/app     # brand new one
+      - .:/opt/pasta # ovewrites the current one - no need to CD but possibly confusing
+#      ENV APP_HOME /opt/pasta

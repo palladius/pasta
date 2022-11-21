@@ -4,6 +4,14 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  validates :email, uniqueness: true
+  validates :username, uniqueness: true
+
+  # https://github.com/heartcombo/devise/wiki/How-To:-Allow-users-to-sign-in-with-something-other-than-their-email-address
+  # If you want to have it auth by username instead of emails
+  #devise :database_authenticatable, :authentication_keys => [:username]
+
+
   # devise :database_authenticatable, :registerable, :timeoutable,
   #        :recoverable, :rememberable, :trackable, :validatable
 

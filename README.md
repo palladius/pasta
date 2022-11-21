@@ -46,4 +46,6 @@ rails generate devise
 #    add_column :users, :likes,    :string, :default => 'chocolate, salmon, @meat'
 #    add_column :users, :dislikes, :string, :default => '@vegetables, @tin_tuna'
 
+# from https://github.com/heartcombo/devise/wiki/How-To:-Allow-users-to-sign-in-with-something-other-than-their-email-address
+rails generate migration add_username_to_users username:string:uniq
 ```
