@@ -1,4 +1,11 @@
 {
   "name": "RiccardoConfig",
   "private": "sobenme",
+  "array": [
+    {
+      "name": "bar",
+      "new_key": 0,
+      "docker_size_v0.8b": "703MB"
+    }
+  ]
 }
