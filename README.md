@@ -15,7 +15,19 @@ I just fixed it. Try:
 
 ```docker run -it -p 8080:8080 palladius/pastang:v0.5```
 
-ort something similar
+or something similar
+
+## skaffold.dev
+
+Note to self: **Skaffold config is kubectl config-dependant**.
+
+    $ kubectl config current-context # find your context which gives you PROJECT
+    $ gcloud artifacts repositories list # gives you REPO and REGION
+    $ skaffold config set default-repo REGION-docker.pkg.dev/PROJECT/REPO
+
+Or just use this awesome:
+
+    $ skaffold-autoconfigure-repo
 
 ## copying from other app
 
