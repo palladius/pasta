@@ -1,9 +1,8 @@
-<% current_user = User.find(session[:user].split(':')[1]) rescue "NO_USER" %>
-	<div align='center' class='pasta_entities' >
+<div align='center' class='pasta_entities' >
   [<% ApplicationHelper::PastaModels.each{ |entity| %>
 	<%= entity.emoji rescue '⚠️' %>
 	<%= link_to( entity.to_s.tableize, "/" + entity.to_s.tableize ) %>
   <% } %>]
-	</div>
+</div>
 
-Hi, <%= current_user rescue "NoCurrentUser: #{$!}" %>
+Hi, <b><%= link_to(current_user.to_s, edit_user_registration_path) rescue :unknown %></b>

@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+    Hi, <b><%= link_to current_user.to_s, edit_user_registration_path %></b>
+        <%= link_to "Log out", destroy_user_session_path %>
+
+<% else %>
+    <i class="color:grey" >You're anonymous</i>
+        <%= link_to "🚪Login", new_user_session_path, class: 'nav-link'%>
+        <%= link_to "➕ SignUp", new_user_registration_path, class: 'nav-link' %>
+<% end %>

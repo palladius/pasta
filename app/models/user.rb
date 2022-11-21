@@ -11,6 +11,11 @@ class User < ApplicationRecord
   # If you want to have it auth by username instead of emails
   #devise :database_authenticatable, :authentication_keys => [:username]
 
+  def to_s
+    return name if name.to_s.length > 3
+    return "🎅🏻#{username}" if username.to_s.length > 3
+    "📧#{email}"
+  end
 
   # devise :database_authenticatable, :registerable, :timeoutable,
   #        :recoverable, :rememberable, :trackable, :validatable
