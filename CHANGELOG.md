@@ -1,3 +1,4 @@
+2022-11-20 ricc 0.8 Devise, added username uniq -> now adding to signup form.
 2022-11-20 ricc 0.8 Fixed devise and login!
 2022-11-20 ricc 0.7 Fixing prod!
 2022-11-20 ricc 0.6 dockerizing to SLIM. Size `~268 MB`
