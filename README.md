@@ -8,8 +8,7 @@ Things you may want to cover:
 * Ruby version: `3.1.2`
 * System dependencies
 
-
- <img src='https://github.com/palladius/pasta/raw/master/doc/pastang-matrix-screenshot.png' width='95%' align='right' />
+ <img src='https://github.com/palladius/pasta/raw/master/doc/pastang-matrix-screenshot.png' width='100%' align='right' />
 
 
 ## Dockerization
