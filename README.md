@@ -9,7 +9,7 @@ Things you may want to cover:
 * System dependencies
 
 
- <img src='https://github.com/palladius/pasta/raw/master/doc/pastang-matrix-screenshot.png' height='300' align='center' />
+ <img src='https://github.com/palladius/pasta/raw/master/doc/pastang-matrix-screenshot.png' width='90%' align='center' />
 
 
 ## Dockerization
