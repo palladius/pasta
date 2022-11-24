@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   #   sign_up: 'signup'
   # }
 
+  get '/pasta_sauces/index_matrix', to: 'pasta_sauces#index_matrix'
+  get '/pasta_sauces/index_boring', to: 'pasta_sauces#index_boring'
+
+
   resources :ingredient_sauces
   resources :ingredients
   resources :events
@@ -21,6 +25,7 @@ Rails.application.routes.draw do
   root to: 'pasta_sauces#index'
   get 'welcome/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
 
   # Defines the root path route ("/")
   # root "articles#index"

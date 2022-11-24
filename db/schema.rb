@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_21_195148) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_24_205458) do
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -32,6 +32,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_195148) do
     t.string "tags"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "emoji"
   end
 
   create_table "pasta_sauces", force: :cascade do |t|
@@ -52,6 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_195148) do
     t.boolean "active", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "emoji"
   end
 
   create_table "sauces", force: :cascade do |t|
@@ -61,6 +63,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_195148) do
     t.string "color", default: "rosso"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "emoji"
   end
 
   create_table "users", force: :cascade do |t|

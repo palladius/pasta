@@ -36,7 +36,8 @@ class PastaSauce < ActiveRecord::Base
   end
 
   def appropriate_emoji
-    appropriate ? '👍' : '⛔️'
+#    appropriate ? '👍' : '⛔️'
+    appropriate ? '👍' : '🤮'
   end
 
   def to_html

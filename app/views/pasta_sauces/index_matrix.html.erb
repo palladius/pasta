@@ -1,0 +1,35 @@
+<h1>INdex MATRIX (TODO)</h1>
+
+<%= render 'pasta_sauces/index_selector' %>
+<%
+    @pastas =  PastaSauce.all.map{|x| x.pasta}.uniq.sort
+    @sauces =  PastaSauce.all.map{|x| x.sauce}.uniq.sort
+%>
+
+<table border="1">
+    <!-- first row: sauces -->
+    <td>
+        <%= image_tag("matrix.png", height: 120 ) %>
+    </td>
+    <% @sauces.each do |sauce| %>
+        <td>
+            <%= link_to sauce,sauce %>
+        </td>
+    <% end %>
+    <!-- second-Nth row: sauces on column and i-th pasta at the beginning og the row-->
+    <% @pastas.each do |pasta| %>
+        <tr>
+            <td>
+                <%= link_to pasta, pasta%>
+            </td>
+        <% @sauces.each do |sauce| %>
+            <td>
+                <%#= PastaSauce.find_all_by_pasta_and_sauce(pasta, sauce) %>
+                <%#= render_matrix_cell PastaSauce.where(:pasta => pasta,:sauce => sauce).first %>
+                <%= cell_pasta_sauce(pasta, sauce) %>
+
+            </td>
+        <% end %>
+        </tr>
+    <% end %>
+</table>

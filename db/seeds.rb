@@ -21,7 +21,7 @@ class Array
   end
 end
 
-SEED_VER = '1.3-20171114'
+SEED_VER = '1.4-20221124'
 DESTROY_ALL_BEFORE_SEEDING = true
 
 BAD_CONDIMENTS = [
@@ -57,44 +57,46 @@ GOOD_CONDIMENTS = [
   %w{ tortelloni     pomodoro burro_salvia },
  ]
 
-INGREDIENTS = {
+INGREDIENTS_WITH_EMOJI = {
   # sets the type of an ingredient
-  :eggs         => 'protein, animal',
+  :eggs         => ['protein, animal', '🥚'], # 🥚
 
-  :bacon        => "meat, fat",
-  :pancetta     => "meat, fat",
-  :chicken      => 'meat, illegal_with_pasta',
-  :minced_beef  => 'meat',
-  :luganega     => 'meat',
-  :salsiccia    => 'meat, fat',
+  :bacon        => ["meat, fat", '🥓'], #
+  :pancetta     => ["meat, fat", '🥓'], # 🥓
+  :guanciale    => ["meat, fat", '🥓'], # 🥓
 
-  :mozzarella   => 'cheese',
-  :cheddar      => 'cheese',
-  :cream        => 'milk',
+  :chicken      => ['meat, illegal_with_pasta'],
+  :minced_beef  => ['meat'],
+  :luganega     => ['meat'], # 🌭
+  :salsiccia    => ['meat, fat'], # 🌭
 
-  :butter       => 'fat, condiment, animal_fat',
-  :oil          => 'fat, condiment, vegetarian_fat',
+  :mozzarella   => ['cheese'], # 🥯
+  :cheddar      => ['cheese'], # 🧀
+  :cream        => ['milk'], # 🍨
 
-  :pesto        => 'sauce' ,
-  :garlic       => 'spice',
-  :red_pepper   => 'spice',
-  :black_pepper => 'spice',
-  :onions       => 'spice, vegetable',
-  :sage         => 'spice',
+  :butter       => ['fat, condiment, animal_fat'], # 🧈
+  :oil          => ['fat, condiment, vegetarian_fat'], # 🛢️
 
-  :cucumbers    => 'vegetable',
-  :mushrooms    => 'vegetable',
-  :celery       => 'vegetable',
-  :carrots      => 'vegetable',
-  :tomato_sauce => 'vegetable',
-  :corn         => 'vegetable, illegal_with_pasta',
+  :pesto        => ['sauce', '🌱'] , # 🌱
+  :garlic       => ['spice'], # 🧄
+  :red_pepper   => ['spice'], # 🌶️
+  :black_pepper => ['spice'], # ◾️
+  :onions       => ['spice, vegetable'], # 🧅
+  :sage         => ['spice'],
 
-  :fresh_tuna   => 'fish',
-  :tin_tuna     => 'fish',
-  :octopus      => 'fish',
-  :scampi       => 'fish',
-  :salmon       => 'fish,healthy',
-  :shrimps      => 'fish',
+  :cucumbers    => ['vegetable'], # 🥒
+  :mushrooms    => ['vegetable'], # 🍄
+  :celery       => ['vegetable'],
+  :carrots      => ['vegetable'], # 🥕
+  :tomato_sauce => ['vegetable'], # 🥫
+  :corn         => ['vegetable, illegal_with_pasta'],
+
+  :fresh_tuna   => ['fish'], # 🍣
+  :tin_tuna     => ['fish'],
+  :octopus      => ['fish'], # 🐙
+  :scampi       => ['fish'], # 🦐
+  :salmon       => ['fish,healthy'], # 🍣
+  :shrimps      => ['fish'], # 🍤
 }
 
   # check everything is ok
@@ -169,9 +171,19 @@ GOOD_CONDIMENTS.each{|pasta_sauces|
 }
 
   # Create ingredients (onion, tomato, ...)
-INGREDIENTS.each{|ingredient, tags|
-  puts "  + Inserting '#{ingredient}' --> '#{tags}'"
-  Ingredient.seed(ingredient.to_s, tags, "Created via seed v. #{SEED_VER}" )
+# INGREDIENTS.each{|ingredient, tags|
+#   puts "  + Inserting '#{ingredient}' --> '#{tags}'"
+#   Ingredient.seed(ingredient.to_s, tags, "Created via seed v. #{SEED_VER}" )
+# }
+INGREDIENTS_WITH_EMOJI.each{|ingredient, tags_and_maybe_emoji|
+  tags = tags_and_maybe_emoji[0]
+  emoji = tags_and_maybe_emoji[1] # rescue nil
+  puts "  + #{emoji} Inserting '#{ingredient}' --> '#{tags}' "
+  Ingredient.seed(ingredient.to_s, tags, "Created via seed v. #{SEED_VER}", emoji )
+  # Ingredient.create(
+  #   ingredient.to_s,
+  #   tags,
+  #   "Created via seed v. #{SEED_VER}" )
 }
 
 

@@ -1,3 +1,5 @@
+2022-11-24 ricc 0.10.0 Breaking schema change. Added EMOJI; to pasta, sauces, and ingredients!
+2022-11-?? ricc 0.9 ??
 2022-11-20 ricc 0.8 Devise, added username uniq -> now adding to signup form.
 2022-11-20 ricc 0.8 Fixed devise and login!
 2022-11-20 ricc 0.7 Fixing prod!

@@ -6,6 +6,14 @@ class PastaSaucesController < ApplicationController
     @pasta_sauces = PastaSauce.all
   end
 
+  # These are just two VIEW variants if index()...
+  def index_boring
+    index
+  end
+  def index_matrix
+    index
+  end
+
   # GET /pasta_sauces/1
   def show
   end
