@@ -5,18 +5,16 @@
     <th>Necessary</th>
     <th>Sauce</th>
     <th>Ingredient</th>
-    <th>Notes</th>
-    
+
     <th colspan=3>Actions</th>
   </thead>
   <tbody>
     <% @ingredient_sauces.each do |ingredient_sauce| %>
       <tr>
         <td><%= ingredient_sauce.necessary %></td>
-        <td><%= ingredient_sauce.sauce_id %></td>
-        <td><%= ingredient_sauce.ingredient_id %></td>
-        <td><%= ingredient_sauce.notes %></td>
-      
+        <td><%= link_to ingredient_sauce.sauce,ingredient_sauce.sauce %></td>
+        <td><%= link_to ingredient_sauce.ingredient,ingredient_sauce.ingredient %></td>
+
         <td><%= link_to "Show", ingredient_sauce_path(ingredient_sauce) %></td>
         <td><%= link_to "Edit", edit_ingredient_sauce_path(ingredient_sauce) %></td>
         <td>

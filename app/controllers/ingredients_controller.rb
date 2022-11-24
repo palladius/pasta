@@ -3,7 +3,12 @@ class IngredientsController < ApplicationController
 
   # GET /ingredients
   def index
-    @ingredients = Ingredient.all
+#    @ingredients = Ingredient.all
+    if params[:tag]
+      @ingredients = Ingredient.where("tags LIKE ?", "%#{ params[:tag] }%")
+    else
+      @ingredients = Ingredient.all
+    end
   end
 
   # GET /ingredients/1

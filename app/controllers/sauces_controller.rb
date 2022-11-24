@@ -8,6 +8,14 @@ class SaucesController < ApplicationController
 
   # GET /sauces/1
   def show
+    #@ingredients = @sauce.ingredients # Ingredient.where(:sauce => @sauce) #rescue nil
+    @ingredient_sauces = IngredientSauce.where(:sauce_id => @sauce.id) # .map{|i_s| i_s.ingredient}
+    #@ingredient_sauces = [@ingredient_sauces] unless @ingredient_sauces.is_a?(Array)
+    @ingredients =  @ingredient_sauces.map{|i_s| i_s.ingredient}
+#    @ingredients = @ingredient_sauces.is_a?(Array) ?
+#      @ingredient_sauces.map{|i_s| i_s.ingredient} :
+#      @ingredient_sauces.ingredient
+
   end
 
   # GET /sauces/new

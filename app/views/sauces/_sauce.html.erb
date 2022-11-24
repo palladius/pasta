@@ -14,4 +14,8 @@
     <%= sauce.active %>
   </p>
 
+  <h2>🛒 Ingredients (if any)</h2>
+  <% @ingredients.each do |ingredient|  %>
+   🛒 <%= link_to ingredient, ingredient %><br/>
+  <% end %>
 </div>

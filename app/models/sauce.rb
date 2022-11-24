@@ -10,6 +10,7 @@ class Sauce < ApplicationRecord
   #   timestamps
   # end
 
+  has_many :ingredients
   validates_uniqueness_of :name, :message => "must be unique"
 
   def to_html()

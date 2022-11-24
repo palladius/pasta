@@ -14,7 +14,7 @@ class Ingredient < ApplicationRecord
   end
 
   def to_s
-    name
+    "#{emoji} #{name}"
   end
 
   def self.emoji

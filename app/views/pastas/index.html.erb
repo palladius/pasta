@@ -11,7 +11,7 @@
   <tbody>
     <% @pastas.each do |pasta| %>
       <tr>
-        <td><%= pasta.name %></td>
+        <td><%= link_to "#{pasta.emoji} #{pasta.name}",pasta %></td>
         <td><%= pasta.description %></td>
         <td><%= pasta.active %></td>
 

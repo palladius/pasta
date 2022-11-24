@@ -25,7 +25,7 @@ SEED_VER = '1.4-20221124'
 DESTROY_ALL_BEFORE_SEEDING = true
 
 BAD_CONDIMENTS = [
-  %w{spaghetti      bolognese }, # 🤢 Seriously you had finished all tagliatelle, fusilli, and penne in the house?!?
+  %w{spaghetti      bolognese us_carbonara }, # 🤢 Seriously you had finished all tagliatelle, fusilli, and penne in the house?!?
   %w{pappardelle    salmone carbonara },
   %w{risotto        bolognese }, # pure blasphemy!
   %w{tortellini     pesto },   # 🤮 Yuk! How can you even CONSIDER that?
@@ -33,11 +33,31 @@ BAD_CONDIMENTS = [
   %w{fusilli        chicken }, # changing pasta won't make it any better.
 ]
 
+#
+PASTA_ICONS = {
+  'DEFAULT' => '🍝',
+  # ------------
+  'risotto' => '🍚',
+  'tagliatelle' => '🍜',
+  'caramelle' => '🍬',
+
+  'linguine' => '👅',
+  'orecchiette' => '👂',
+  'fusilli' => '🧬',
+  'conchiglie' => '🐚',
+}
+
+SAUCE_ICONS = {
+  'chicken' => '🐓',
+  'pesto' => '🌱',
+
+}
+
 GOOD_CONDIMENTS = [
   %w{ agnolotti      burro_salvia bolognese brodo }, # http://it.wikipedia.org/wiki/Agnolotti_piemontesi
   %w{ bucatini       amatriciana pomodoro },
   %w{ bigoli         luganega },
-  %w{ chitarre       caspio }, # caviar and beans
+  #%w{ chitarre       caspio }, # caviar and beans, only my mum knows...
   %w{ conchiglie     pomodoro bolognese piselli },
   %w{ fusilli        bolognese pesto radicchio },
   %w{ garganelli     boscaiola nero_di_seppia bolognese quattro_formaggi },
@@ -59,44 +79,64 @@ GOOD_CONDIMENTS = [
 
 INGREDIENTS_WITH_EMOJI = {
   # sets the type of an ingredient
-  :eggs         => ['protein, animal', '🥚'], # 🥚
+  :eggs         => ['protein, animal', '🥚'],
 
-  :bacon        => ["meat, fat", '🥓'], #
-  :pancetta     => ["meat, fat", '🥓'], # 🥓
-  :guanciale    => ["meat, fat", '🥓'], # 🥓
+  :bacon        => ["meat, fat", '🥓'],
+  :pancetta     => ["meat, fat", '🥓'],
+  :guanciale    => ["meat, fat", '🥓'],
 
-  :chicken      => ['meat, illegal_with_pasta'],
-  :minced_beef  => ['meat'],
-  :luganega     => ['meat'], # 🌭
-  :salsiccia    => ['meat, fat'], # 🌭
+  :chicken      => ['meat, illegal_with_pasta', '🐓'],
+  :minced_beef  => ['meat', '🍔'], #
+  :luganega     => ['meat', '🌭'],
+  :salsiccia    => ['meat, fat', '🌭'],
 
-  :mozzarella   => ['cheese'], # 🥯
-  :cheddar      => ['cheese'], # 🧀
-  :cream        => ['milk'], # 🍨
+  :mozzarella   => ['cheese', '🥯'],
+  :cheddar      => ['cheese', '🧀'],
+  :cream        => ['milk', '🍦'], #
+  :parmigiano   => ['cheese', '🧀'],
 
-  :butter       => ['fat, condiment, animal_fat'], # 🧈
-  :oil          => ['fat, condiment, vegetarian_fat'], # 🛢️
+  :butter       => ['fat, condiment, animal_fat', '🧈'], #
+  :oil          => ['fat, condiment, vegetarian_fat', '🛢️'], # olive_oil
+  :margarine          => ['fat, condiment, vegetarian_fat', '🧈'],
 
-  :pesto        => ['sauce', '🌱'] , # 🌱
-  :garlic       => ['spice'], # 🧄
-  :red_pepper   => ['spice'], # 🌶️
-  :black_pepper => ['spice'], # ◾️
-  :onions       => ['spice, vegetable'], # 🧅
-  :sage         => ['spice'],
+  #:pesto        => ['sauce', '🌱'] ,
 
-  :cucumbers    => ['vegetable'], # 🥒
-  :mushrooms    => ['vegetable'], # 🍄
-  :celery       => ['vegetable'],
-  :carrots      => ['vegetable'], # 🥕
-  :tomato_sauce => ['vegetable'], # 🥫
-  :corn         => ['vegetable, illegal_with_pasta'],
+  :basil        => ['herb', '🌱'] ,
+  :sage         => ['herb', '🌱'],
 
-  :fresh_tuna   => ['fish'], # 🍣
+  :garlic       => ['spice', '🧄'], #
+  :red_pepper   => ['spice', '🌶️'], #
+  :black_pepper => ['spice', '◾️'], #
+  :onions       => ['spice, vegetable', '🧅'],
+
+  :cucumbers    => ['vegetable', '🥒'], #
+  :green_pepper => ['vegetable', '🫑'], #
+  :mushrooms    => ['vegetable', '🍄'], #
+  :celery       => ['vegetable', '🥬'],
+  :carrots      => ['vegetable', '🥕'], #
+  :potatoes     => ['vegetable', '🥔'], # unhealthy veg - its actually a tuberus
+  :tomato_sauce => ['vegetable', '🥫'], #
+  :corn         => ['vegetable, illegal_with_pasta', '🌽'],
+
+  :pinenuts => ['nuts','🥜'],
+  :peanuts => ['nuts','🥜'],
+  #:pinenuts => ['nuts','🥜'],
+
+  :fresh_tuna   => ['fish', '🍣'], #
   :tin_tuna     => ['fish'],
-  :octopus      => ['fish'], # 🐙
-  :scampi       => ['fish'], # 🦐
-  :salmon       => ['fish,healthy'], # 🍣
-  :shrimps      => ['fish'], # 🍤
+  :octopus      => ['fish', '🐙'], #
+  :scampi       => ['fish', '🦐'], #
+  :salmon       => ['fish,healthy', '🍣'], #
+  :shrimps      => ['fish', '🍤'],
+}
+
+INGREDIENT_SAUCES = {
+  :carbonara => %w{ eggs guanciale },
+  :us_carbonara => %w{ eggs bacon cream onions },
+  :chicken => %w{ cream chicken },
+  :sorrentina => %w{ mozzarella pomodoro },
+  :pesto => %w{ basil oil pinenuts parmigiano },
+
 }
 
   # check everything is ok
@@ -126,7 +166,8 @@ print "+ Creating pasta: "
 $extracted_pastas.each{ |pasta_name|
   p = Pasta.create(
     :name => pasta_name ,
-    :description => "Created via seed v. #{SEED_VER}"
+    :description => "Created via seed v. #{SEED_VER}",
+    :emoji => PASTA_ICONS.fetch(pasta_name, '🍝'),
   )
   print "#{p}, "
 }
@@ -186,6 +227,21 @@ INGREDIENTS_WITH_EMOJI.each{|ingredient, tags_and_maybe_emoji|
   #   "Created via seed v. #{SEED_VER}" )
 }
 
+
+# INGREDIENT_SAUCES = {
+#   :carbonara => %w{ eggs guanciale },
+#   :chicken => %w{ cream chicken },
+# }
+INGREDIENT_SAUCES.each do |sauce, ingredients|
+  ingredients.each do |ingredient|
+    IngredientSauce.create(
+      :sauce => Sauce.find_by_name(sauce.to_s),
+      :ingredient => Ingredient.find_by_name(ingredient),
+      :notes =>  "Created via seed v. #{SEED_VER}",
+      :necessary => true,
+    )
+  end
+end
 
 # Sample users
 User.create( :name => 'ste' , :email => 'ste@example.com' , :likes => 'muller_thurgau', :dislikes => '@cheese' )
