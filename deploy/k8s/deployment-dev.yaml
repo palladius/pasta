@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: skaf-pasta-ror7
+  name: skpasta-dev
   labels:
-    app: skaf-pasta-ror7
+    app: skpasta-dev
 spec:
   ports:
   - port: 8080
@@ -11,29 +11,29 @@ spec:
   #clusterIP: None
   type: LoadBalancer
   selector:
-    app: skaf-pasta-ror7
+    app: skpasta-dev
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: skaf-pasta-ror7
+  name: skpasta-dev
   labels:
-    app: skaf-pasta-ror7
+    app: skpasta-dev
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: skaf-pasta-ror7
+      app: skpasta-dev
   template:
     metadata:
       labels:
-        app: skaf-pasta-ror7
+        app: skpasta-dev
     spec:
       containers:
-      - name: skaf-pasta-ror7
-        image: skaf-pasta-ror7
+      - name: skpasta-dev
+        image: skpasta-dev
         env:
         - name: RAILS_ENV
           value: development
-#        - name: DEMO_FAREWELL
-#          value: "Such a sweet sorrow"
+        - name: MESSAGGIO_OCCASIONALE
+          value: "sobenme."

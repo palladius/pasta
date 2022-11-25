@@ -1,5 +1,7 @@
 
 VERSION = $(shell cat VERSION)
+# needed by my Linux machine at work :)
+SHELL := /bin/bash
 
 help:
 	cat Makefile

@@ -1,3 +1,4 @@
+2022-11-25 ricc 0.10.2 Fixing deployment on k8s with Skaffold
 2022-11-24 ricc 0.10.1 Now emoji are great into the system!
 2022-11-24 ricc 0.10.0 Breaking schema change. Added EMOJI; to pasta, sauces, and ingredients!
 2022-11-?? ricc 0.9 ??

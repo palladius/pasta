@@ -36,4 +36,9 @@ spec:
         - name: RAILS_ENV
           value: production
         - name: MESSAGGIO_OCCASIONALE
-          value: "This is my skaffold/k8s/pasta-ng 2022 PRODuction version. Lets see if it works!"
+          value: |
+             This is my skaffold/k8s/pasta-ng 2022 PRODuction version. Lets see if it works!
+             This will NOT work until you find a way to set this up correctly with proper
+             RAILS_MASTER_KEY or other secret that ricc has and other people dont.
+             Or you just ignore because, you know, DB is public and so code. Dont know..
+
