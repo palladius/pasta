@@ -149,6 +149,7 @@ INGREDIENT_SAUCES = {
 ANECDOTAL_INFORMATION = [
   [:bigoli, :luganega, "💭 famous fraternity song: Me piaze i bigoli con la luganega https://www.folkmusicworld.com/me-piaze-bigoli-con-la-luganega-musica-folk-trentina"],
   [:spaghetti, :bolognese, "💭 This is as insulting to Italians as Pineapple on pizza. Some sites to prove this: http://146.148.31.85/joomla/index.php?option=com_content&view=article&id=177:spaghetti-bolognese-dont-exist&catid=30:english-contents&Itemid=67 and https://www.italymammamia.com/spaghetti-bolognese-does-not-exist-in-italy.html and https://www.insider.com/spaghetti-bolognese-does-not-exist-says-mayor-of-bologna-italy-2019-3#:~:text=Rather%20than%20%22spaghetti%20bolognese%2C%22,their%20equivalent%20meat%2Dbased%20sauce.&text=However%20it's%20rarely%20served%20with,the%20sauce%2C%20such%20as%20tagliatelle"],
+  [:tagliatelle, :bolognese, "This is the most typical way to use Ragu Bolognese as a pasta in Bologna: homemade egg tagliatelle! Did you know Emilia is famous for egg pasta with distinct yellow color? google 'Emiliane Barilla' if you dont believe me"],
 ]
 
   # check everything is ok
@@ -266,7 +267,7 @@ ANECDOTAL_INFORMATION.each do |pasta_sym, sauce_sym, anecdote|
       sauce_id: s.id,
       pasta_id: p.id,
     ).first
-    ps.notes = anecdote # 'cambiata da Riccardo venerdi sera'
+    ps.notes = "💭 #{anecdote}" # 'cambiata da Riccardo venerdi sera'
     puts "💭 Succesfully saved anecdote for #{ps}" if ps.save
   # rescue
   #   puts "[ANECDOTAL_INFORMATION] Some error here: #{$!}"

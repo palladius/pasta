@@ -35,8 +35,15 @@ class PastaSauce < ActiveRecord::Base
     "<b>LABEL</b>"
   end
 
+  def anecdote_present?
+    self.notes =~ /^💭/
+  end
+
   def appropriate_emoji
-#    appropriate ? '👍' : '⛔️'
+    if anecdote_present?
+      return appropriate ? '💭👍' : '💭🤮'
+    end
+    # appropriate ? '👍' : '⛔️'
     appropriate ? '👍' : '🤮'
   end
 
