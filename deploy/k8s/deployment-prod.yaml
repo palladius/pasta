@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: skpasta-prod
+  labels:
+    app: skpasta-prod
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+  #clusterIP: None
+  type: LoadBalancer
+  selector:
+    app: skpasta-prod
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: skpasta-prod
+  labels:
+    app: skpasta-prod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: skpasta-prod
+  template:
+    metadata:
+      labels:
+        app: skpasta-prod
+    spec:
+      containers:
+      - name: skpasta-prod
+        image: skpasta-prod
+        env:
+        - name: RAILS_ENV
+          value: production
+        - name: MESSAGGIO_OCCASIONALE
+          value: "This is my skaffold/k8s/pasta-ng 2022 PRODuction version. Lets see if it works!"

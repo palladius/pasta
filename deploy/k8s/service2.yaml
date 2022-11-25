@@ -1,0 +1,15 @@
+# not sure if skaffold updates k8s so I create another service before then cleaning all up :)
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-skpasta2
+  labels:
+    app: skaf-pasta-ror7
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+  #clusterIP: None
+  type: LoadBalancer
+  selector:
+    app: skaf-pasta-ror7
