@@ -15,8 +15,12 @@ RUN apt-get update \
     libxml2-dev \
     libxslt-dev \
     libsqlite3-dev \
+    npm \
     ssh \
  && rm -rf /var/lib/apt/lists/*
+
+# install YARN through NPM
+RUN npm install --global yarn
 
 ENV APP_HOME /opt/pasta
 
