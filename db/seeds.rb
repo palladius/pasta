@@ -29,8 +29,8 @@ BAD_CONDIMENTS = [
   %w{pappardelle    salmone carbonara },
   %w{risotto        bolognese }, # pure blasphemy!
   %w{tortellini     pesto },   # 🤮 Yuk! How can you even CONSIDER that?
-  %w{tagliatelle    chicken }, # so obvious its insulting to even write it down!
-  %w{fusilli        chicken }, # changing pasta won't make it any better.
+  %w{tagliatelle    pollo }, # so obvious its insulting to even write it down!
+  %w{fusilli        pollo }, # changing pasta won't make it any better.
 ]
 
 #
@@ -86,6 +86,7 @@ INGREDIENTS_WITH_EMOJI = {
   :guanciale    => ["meat, fat", '🥓'],
 
   :chicken      => ['meat, illegal_with_pasta', '🐓'],
+  :pollo      => ['meat, illegal_with_pasta', '🐓'],  # same as chicken, apologix for WETness.
   :minced_beef  => ['meat', '🍔'], #
   :luganega     => ['meat', '🌭'],
   :salsiccia    => ['meat, fat', '🌭'],
@@ -120,7 +121,7 @@ INGREDIENTS_WITH_EMOJI = {
 
   :pinenuts => ['nuts','🥜'],
   :peanuts => ['nuts','🥜'],
-  #:pinenuts => ['nuts','🥜'],
+  #:pine_nuts => ['nuts','🥜'],
 
   :fresh_tuna   => ['fish', '🍣'], #
   :tin_tuna     => ['fish'],
@@ -138,6 +139,14 @@ INGREDIENT_SAUCES = {
   :pesto => %w{ basil oil pinenuts parmigiano },
 
 }
+
+# TODO(ricc): add this anecdotal in find_or_create.. by adding this to the info and surfacing the info in the matrix with a comicbook
+# 💭
+ANECDOTAL_INFORMATION = [
+  [:bigoli, :luganega, "💭 famous fraternity song: Me piaze i bigoli con la luganega https://www.folkmusicworld.com/me-piaze-bigoli-con-la-luganega-musica-folk-trentina"],
+  [:spaghetti, :bolognese, "💭 This is as insulting to Italians as Pineapple on pizza. Some sites to prove this: http://146.148.31.85/joomla/index.php?option=com_content&view=article&id=177:spaghetti-bolognese-dont-exist&catid=30:english-contents&Itemid=67 and https://www.italymammamia.com/spaghetti-bolognese-does-not-exist-in-italy.html and https://www.insider.com/spaghetti-bolognese-does-not-exist-says-mayor-of-bologna-italy-2019-3#:~:text=Rather%20than%20%22spaghetti%20bolognese%2C%22,their%20equivalent%20meat%2Dbased%20sauce.&text=However%20it's%20rarely%20served%20with,the%20sauce%2C%20such%20as%20tagliatelle"],
+]
+
 
   # check everything is ok
 $extracted_pastas = (GOOD_CONDIMENTS + BAD_CONDIMENTS).map{|x| x[0] }.sort

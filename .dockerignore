@@ -1,3 +1,7 @@
 vecchiume/
 log/
 docker-compose.yml
+deploy/
+README.md
+Makefile
+CHANGELOG.md

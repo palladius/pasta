@@ -55,13 +55,17 @@ if printenv RAILS_ENV | grep -q production ; then
     # Lets try to REMOVE them to make start FASTER.
     # You can always call CMD "bundle install && bundle exec rake db:migrate" no wait you cant
     #bundle install
+    rake tmp:clear # https://github.com/rails/sprockets-rails/issues/458
     bundle exec rake db:migrate db:seed
 
     #bundle exec rails s -b 0.0.0.0 -p $MYPORT
 else
-    verbose_echo "Riccardo I believe this is DEV (RAILS_ENV=$RAILS_ENV)"
+    verbose_echo "Riccardo I believe this is DEV (RAILS_ENV=$RAILS_ENV). Still worth migrate/seed"
     #source .env # Nope, already done my friend.
     # TODO create and source .env.development
+    #rake tmp:clear # https://github.com/rails/sprockets-rails/issues/458
+    rails assets:precompile
+    bundle exec rake db:migrate db:seed
 fi
 
 if printenv ADDITIONAL_CMD1; then

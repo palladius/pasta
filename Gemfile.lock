@@ -100,16 +100,11 @@ GEM
       concurrent-ruby (~> 1.0)
     jsbundling-rails (1.0.3)
       railties (>= 6.0.0)
-    lolcat (100.0.1)
-      manpages (~> 0.6.1)
-      optimist (~> 3.0.0)
-      paint (~> 2.1)
     loofah (2.19.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
-    manpages (0.6.1)
     marcel (1.0.2)
     matrix (0.4.2)
     method_source (1.0.0)
@@ -129,9 +124,9 @@ GEM
       racc (~> 1.4)
     nokogiri (1.13.9-x86_64-darwin)
       racc (~> 1.4)
-    optimist (3.0.1)
+    nokogiri (1.13.9-x86_64-linux)
+      racc (~> 1.4)
     orm_adapter (0.5.0)
-    paint (2.3.0)
     public_suffix (5.0.0)
     puma (5.6.5)
       nio4r (~> 2.0)
@@ -187,6 +182,7 @@ GEM
       sprockets (>= 3.0.0)
     sqlite3 (1.5.3-arm64-darwin)
     sqlite3 (1.5.3-x86_64-darwin)
+    sqlite3 (1.5.3-x86_64-linux)
     stimulus-rails (1.1.1)
       railties (>= 6.0.0)
     thor (1.2.1)
@@ -219,6 +215,7 @@ GEM
 PLATFORMS
   arm64-darwin-21
   x86_64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
@@ -226,7 +223,6 @@ DEPENDENCIES
   cssbundling-rails
   devise
   jsbundling-rails
-  lolcat
   puma (~> 5.0)
   rails (~> 7.0.4)
   redis (~> 4.0)

@@ -29,7 +29,7 @@ class Sauce < ApplicationRecord
     return 'black'        if name =~ /nero/
     return 'pink'         if name =~ /salmone/
     return 'darkgreen'    if name =~ /pesto/
-    return 'brown'        if name =~ /ragu|funghi|bologn|cinghiale/
+    return 'brown'        if name =~ /ragu|funghi|bologn|cinghiale|chicken|pollo/
     return 'purple'       if name =~ /radicchio/
     return 'gold'         if name =~ /aglio_olio|brodo|burro/
     return 'gold'         if name =~ /carbonara/

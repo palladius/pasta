@@ -24,7 +24,8 @@ RUN mkdir -p $APP_HOME
 WORKDIR $APP_HOME
 
 # change to . if you move Dockerfile to /
-ADD Gemfile Gemfile.lock $APP_HOME
+ADD Gemfile $APP_HOME
+ADD Gemfile.lock $APP_HOME
 
 ENV GEM_HOME /opt/pasta/vendor/bundle
 ENV PATH $GEM_HOME/bin:$PATH
@@ -53,6 +54,6 @@ EXPOSE 8080
 #ENTRYPOINT [ "rails", "s", "-p", "8080" ]
 ENTRYPOINT [ "./entrypoint-8080.sh"]
 
-#CMD ["/bin/bash"]
+CMD ["/bin/bash"]
 
 #CMD ["echo", "Ciao a tutti. Change CMD if you want to run bash or something.." ]
