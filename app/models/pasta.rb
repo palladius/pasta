@@ -37,6 +37,10 @@ class Pasta < ApplicationRecord
     true
   end
 
+  def wikipedia_link
+    "https://en.wikipedia.org/wiki/#{name}"
+  end
+
   def self.emoji
     '🍝'
   end

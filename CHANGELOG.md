@@ -1,3 +1,4 @@
+2022-11-25 ricc 0.10.4 better footer. Added notes to P/S combos.
 2022-11-25 ricc 0.10.3 changed dockerfile to support YARN for PROD.
 2022-11-25 ricc 0.10.2 Fixing deployment on k8s with Skaffold
 2022-11-24 ricc 0.10.1 Now emoji are great into the system!

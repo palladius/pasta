@@ -45,6 +45,10 @@ PASTA_ICONS = {
   'orecchiette' => '👂',
   'fusilli' => '🧬',
   'conchiglie' => '🐚',
+
+  'gnocchi' => '🥟',
+  'tortellini' => '🥟',
+  'tortelloni' => '🥟',
 }
 
 SAUCE_ICONS = {
@@ -124,7 +128,7 @@ INGREDIENTS_WITH_EMOJI = {
   #:pine_nuts => ['nuts','🥜'],
 
   :fresh_tuna   => ['fish', '🍣'], #
-  :tin_tuna     => ['fish'],
+  :tin_tuna     => ['fish', '🐟'],
   :octopus      => ['fish', '🐙'], #
   :scampi       => ['fish', '🦐'], #
   :salmon       => ['fish,healthy', '🍣'], #
@@ -146,7 +150,6 @@ ANECDOTAL_INFORMATION = [
   [:bigoli, :luganega, "💭 famous fraternity song: Me piaze i bigoli con la luganega https://www.folkmusicworld.com/me-piaze-bigoli-con-la-luganega-musica-folk-trentina"],
   [:spaghetti, :bolognese, "💭 This is as insulting to Italians as Pineapple on pizza. Some sites to prove this: http://146.148.31.85/joomla/index.php?option=com_content&view=article&id=177:spaghetti-bolognese-dont-exist&catid=30:english-contents&Itemid=67 and https://www.italymammamia.com/spaghetti-bolognese-does-not-exist-in-italy.html and https://www.insider.com/spaghetti-bolognese-does-not-exist-says-mayor-of-bologna-italy-2019-3#:~:text=Rather%20than%20%22spaghetti%20bolognese%2C%22,their%20equivalent%20meat%2Dbased%20sauce.&text=However%20it's%20rarely%20served%20with,the%20sauce%2C%20such%20as%20tagliatelle"],
 ]
-
 
   # check everything is ok
 $extracted_pastas = (GOOD_CONDIMENTS + BAD_CONDIMENTS).map{|x| x[0] }.sort
@@ -252,8 +255,27 @@ INGREDIENT_SAUCES.each do |sauce, ingredients|
   end
 end
 
+
+ANECDOTAL_INFORMATION.each do |pasta_sym, sauce_sym, anecdote|
+  #puts pasta
+  p = Pasta.find_by_name(pasta_sym.to_s)
+  s = Sauce.find_by_name(sauce_sym.to_s)
+  #puts p, s
+  begin
+    ps = PastaSauce.where(
+      sauce_id: s.id,
+      pasta_id: p.id,
+    ).first
+    ps.notes = anecdote # 'cambiata da Riccardo venerdi sera'
+    puts "💭 Succesfully saved anecdote for #{ps}" if ps.save
+  # rescue
+  #   puts "[ANECDOTAL_INFORMATION] Some error here: #{$!}"
+  end
+end
+
+
 # Sample users
-User.create( :name => 'ste' , :email => 'ste@example.com' , :likes => 'muller_thurgau', :dislikes => '@cheese' )
-User.create( :name => 'ric' , :email => 'ric@example.com' , :likes => 'chocolate, salmon', :dislikes => '@vegetable' )
+User.create(:name => 'ste' , :email => 'ste@example.com' , :likes => 'muller_thurgau', :dislikes => '@cheese' )
+User.create(:name => 'ric' , :email => 'ric@example.com' , :likes => 'chocolate, salmon', :dislikes => '@vegetable' )
 
 puts "All done 2022"

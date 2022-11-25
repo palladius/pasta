@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PastaRor7 Pasta rewritten (TM)</title>
+    <title>🍝 PastaNG 💎7 (TM)</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -22,17 +22,6 @@
       <% end %>
       <%= yield %>
     </div>
-    <div class="container bg-white border pb-3">
-      <%= render :partial => "layouts/model_links" %>
-      <div class="alert alert-warning" >
-        <b><%= APP_NAME rescue :NoAppName %></b>
-        v<%= APP_VERSION rescue :NoAppVersion %>
-        (<%= ENV.fetch 'RAILS_ENV', :NoAppVersion %>)
-      </div>
-      <div class="alert alert-primary" >
-        <%= ENV.fetch 'DESCRIPTION', 'No ENV[DESCRIPTION] provided 😌'  %><br/>
-        <%= ENV.fetch 'MESSAGGIO_OCCASIONALE', 'No ENV[MESSAGGIO_OCCASIONALE] provided 😌'  %>
-      </div>
-    </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

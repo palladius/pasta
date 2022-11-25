@@ -2,9 +2,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: svc-skpasta2
+  name: svc-skpasta2 # just another service bcs why not. TODO ricc remove this.
   labels:
-    app: skaf-pasta-ror7
+    app: skpasta-dev # skaf-pasta-ror7
 spec:
   ports:
   - port: 8080
@@ -12,4 +12,4 @@ spec:
   #clusterIP: None
   type: LoadBalancer
   selector:
-    app: skaf-pasta-ror7
+    app: skpasta-dev # skaf-pasta-ror7
