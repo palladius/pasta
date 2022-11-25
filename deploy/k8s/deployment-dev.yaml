@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: skpasta-dev
-        image: skpasta-dev
+        image: skaf-pasta-ror7 # skpasta-dev
         env:
         - name: RAILS_ENV
           value: development
