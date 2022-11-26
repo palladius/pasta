@@ -1,3 +1,4 @@
+2022-11-26 ricc 0.10.5 updated boostrap 5.2.2 to 5.2.3 since it gave a bad warning on yarn usage. => https://github.com/twbs/bootstrap/issues/37430
 2022-11-25 ricc 0.10.4 better footer. Added notes to P/S combos.
 2022-11-25 ricc 0.10.3 changed dockerfile to support YARN for PROD.
 2022-11-25 ricc 0.10.2 Fixing deployment on k8s with Skaffold
