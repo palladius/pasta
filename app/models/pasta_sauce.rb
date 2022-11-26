@@ -3,7 +3,7 @@
 class PastaSauce < ActiveRecord::Base
 
   def self.emoji
-    '🍅'
+    '🥫' # 🍅
   end
   # hobo_model # Don't put anything above this
 

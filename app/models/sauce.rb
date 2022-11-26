@@ -67,7 +67,7 @@ class Sauce < ApplicationRecord
   end
 
   def self.emoji
-    '🍝'
+    '🥫' # food in tin can
   end
 
 end

@@ -10,4 +10,6 @@ Rails.application.configure do
 end
 
 APP_NAME = 'Pasta DoneWell'
+FANCY_APP_NAME = '🍝 Pasta DoneWell 💎7 (TM)'
+
 APP_VERSION = File.read("#{Rails.root}/VERSION").chomp

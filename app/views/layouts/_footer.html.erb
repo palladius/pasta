@@ -1,9 +1,9 @@
     <div class="container bg-white border pb-3">
       <%= render :partial => "layouts/model_links" %>
       <div class="alert alert-warning" >
-        <b><%= APP_NAME rescue :NoAppName %></b>
-        v<%= APP_VERSION rescue :NoAppVersion %>
-        (<%= ENV.fetch 'RAILS_ENV', :NoAppVersion %>)
+        <b><%= FANCY_APP_NAME %></b>
+        v<b><%= APP_VERSION rescue :NoAppVersion %></b>
+        (<%= ENV.fetch 'RAILS_ENV', :NoRailsEnvWtf %>)
         @ 💻 <tt><%= Socket.gethostname %></tt>
       </div>
       <div class="alert alert-primary" >

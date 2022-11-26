@@ -1,7 +1,10 @@
-vecchiume/
-log/
-docker-compose.yml
+# folders
 deploy/
-README.md
-Makefile
+log/
+vecchiume/
+# files
+docker-compose.yml
+BUGS.md
 CHANGELOG.md
+Makefile
+README.md
