@@ -35,6 +35,7 @@ My configs:
 
 * at thome with my Mac M1: `europe-west3-docker.pkg.dev/cicd-platinum-test032/pasta-and-friends32`
 * at work on my derek: (I believe on test31 prj) TODO(ricc)
+* aspirina linux: ` gke_vulcanina_us-central1-c_dev` (gcloud container clusters get-credentials dev --zone us-central1-c --project vulcanina)
 
 ## copying from other app
 

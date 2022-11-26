@@ -26,3 +26,6 @@ docker-push: docker-build
 find-interesting-changes:
 	echo These are things it took me a while to fix, and are important and hard to see changes..
 	rgrep Ric2022 .
+
+run-prod:
+	RAILS_ENV=production RICCARDO_SECRET_KEY_BASE=0a2780996c36bef4a8728d3676665a6f MESSAGGIO_OCCASIONALE="note this key is available to the whole world. Make sure if you have something interesting you find the time to change the ENV file :)" ./entrypoint-8080.sh

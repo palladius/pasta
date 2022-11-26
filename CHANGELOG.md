@@ -1,3 +1,4 @@
+2022-11-26 ricc 0.10.6 trying to fix production and Bruxelles Sprockets..
 2022-11-26 ricc 0.10.5 updated boostrap 5.2.2 to 5.2.3 since it gave a bad warning on yarn usage. => https://github.com/twbs/bootstrap/issues/37430
 2022-11-25 ricc 0.10.4 better footer. Added notes to P/S combos.
 2022-11-25 ricc 0.10.3 changed dockerfile to support YARN for PROD.

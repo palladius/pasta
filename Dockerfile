@@ -56,7 +56,7 @@ EXPOSE 8080
 
 # ./entrypoint-8080.sh doesnt work as requires lolcat
 #ENTRYPOINT [ "rails", "s", "-p", "8080" ]
-ENTRYPOINT [ "./entrypoint-8080.sh"]
+ENTRYPOINT [ "./entrypoint-8080.sh"] 
 
 CMD ["/bin/bash"]
 
