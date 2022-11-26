@@ -31,6 +31,11 @@ Or just use this awesome:
 
     $ skaffold-autoconfigure-repo
 
+My configs:
+
+* at thome with my Mac M1: `europe-west3-docker.pkg.dev/cicd-platinum-test032/pasta-and-friends32`
+* at work on my derek: (I believe on test31 prj) TODO(ricc)
+
 ## copying from other app
 
 ```bash
