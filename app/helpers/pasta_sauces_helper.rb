@@ -5,9 +5,11 @@ module PastaSaucesHelper
 	  #return image_tag(ps.appropriate ? 'green.png' : 'red.png', :height => 20 ) if ps
 	  return link_to(ps.appropriate_emoji,ps) if ps
 	  return link_to(
-			'+',
+			'✨',
 			"/pasta_sauces/new?pasta_id=#{pasta.id}&sauce_id=#{sauce.id}&notes=autocreated&vote=42",
-			:title => "Create new PastaSauce association for '#{pasta}' with '#{sauce}'.\nMake sure you consult a true Italian before perturbating the Universe Status Quo" ) # in mancanza
+			:title => "Create new PastaSauce association for '#{pasta}' with '#{sauce}'.\nMake sure you consult a true Italian before perturbating the Universe Status Quo",
+			:class => 'ps-matrix-new'
+		) # in mancanza
 	end
 
 	def render_matrix_cell(pasta,sauce)

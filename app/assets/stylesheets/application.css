@@ -79,3 +79,18 @@ body {
     font-size: 12px;
     list-style: disc;
   }
+
+
+
+  /* Riccardo */
+
+  .ps-matrix-new {
+    color: blue;
+    size-adjust: small ;   /* Riccardo 🛩  */
+    text-decoration: none;
+    font-size: x-small;
+  }
+  .ps-matrix-new a:link { text-decoration: none; }
+  .ps-matrix-new a:visited { text-decoration: none; }
+  .ps-matrix-new a:hover { text-decoration: none; }
+  .ps-matrix-new a:active { text-decoration: none; }
