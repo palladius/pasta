@@ -1,15 +1,21 @@
-# not sure if skaffold updates k8s so I create another service before then cleaning all up :)
-apiVersion: v1
-kind: Service
-metadata:
-  name: svc-skpasta2 # just another service bcs why not. TODO ricc remove this.
-  labels:
-    app: skpasta-dev # skaf-pasta-ror7
-spec:
-  ports:
-  - port: 8080
-    protocol: TCP
-  #clusterIP: None
-  type: LoadBalancer
-  selector:
-    app: skpasta-dev # skaf-pasta-ror7
+
+
+# # not sure if skaffold updates k8s so I create another service before then cleaning all up :)
+
+# NOte: this works beautifully but its totally useless. You just create ANOTHER GCLB (hence new IP address) 
+# to point to the same service. So either both work, or none works. Removing to save money :)
+
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: svc-skpasta2 # just another service bcs why not. TODO ricc remove this.
+#   labels:
+#     app: skpasta-dev # skaf-pasta-ror7
+# spec:
+#   ports:
+#   - port: 8080
+#     protocol: TCP
+#   #clusterIP: None
+#   type: LoadBalancer
+#   selector:
+#     app: skpasta-dev # skaf-pasta-ror7

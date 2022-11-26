@@ -42,7 +42,8 @@ if printenv RAILS_ENV | grep -q production ; then
         rm tmp/pids/server.pid
     fi
 
-    RAILS_ENV=production rails assets:precompile
+    #RAILS_ENV=production pleonastic :) 
+    rails assets:precompile
     #source .env # Nope, already done my friend.
     #source .env
     #pleonastic as well

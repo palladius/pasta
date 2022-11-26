@@ -2,6 +2,8 @@
 VERSION = $(shell cat VERSION)
 # needed by my Linux machine at work :)
 SHELL := /bin/bash
+# note in skaffold its called differently..
+MAKEFILE_DOCKER_IMAGE_NAME = pasta-ror7
 
 help:
 	cat Makefile
@@ -27,5 +29,11 @@ find-interesting-changes:
 	echo These are things it took me a while to fix, and are important and hard to see changes..
 	rgrep Ric2022 .
 
-run-prod:
+run-prod-directly:
 	RAILS_ENV=production RICCARDO_SECRET_KEY_BASE=0a2780996c36bef4a8728d3676665a6f MESSAGGIO_OCCASIONALE="note this key is available to the whole world. Make sure if you have something interesting you find the time to change the ENV file :)" ./entrypoint-8080.sh
+
+run-prod-docker: docker-build
+	docker run -it -p 8080:8080 \
+		--env RAILS_ENV=production \
+		--env RICCARDO_SECRET_KEY_BASE=0a2780996c36bef4a8728d3676665a6f \
+		pasta-ror7:v$(VERSION) ./entrypoint-8080.sh

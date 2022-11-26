@@ -19,7 +19,8 @@ RUN apt-get update \
     ssh \
  && rm -rf /var/lib/apt/lists/*
 
-# install YARN through NPM
+# install YARN through NPM. 
+## alternatvely: curl -o- -L https://yarnpkg.com/install.sh | bash
 RUN npm install --global yarn
 
 ENV APP_HOME /opt/pasta
