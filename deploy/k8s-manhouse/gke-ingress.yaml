@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: skpasta-ingress
+  name: pastang-manhouse-ingress
   annotations:
     # If the class annotation is not specified it defaults to "gce".
     kubernetes.io/ingress.class: "gce"
@@ -13,13 +13,13 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: skpasta-dev # skaf-pasta-ror7 # hello-world-1
+            name: pastang-manhouse-dev
             port:
               number: 8080
       # - path: /prod
       #   pathType: ImplementationSpecific
       #   backend:
       #     service:60000
-      #       name: hello-world-2
+      #       name: pastang-manhouse-prod
       #       port:
       #         number: 80

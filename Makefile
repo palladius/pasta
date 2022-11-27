@@ -44,3 +44,7 @@ run-prod-docker: docker-build
 		--env RICCARDO_SECRET_KEY_BASE=0a2780996c36bef4a8728d3676665a6f \
 		--env MESSAGGIO_OCCASIONALE='This time I run the dockerized version with proper ENVs setup like this amazingly meaningful message' \
 		pasta-ror7:v$(VERSION) ./entrypoint-8080.sh
+
+kubectl-apply-prod:
+	./kubectl-apply-to-prod.sh
+

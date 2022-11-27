@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pastang-manhouse-prod
+  labels:
+    app: pastang-manhouse-prod
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+  #clusterIP: None
+  type: LoadBalancer
+  selector:
+    app: pastang-manhouse-prod
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pastang-manhouse-prod
+  labels:
+    app: pastang-manhouse-prod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pastang-manhouse-prod
+  template:
+    metadata:
+      labels:
+        app: pastang-manhouse-prod
+    spec:
+      containers:
+      - name: pastang-manhouse-prod
+        image: palladius/pastang
+        env:
+        - name: RAILS_ENV
+          value: production
+        - name: MESSAGGIO_OCCASIONALE
+          value: |
+             This is my manual version where I pull images from dockerhub. Anyone should be able to pull these
+             manifests from the itnernet and run my pasta app from latest versions.
+             Bypassing skaffold altogether, hence MANHOUSE (Google it, but only italians will get this, sorry).
