@@ -19,7 +19,7 @@ RUN apt-get update \
     ssh \
  && rm -rf /var/lib/apt/lists/*
 
-# install YARN through NPM. 
+# install YARN through NPM.
 ## alternatvely: curl -o- -L https://yarnpkg.com/install.sh | bash
 RUN npm install --global yarn
 
@@ -41,7 +41,10 @@ ENV DESCRIPTION "This experiment was tried in 2019. Not sure it works today"
 # This doesnt work!!
 RUN gem install bundler
 # https://stackoverflow.com/questions/52051122/cant-find-gem-railties-0-a-with-executable-rails-gemgemnotfoundexceptio
-RUN bundle install --path vendor/bundle
+# [DEPRECATED] The `--path` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set --local path 'vendor/bundle'`, and stop using this flag
+#RUN bundle install --path vendor/bundle
+RUN bundle config set --local path 'vendor/bundle'
+RUN bundle install
 # or try: RUN bundle check || bundle install
 # Then I add the rest
 ADD . $APP_HOME
@@ -57,7 +60,7 @@ EXPOSE 8080
 
 # ./entrypoint-8080.sh doesnt work as requires lolcat
 #ENTRYPOINT [ "rails", "s", "-p", "8080" ]
-ENTRYPOINT [ "./entrypoint-8080.sh"] 
+ENTRYPOINT [ "./entrypoint-8080.sh"]
 
 CMD ["/bin/bash"]
 
