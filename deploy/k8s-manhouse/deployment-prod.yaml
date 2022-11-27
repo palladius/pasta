@@ -32,6 +32,7 @@ spec:
       containers:
       - name: pastang-manhouse-prod
         image: palladius/pastang
+        command: "./entrypoint-8080.sh" #         command: ["./entrypoint-8080.sh"]
         env:
         - name: RAILS_ENV
           value: production
