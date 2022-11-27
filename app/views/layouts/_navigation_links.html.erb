@@ -4,21 +4,32 @@
   <%= link_to "#{Sauce.emoji} Pasta/Sauces", pasta_sauces_path, class: 'nav-link' %>
   <%= link_to "#{Ingredient.emoji} Ingredients", ingredients_path, class: 'nav-link' %>
   <%= link_to "#{IngredientSauce.emoji} Ingredient Sauces", ingredient_sauces_path, class: 'nav-link' %>
+  <!-- Login addons -->
   <% if user_signed_in? %>
-    <%= link_to "🫡 Logout", destroy_user_session_path, class: 'nav-link'  %>
+    <%= link_to "🚪Logout", destroy_user_session_path, class: 'nav-link'  %>
     <%= link_to "💣 Destroy Reg", cancel_user_registration_path, class: 'nav-link'  %>
     <%= link_to "📝 Edit Acct", edit_user_registration_path, class: 'nav-link'  %>
   <% else %>
     <%= link_to "➕ SignUp", new_user_registration_path, class: 'nav-link' %>
-    <%= link_to "🚪 Login", user_session_path, class: 'nav-link' %>
+    <%= link_to "🔒 Login", user_session_path, class: 'nav-link' %>
   <% end %>
 </li>
+    
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Login Stuff NonVa
+  </a>
+  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</li>
 
-<%#= render :partial => "layouts/model_links" %>
-<!--
+
+<!-- memini, meminisse:
   destroy_user_session_path     =>  '/auth/logout'
   user_session_path             =>  '/auth/login'
   new_user_registration_path    =>  '/auth/register/signup'
   cancel_user_registration_path =>   /auth/register/cancel
-
 -->

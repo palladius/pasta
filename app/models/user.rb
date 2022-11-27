@@ -17,6 +17,14 @@ class User < ApplicationRecord
     "📧#{email}"
   end
 
+  # says Hi, and add a emoji based on logged in or not
+  # See user_helper for tackling this the correct way :/
+  # def salutation_short_useless
+  #   user_signed_in? ?
+  #   "🧑‍🦱 #{self.to_s}" :
+  #   '👥 Anonymous' # will never be anonymours
+  # end
+
   # devise :database_authenticatable, :registerable, :timeoutable,
   #        :recoverable, :rememberable, :trackable, :validatable
 

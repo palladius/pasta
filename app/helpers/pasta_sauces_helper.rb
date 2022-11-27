@@ -9,7 +9,7 @@ module PastaSaucesHelper
 		'+',
 			"/pasta_sauces/new?pasta_id=#{pasta.id}&sauce_id=#{sauce.id}&notes=autocreated&vote=42",
 			:title => "Create new PastaSauce association for 🍝 '#{pasta}' + 🥫 '#{sauce}'.\nMake sure you consult a true 🇮🇹 Italian before perturbating the Universe Status Quo",
-			:class => 'ps-matrix-new',
+			:class => 'ps-matrix-new', 
 			:style => 'text-decoration: none;',
 		) # in mancanza
 	end

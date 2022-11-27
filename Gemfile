@@ -8,6 +8,10 @@ ruby "3.1.2"
 # Riccardo 2022
 gem 'devise'
 #gem 'lolcat'
+#gem 'rails-bootstrap'
+gem 'bootstrap', '~> 5.2.2'
+gem 'jquery-rails'
+
 ############
 
 

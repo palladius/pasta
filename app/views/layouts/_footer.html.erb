@@ -1,9 +1,10 @@
     <div class="container bg-white border pb-3">
       <%= render :partial => "layouts/model_links" %>
       <div class="alert alert-warning" >
+        <%= image_tag 'logo.png', class: 'img-fluid' %>
         <b><%= FANCY_APP_NAME %></b>
         v<b><%= APP_VERSION rescue :NoAppVersion %></b>
-        (<%= ENV.fetch 'RAILS_ENV', :NoRailsEnvWtf %>)
+        (<%= ENV_EMOJI %><%= ENV.fetch 'RAILS_ENV', :NoRailsEnvWtf %>)
         @ 💻 <tt><%= Socket.gethostname %></tt>
       </div>
       <div class="alert alert-primary" >

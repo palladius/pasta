@@ -274,6 +274,8 @@ ANECDOTAL_INFORMATION.each do |pasta_sym, sauce_sym, anecdote|
   end
 end
 
+# Sample events. what I think its in the name :)
+Event.new(name: 'Why the hell did I add events to a Pasta app?!?').save
 
 # Sample users
 User.create(:name => 'ste' , :email => 'ste@example.com' , :likes => 'muller_thurgau', :dislikes => '@cheese' )

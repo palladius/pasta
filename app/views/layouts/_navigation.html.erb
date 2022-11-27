@@ -2,17 +2,17 @@
   <div class="container-fluid">
     <a class="navbar-brand" href="#" data-config-id="brand">
       <%= image_tag 'logo.png', class: 'img-fluid' %>
-      <%= render 'layouts/hi_username' %>
+      <%#= render 'layouts/hi_username' %>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="nav">
+    <div class="collapse navbar-collapse" id="nav" >
       <ul class="d-none d-lg-flex navbar-nav mt-3 mt-lg-0 mb-3 mb-lg-0">
-        <%= render 'layouts/navigation_links' %>
+        <%= render 'layouts/navigation_links_maga' %>
       </ul>
       <ul class="navbar-nav mt-3 mt-lg-0 mb-3 mb-lg-0 d-lg-none">
-        <%= render 'layouts/navigation_links' %>
+        <%= render 'layouts/navigation_links_maga' %>
       </ul>
     </div>
   </div>

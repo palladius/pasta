@@ -1,3 +1,6 @@
+2022-11-27 ricc 0.11.0 BREAKING_CHANGE trying to understand bootstrap and failing at it. Folow docs i believe im doing sth profoundlyt wrong like using
+                    both yarn/npm at same time and both auto-boostrap with rails-bootstartp with also jquery. God save me! Top test this I create
+                    a second MAGA-inspired partial.
 2022-11-26 ricc 0.10.7 emojis all around.
 2022-11-26 ricc 0.10.6 trying to fix production and Bruxelles Sprockets..
 2022-11-26 ricc 0.10.5 updated boostrap 5.2.2 to 5.2.3 since it gave a bad warning on yarn usage. => https://github.com/twbs/bootstrap/issues/37430

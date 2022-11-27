@@ -8,6 +8,9 @@ MAKEFILE_DOCKER_IMAGE_NAME = pasta-ror7
 help:
 	cat Makefile
 
+assets:
+	rake assets:precompile
+
 db-recreate-DANGEOURS:
 	./destroy-and-recreate.sh
 

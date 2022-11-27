@@ -12,6 +12,7 @@
 
   <body class='bg-light'>
     <div class="container bg-white border pb-3">
+      <%#= render 'layouts/navigation_maga' %>
       <%= render 'layouts/navigation' %>
       <% flash.each do |type, msg| %>
         <% if type == 'alert' %>
