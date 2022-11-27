@@ -7,7 +7,7 @@ class IngredientsController < ApplicationController
     if params[:tag]
       @ingredients = Ingredient.where("tags LIKE ?", "%#{ params[:tag] }%")
     else
-      @ingredients = Ingredient.all
+      @ingredients = Ingredient.all # .sort_by(:name)
     end
   end
 

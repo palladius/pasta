@@ -10,8 +10,7 @@ gem 'devise'
 #gem 'lolcat'
 #gem 'rails-bootstrap'
 gem 'bootstrap', '~> 5.2.2'
-gem 'jquery-rails'
-
+gem 'jquery-rails'           # I believe this is useless
 ############
 
 
