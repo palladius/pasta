@@ -4,6 +4,7 @@ set -e
 
 echo "🚀 Trying to deploy to k8s without skaffold, using PROD images from Dockerhub: "
 # interesting kubemoji proposal: https://github.com/jseguillon/kubemoji
+#kubectl create ns pasta-manhouse || echo probably already exists
 kubectl apply -f deploy/k8s-manhouse/ | while read LINE ; do
     echo "8️⃣ 🧠 $LINE"
 done

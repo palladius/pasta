@@ -18,7 +18,7 @@ docker-build:
 	docker build -t pasta-ror7:v$(VERSION) .
 
 docker-run: docker-build
-	docker run -it -p 8080:8080 pasta-ror7:v$(VERSION)
+	docker run -it -p 8080:8080 pasta-ror7:v$(VERSION) ./entrypoint-8080.sh
 
 docker-push: docker-build
 	# push latest version

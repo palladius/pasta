@@ -20,7 +20,7 @@ metadata:
   labels:
     app: pastang-manhouse-prod
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: pastang-manhouse-prod
@@ -32,10 +32,14 @@ spec:
       containers:
       - name: pastang-manhouse-prod
         image: palladius/pastang
-        command: "./entrypoint-8080.sh" #         command: ["./entrypoint-8080.sh"]
+        command:
+        - "./entrypoint-8080.sh"
+        #         command: ["./entrypoint-8080.sh"]
         env:
         - name: RAILS_ENV
           value: production
+        - name: RICCARDO_SECRET_KEY_BASE
+          value: 0a2780996c36bef4a8728d3676665a6f
         - name: MESSAGGIO_OCCASIONALE
           value: |
              This is my manual version where I pull images from dockerhub. Anyone should be able to pull these

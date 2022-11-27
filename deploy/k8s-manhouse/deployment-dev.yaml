@@ -19,7 +19,7 @@ metadata:
   labels:
     app: pastang-manhouse-dev
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: pastang-manhouse-dev
@@ -31,6 +31,8 @@ spec:
       containers:
       - name: pastang-manhouse-dev
         image: palladius/pastang
+        command:
+          - "./entrypoint-8080.sh"
         env:
         - name: RAILS_ENV
           value: development
