@@ -21,3 +21,6 @@ ENV_EMOJI = (Rails.env == 'production' ? '🌳' : '👷‍♂️') # 🚧⚠️
 
 # butstrap da manuale: https://github.com/twbs/bootstrap-rubygem
 Rails.application.config.assets.precompile += %w(bootstrap.js popper.js)
+
+config.hosts << "pastang-dev.palladi.us"
+config.hosts << "pastang.palladi.us"
