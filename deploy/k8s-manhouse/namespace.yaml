@@ -1,0 +1,7 @@
+# pasta-manhouse
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: pasta-manhouse
+  # labels:
+  #   name: pasta-manhouse

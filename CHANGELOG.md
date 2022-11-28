@@ -1,3 +1,4 @@
+2022-11-28 ricc 0.11.2 playing with namespace and cross-compiler dockr building..
 2022-11-27 ricc 0.11.1 Fix bundle warning in `Dockerfile`. b/260423201
 2022-11-27 ricc 0.11.0 BREAKING_CHANGE trying to understand bootstrap and failing at it. Folow docs i believe im doing sth profoundlyt wrong like using
                     both yarn/npm at same time and both auto-boostrap with rails-bootstartp with also jquery. God save me! Top test this I create
