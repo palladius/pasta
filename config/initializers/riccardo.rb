@@ -7,6 +7,10 @@ Rails.application.configure do
   # PROD doesnt work but SO helps: https://stackoverflow.com/questions/35683185/rails-sprocketsrailshelperassetnotprecompiled-in-development
   config.assets.check_precompiled_asset = false
 
+  # hosts for PROD
+  config.hosts << "pastang-dev.palladi.us"
+  config.hosts << "pastang.palladi.us"
+  config.hosts << /pasta.*\.palladi\.us/
 
 end
 
@@ -22,5 +26,5 @@ ENV_EMOJI = (Rails.env == 'production' ? '🌳' : '👷‍♂️') # 🚧⚠️
 # butstrap da manuale: https://github.com/twbs/bootstrap-rubygem
 Rails.application.config.assets.precompile += %w(bootstrap.js popper.js)
 
-config.hosts << "pastang-dev.palladi.us"
-config.hosts << "pastang.palladi.us"
+
+

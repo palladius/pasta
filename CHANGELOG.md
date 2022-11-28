@@ -1,4 +1,5 @@
-2022-11-28 ricc 0.11.3 auth host
+2022-11-28 ricc 0.11.4 More hosts in regex, removed `jquery-rails`. fixing pasta new link
+2022-11-28 ricc 0.11.3 auth host.
 2022-11-28 ricc 0.11.2 playing with namespace and cross-compiler dockr building..
 2022-11-27 ricc 0.11.1 Fix bundle warning in `Dockerfile`. b/260423201
 2022-11-27 ricc 0.11.0 BREAKING_CHANGE trying to understand bootstrap and failing at it. Folow docs i believe im doing sth profoundlyt wrong like using
