@@ -65,7 +65,7 @@ GOOD_CONDIMENTS = [
   %w{ conchiglie     pomodoro bolognese piselli },
   %w{ fusilli        bolognese pesto radicchio },
   %w{ garganelli     boscaiola nero_di_seppia bolognese quattro_formaggi },
-  %w{ gnocchi        sorrentina dun_laoghaire quattro_formaggi },
+  %w{ gnocchi        sorrentina  quattro_formaggi }, # for Ireland: dun_laoghaire
   %w{ gramigna       salsiccia bolognese },
   %w{ linguine       pesto },
   %w{ orecchiette    pesto nero_di_seppia piselli },
