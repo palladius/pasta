@@ -32,9 +32,13 @@ spec:
       containers:
       - name: skpasta-prod
         image: skaf-pasta-ror7 # skpasta-prod
+        command:
+        - "./entrypoint-8080.sh"
         env:
         - name: RAILS_ENV
           value: production
+        - name: RICCARDO_SECRET_KEY_BASE
+          value: 0a2780996c36bef4a8728d3676665a6f
         - name: MESSAGGIO_OCCASIONALE
           value: |
              This is my skaffold/k8s/pasta-ng 2022 PRODuction version. Lets see if it works!
