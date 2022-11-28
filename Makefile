@@ -21,6 +21,8 @@ docker-run: docker-build
 	docker run -it -p 8080:8080 pasta-ror7:v$(VERSION) ./entrypoint-8080.sh
 
 docker-push: docker-build
+	echo WARNING If you are on a arm64 Mac you will push BAD docker... FIXME.
+	exit 42
 	# push latest version
 	docker tag pasta-ror7:v$(VERSION) palladius/pastang:v$(VERSION)
 	docker push palladius/pastang:v$(VERSION)
