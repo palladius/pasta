@@ -26,6 +26,10 @@ if kubectl get deploy | grep pastang-manhouse | grep '0/' ; then
     exit 42
 fi
 
+if  uname -a | grep arm64 ; then
+    echo I presume compiling from M1 Mac could impair the final docker container :/
+fi
+
 echo "Note: this will only work for Riccardo. For inspiration, check kubernetes-service.rb in palladius/sakura"
 # gcloud --quiet --project XXX beta dns record-sets create --rrdatas='1.2.3.4' --type=A --ttl=300 --zone=palladi-us pastang-dev.palladi.us
 dns-setup-palladius.sh pastang-dev.palladi.us  "$GCLB_IP_DEV"
