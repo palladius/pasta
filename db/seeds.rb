@@ -57,6 +57,19 @@ SAUCE_ICONS = {
 
 }
 
+# ireland
+GOOD_CONDIMENTS_WORLDWIDE = {
+  :ie => # 🇮🇪
+    [
+      %w{ gnocchi     dun_laoghaire }, # for Ireland:  (my invention)
+    ],
+  :uk => # 🇬🇧
+    [
+      %w{ fish        chips }, # although not a pasta, its still fun :)
+    ],
+
+}
+
 GOOD_CONDIMENTS = [
   %w{ agnolotti      burro_salvia bolognese brodo }, # http://it.wikipedia.org/wiki/Agnolotti_piemontesi
   %w{ bucatini       amatriciana pomodoro },
@@ -65,7 +78,7 @@ GOOD_CONDIMENTS = [
   %w{ conchiglie     pomodoro bolognese piselli },
   %w{ fusilli        bolognese pesto radicchio },
   %w{ garganelli     boscaiola nero_di_seppia bolognese quattro_formaggi },
-  %w{ gnocchi        sorrentina  quattro_formaggi }, # for Ireland: dun_laoghaire
+  %w{ gnocchi        sorrentina quattro_formaggi }, # for Ireland: dun_laoghaire (my invention)
   %w{ gramigna       salsiccia bolognese },
   %w{ linguine       pesto },
   %w{ orecchiette    pesto nero_di_seppia piselli },
