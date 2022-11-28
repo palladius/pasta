@@ -1,3 +1,9 @@
+# CHANGELOG
+
+TODO(ricc): import this to Rails once you learn how to move MD to HTML (should be super easy).
+
+```
+2022-11-28 ricc 0.11.5 Upgrading skaffold: https://skaffold.dev/docs/upgrading/
 2022-11-28 ricc 0.11.4 More hosts in regex, removed `jquery-rails`. fixing pasta new link
 2022-11-28 ricc 0.11.3 auth host.
 2022-11-28 ricc 0.11.2 playing with namespace and cross-compiler dockr building..
@@ -22,3 +28,4 @@
 2022-11-19 ricc 0.4 PastaSauce now ROCKS. Only two missing things: docker and Matrix version
 2022-11-19 ricc 0.3 Added Devise for auth
 2022-11-19 ricc 0.2 Fixed all views and made rake db:seed to work
+```
