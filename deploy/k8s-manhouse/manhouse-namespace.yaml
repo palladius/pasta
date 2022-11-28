@@ -1,4 +1,4 @@
-apiVersion: apps/v1
-kind: Namespace
-metadata:
-  name: pasta-manhouse
+# apiVersion: apps/v1
+# kind: Namespace
+# metadata:
+#   name: pasta-manhouse
