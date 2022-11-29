@@ -20,9 +20,12 @@ docker-build:
 docker-run: docker-build
 	docker run -it -p 8080:8080 pasta-ror7:v$(VERSION) ./entrypoint-8080.sh
 
+# https://www.docker.com/blog/faster-multi-platform-builds-dockerfile-cross-compilation-guide/
 docker-push: docker-build
 	echo WARNING If you are on a arm64 Mac you will push BAD docker... FIXME.
-	exit 42
+	#exit 42
+	#Note this is a ricc only problem apologies everyone else..
+	uname | grep Linux && echo 'OK Linux no probs of my Mac weird cross compiling.'
 	# push latest version
 	docker tag pasta-ror7:v$(VERSION) palladius/pastang:v$(VERSION)
 	docker push palladius/pastang:v$(VERSION)
