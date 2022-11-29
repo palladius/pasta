@@ -4,5 +4,3 @@
 	<%= link_to( entity.to_s.tableize, "/" + entity.to_s.tableize ) %>
   <% } %>]
 </div>
-
-Hi, <b><%= link_to(current_user.to_s, edit_user_registration_path) rescue :unknown %></b>
