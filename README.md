@@ -10,6 +10,10 @@ Things you may want to cover:
 
  <img src='https://github.com/palladius/pasta/raw/master/doc/pastang-matrix-screenshot.png' width='100%' align='right' />
 
+## New ideas
+
+* (From Roberto) do the same with france and UK (maybe a namespace): fish and chips.
+* [ricc] add emoji for every pasta and ingredients (default: 🍝) 
 
 ## Dockerization
 
