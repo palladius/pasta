@@ -53,3 +53,14 @@ run-prod-docker: docker-build
 kubectl-apply-prod:
 	./kubectl-apply-to-prod.sh
 
+
+get-skaffold-pods:
+	kubectl get 'pod,deployment' | grep skpasta
+	# servicepods
+	echo Try also: ./test-app.sh
+	make test-apps
+
+
+test-apps:
+	echo Testing load balancers
+	./test-app.sh

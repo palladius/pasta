@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# This is a test script I created to just update the JSON file with an array of version -> imagesize
+# to surface possible docker regressions.
+#
+
 set -e
 
 cat riccardo.json | lolcat

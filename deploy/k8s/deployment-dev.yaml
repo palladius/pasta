@@ -6,13 +6,18 @@ metadata:
     app: skpasta-dev
 spec:
   ports:
-  - port: 8080
+  - port: 80
     protocol: TCP
   #clusterIP: None
   type: LoadBalancer
   selector:
     app: skpasta-dev
+
+
 ---
+
+
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -20,7 +25,7 @@ metadata:
   labels:
     app: skpasta-dev
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: skpasta-dev
@@ -32,6 +37,8 @@ spec:
       containers:
       - name: skpasta-dev
         image: skaf-pasta-ror7 # skpasta-dev
+        ports:
+        - containerPort: 8080
         env:
         - name: RAILS_ENV
           value: development
