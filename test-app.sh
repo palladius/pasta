@@ -10,7 +10,8 @@ function _curl() {
 #kubectl get 'pod,deployment' | grep skpasta
 kubectl get service | grep "$SERVICE_REGEX" | while read service type intip EXT_IP port_mapping time ; do
     PORT=$(echo $port_mapping | cut -d: -f 1)
-    echo "DEB LINE EXT_IP:$EXT_IP PORT:$PORT port_mapping:$port_mapping"
+    echo "[🏚️🐛] check $service $EXT_IP:$PORT"
+
 
     echo
     _curl "http://$EXT_IP:$PORT/"
