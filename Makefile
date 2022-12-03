@@ -20,6 +20,9 @@ docker-build:
 docker-run: docker-build
 	docker run -it -p 8080:8080 pasta-ror7:v$(VERSION) ./entrypoint-8080.sh
 
+macosx-docker-build:
+	./docker-buildx-on-mac-m1.sh
+
 # https://www.docker.com/blog/faster-multi-platform-builds-dockerfile-cross-compilation-guide/
 docker-push: docker-build
 	echo WARNING If you are on a arm64 Mac you will push BAD docker... FIXME.

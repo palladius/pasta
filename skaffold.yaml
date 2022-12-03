@@ -3,6 +3,9 @@ kind: Config
 metadata:
   name: pasta
 build:
+  platforms: # x-build: https://skaffold.dev/docs/pipeline-stages/builders/
+  #- linux/arm64
+  - linux/amd64
   artifacts:
   - image: skaf-pasta-ror7
     docker:
@@ -16,3 +19,43 @@ portForward:
 - resourceType: service
   resourceName: skaf-pasta-ror7
   port: 8080
+
+# doc: https://cloud.google.com/deploy/docs/verify-deployment#configure_skaffold
+# new as of dec22
+verify:
+# - name: verify-integration-test
+#   container:
+#     name: integration-test
+#     image: skaf-pasta-ror7
+#     command: ["./test-systems.sh"]
+- name: verify-endpoint-test
+  container:
+    name: alpine
+    image: alpine
+    command: ["/bin/sh"]
+    args: ["-c", "wget $ENDPOINT_URL"]
+
+
+profiles:
+# "gcb" profile allows building and pushing the images
+# on Google Container Builder without requiring docker
+# installed on the developer machine. However, note that
+# since GCB does not cache the builds, each build will
+# start from scratch and therefore take a long time.
+#
+# This is not used by default. To use it, run:
+#     skaffold run -p gcb
+- name: gcb
+  build:
+    # explained here: https://skaffold.dev/docs/pipeline-stages/builders/
+    googleCloudBuild:
+      diskSizeGb: 300
+      machineType: N1_HIGHCPU_32
+      timeout: 3600s
+      #projectId: myProjectId
+
+#     skaffold run -p local
+- name: local
+  build:
+    local:
+      push: false
