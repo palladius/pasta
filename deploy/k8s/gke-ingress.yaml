@@ -15,7 +15,7 @@ spec:
           service:
             name: skpasta-dev # skaf-pasta-ror7 # hello-world-1
             port:
-              number: 8080
+              number: 80
       # - path: /prod
       #   pathType: ImplementationSpecific
       #   backend:
