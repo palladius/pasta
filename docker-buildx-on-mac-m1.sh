@@ -17,6 +17,8 @@ function install_onmac_m1() {
     docker buildx build --tag pastang:m1-v$VERSION -o type=image --platform=linux/arm64,linux/amd64 .
     #docker buildx build --push --tag [palladius/image-tag] --platform=linux/arm64,linux/amd64 .
     docker buildx build --push --tag palladius/pastang:m1-v$VERSION --platform=linux/arm64,linux/amd64 .
+
+    docker buildx ls
 }
 
 function insyall_on_linux() {
