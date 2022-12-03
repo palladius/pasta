@@ -6,17 +6,14 @@ metadata:
     app: skpasta-dev
 spec:
   ports:
-  - port: 80
+  - port: 8080
     protocol: TCP
   #clusterIP: None
   type: LoadBalancer
   selector:
     app: skpasta-dev
 
-
 ---
-
-
 
 apiVersion: apps/v1
 kind: Deployment
