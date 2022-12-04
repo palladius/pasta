@@ -26,11 +26,12 @@ DESTROY_ALL_BEFORE_SEEDING = true
 
 BAD_CONDIMENTS = [
   %w{spaghetti      bolognese us_carbonara }, # 🤢 Seriously you had finished all tagliatelle, fusilli, and penne in the house?!?
-  %w{pappardelle    salmone carbonara },
+  #%w{pappardelle    salmone carbonara },  # not sure I could defend this in tribunal..
   %w{risotto        bolognese }, # pure blasphemy!
   %w{tortellini     pesto },   # 🤮 Yuk! How can you even CONSIDER that?
   %w{tagliatelle    pollo }, # so obvious its insulting to even write it down!
   %w{fusilli        pollo }, # changing pasta won't make it any better.
+#  %w{ _ .           pollo }, # Anything (TODO implement me)
 ]
 
 #
@@ -84,10 +85,11 @@ GOOD_CONDIMENTS = [
   %w{ orecchiette    pesto nero_di_seppia piselli },
   %w{ paccheri       bolognese }, # http://it.wikipedia.org/wiki/Paccheri
   %w{ pappardelle    bolognese cinghiale boscaiola funghi } ,  # http://it.wikipedia.org/wiki/Pappardelle
-  %w{ penne          aglio_olio amatriciana bolognese puttanesca radicchio quattro_formaggi piselli } ,
+  %w{ penne          aglio_olio amatriciana bolognese norma piselli puttanesca quattro_formaggi radicchio  } ,
+  %w{ rigatoni       norma gricia bolognese boscaiola carbonara zozzona } ,
   %w{ risotto        funghi zafferano frutti_di_mare },
-  %w{ spaghetti      aglio_olio amatriciana carbonara nero_di_seppia pesto pomodoro puttanesca scoglio tonno frutti_di_mare },
-  %w{ strozzapreti   canocchie cinghiale pesto ragu },
+  %w{ spaghetti      aglio_olio amatriciana carbonara nero_di_seppia norma pesto pomodoro puttanesca scoglio tonno frutti_di_mare },
+  %w{ strozzapreti    cinghiale pesto ragu }, # removed canocchie to simplify
   %w{ tagliatelle    bolognese funghi gamberetti_zucchine nero_di_seppia panna_funghi prosciutto burro_e_tartufo }, # http://it.wikipedia.org/wiki/Tagliatelle
   %w{ tagliolini     scoglio gamberetti_zucchine nero_di_seppia panna_funghi burro_e_tartufo salmone },
   %w{ tortellini     brodo panna },
@@ -98,12 +100,12 @@ INGREDIENTS_WITH_EMOJI = {
   # sets the type of an ingredient
   :eggs         => ['protein, animal', '🥚'],
 
-  :bacon        => ["meat, fat", '🥓'],
-  :pancetta     => ["meat, fat", '🥓'],
-  :guanciale    => ["meat, fat", '🥓'],
+  :bacon        => ["meat, fat", '🥓'], # whatever ..
+  :pancetta     => ["meat, fat", '🥓'], # this should be the belly of the pig
+  :guanciale    => ["meat, fat", '🥓'], # this is the cheek of the pig
 
   :chicken      => ['meat, illegal_with_pasta', '🐓'],
-  :pollo      => ['meat, illegal_with_pasta', '🐓'],  # same as chicken, apologix for WETness.
+  :pollo        => ['meat, illegal_with_pasta', '🐓'],  # same as chicken, apologix for WETness.
   :minced_beef  => ['meat', '🍔'], #
   :luganega     => ['meat', '🌭'],
   :salsiccia    => ['meat, fat', '🌭'],
@@ -127,6 +129,7 @@ INGREDIENTS_WITH_EMOJI = {
   :black_pepper => ['spice', '◾️'], #
   :onions       => ['spice, vegetable', '🧅'],
 
+  :melanzane    => ['vegetable', '🍆'], # melanzane, aubergine, eggplant
   :cucumbers    => ['vegetable', '🥒'], #
   :green_pepper => ['vegetable', '🫑'], #
   :mushrooms    => ['vegetable', '🍄'], #
@@ -135,6 +138,7 @@ INGREDIENTS_WITH_EMOJI = {
   :potatoes     => ['vegetable', '🥔'], # unhealthy veg - its actually a tuberus
   :tomato_sauce => ['vegetable', '🥫'], #
   :corn         => ['vegetable, illegal_with_pasta', '🌽'],
+
 
   :pinenuts => ['nuts','🥜'],
   :peanuts => ['nuts','🥜'],
@@ -146,14 +150,21 @@ INGREDIENTS_WITH_EMOJI = {
   :scampi       => ['fish', '🦐'], #
   :salmon       => ['fish,healthy', '🍣'], #
   :shrimps      => ['fish', '🍤'],
+
+  # alcohol
+  :wine         => ['alcohol', '🍷'],
+  :red_wine     => ['alcohol', '🍷'],
+  :white_wine   => ['alcohol', '🥂'],
 }
 
 INGREDIENT_SAUCES = {
-  :carbonara => %w{ eggs guanciale },
+  :carbonara => %w{ eggs guanciale }, # plus salt pepper
   :us_carbonara => %w{ eggs bacon cream onions },
+  :bolognese => %w{ tomato minced_meat wine onion carrots celery }, #someone puts milk
   :chicken => %w{ cream chicken },
   :sorrentina => %w{ mozzarella pomodoro },
   :pesto => %w{ basil oil pinenuts parmigiano },
+  :norma => %w{ melanzane pomodoro ricotta }, # https://it.wikipedia.org/wiki/Pasta_alla_Norma
 
 }
 

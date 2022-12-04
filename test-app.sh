@@ -20,3 +20,4 @@ kubectl get service | grep "$SERVICE_REGEX" | while read service type intip EXT_
 #    _curl "http://$EXT_IP:8080"
 done
 
+kubectl get all | grep skpasta-

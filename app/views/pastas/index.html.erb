@@ -1,4 +1,6 @@
-<h1>Pasta</h1>
+<h1>
+  <%= image_tag 'pastas.png', :height => 200 %>
+  Types of Pasta</h1>
 
 <table class='table'>
   <thead>
@@ -12,8 +14,8 @@
     <% @pastas.each do |pasta| %>
       <tr>
         <td><%= link_to "#{pasta.emoji} #{pasta.name}",pasta %></td>
-        <td><%= pasta.description %></td>
-        <td><%= pasta.active %></td>
+        <td><%= pasta_wikipedia_link(pasta) %></td>
+        <td><%#= pasta.active %></td>
 
         <td><%= link_to "Show", pasta_path(pasta) %></td>
         <td><%= link_to "Edit", edit_pasta_path(pasta) %></td>

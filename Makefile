@@ -67,3 +67,5 @@ get-skaffold-pods:
 test-apps:
 	echo Testing load balancers
 	./test-app.sh
+
+verify: test-apps

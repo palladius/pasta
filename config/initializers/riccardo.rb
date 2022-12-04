@@ -8,6 +8,7 @@ Rails.application.configure do
   config.assets.check_precompiled_asset = false
 
   # hosts for PROD
+  config.hosts << "localhost"
   config.hosts << "pastang-dev.palladi.us"
   config.hosts << "pastang.palladi.us"
   config.hosts << /pasta.*\.palladi\.us/

@@ -41,6 +41,8 @@ class Pasta < ApplicationRecord
     "https://en.wikipedia.org/wiki/#{name}"
   end
 
+  alias :link :wikipedia_link
+
   def self.emoji
     '🍝'
   end
