@@ -9,3 +9,9 @@ config:
   # pasta:containerPort: "8080"
   # pasta:cpu: "1"
   # pasta:memory: 1Gi
+  pasta:project: cicd-platinum-test032
+  # GoogleNative
+  google-native:project:  cicd-platinum-test032
+  # BigTable locations: https://cloud.google.com/bigtable/docs/locations
+  google-native:location: europe-west1-b
+  google-native:region: europe-west1

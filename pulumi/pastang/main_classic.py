@@ -7,5 +7,11 @@ import pulumi
 
 from pulumi_gcp import storage
 
-bucket = storage.Bucket('my-bucket')
+# Docs: https://www.pulumi.com/registry/packages/gcp/api-docs/storage/bucket/
+cbucket = storage.Bucket(
+    'my-classic-bucket',
+    location="EU",
+)
 
+pulumi.export('classic_bucket_link', cbucket.self_link)
+pulumi.export('classic_bucket_name', cbucket.name)
