@@ -1,7 +1,7 @@
 apiVersion: skaffold/v3
 kind: Config
 metadata:
-  name: pasta
+  name: pasta-skaffold-config
 build:
   platforms: # x-build: https://skaffold.dev/docs/pipeline-stages/builders/
   #- linux/arm64
@@ -63,3 +63,19 @@ profiles:
   build:
     local:
       push: false
+- name: run
+  manifests:
+    rawYaml:
+    - deploy/run/*.yaml
+  deploy:
+    cloudrun:
+      projectid: cicd-platinum-test032
+      region: europe-west1
+  # TODO when i figured out how to get programmatically the CloudRun URL :)
+  #verify:
+  # - name: verify-cloudrun-endpoint
+  #   container:
+  #     name: alpine
+  #     image: alpine
+  #     command: ["/bin/sh"]
+  #     args: ["-c", "wget $ENDPOINT_URL"]

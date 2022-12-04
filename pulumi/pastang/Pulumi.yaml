@@ -1,0 +1,7 @@
+name: pasta
+description: |
+    A Python GCP program to deploy Palladius Pasta on Google Cloud
+runtime:
+    name: python
+    options:
+        virtualenv: venv

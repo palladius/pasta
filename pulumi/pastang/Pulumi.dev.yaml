@@ -1,0 +1,11 @@
+config:
+  # might chnage
+  gcp:project: cicd-platinum-test032
+  gcp:region: europe-west1
+  # for template of GCP py Serverless template:
+  # code: https://www.pulumi.com/templates/serverless-application/gcp/
+  # pasta:appPath: pasta-code
+  # pasta:concurrency: "50"
+  # pasta:containerPort: "8080"
+  # pasta:cpu: "1"
+  # pasta:memory: 1Gi

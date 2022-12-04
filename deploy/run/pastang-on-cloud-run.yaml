@@ -1,0 +1,26 @@
+# this is me cheekily installing another app :)
+kind: Service
+metadata:
+  name: sku-pastang
+  annotations:
+    autoscaling.knative.dev/minScale: 1
+    palladi.us/ultimate-answer: 42 # testing custom annotation - it works!
+    palladi.us/github-repo: 'github.com:palladius/pasta'
+    palladi.us/image-source: 'https://hub.docker.com/r/palladius/pastang'
+    palladi.us/random-notes: 'This app should be created/maintained by Skaffold'
+    #run.googleapis.com/ingress-status: all
+spec:
+  template:
+    spec:
+      #serviceAccountName: <service_account>
+      containers:
+      - image: skaf-pasta-ror7 # vanilla-app
+        env:
+        - name: RAILS_ENV
+          value: development
+        - name: MESSAGGIO_OCCASIONALE
+          value: |
+            Vediamo se 🍄 funge.
+            This is something I tested just 30m ago in VanillaApp.
+            Something i learnt is that ACCESS to this is not regualted from this YAML
+            but instead from the IAM permission you give to the runner (or sth similar).

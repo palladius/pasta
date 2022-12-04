@@ -13,7 +13,7 @@ Things you may want to cover:
 ## New ideas
 
 * (From Roberto) do the same with france and UK (maybe a namespace): fish and chips.
-* [ricc] add emoji for every pasta and ingredients (default: 🍝) 
+* [ricc] add emoji for every pasta and ingredients (default: 🍝)
 
 ## Dockerization
 
@@ -72,4 +72,15 @@ rails generate devise
 
 # from https://github.com/heartcombo/devise/wiki/How-To:-Allow-users-to-sign-in-with-something-other-than-their-email-address
 rails generate migration add_username_to_users username:string:uniq
+```
+
+## Running
+
+* Cloud run: just created the `run` config:
+
+```bash
+skaffold dev -p run
+skaffold build -p run
+skaffold render -p run
+skaffold run -p run
 ```
