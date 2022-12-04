@@ -1,10 +1,10 @@
 '''This is the main GCP page to pulumaform PastaNG to GCP.
 
+Note that not everything is available in Pulumi GCP Native.
+Let's try to make it work with Native.
+
 For now just boilerplate until I really need it (which is now basically).
 '''
-# from pulumi_gcp import storage
-
-# bucket = storage.Bucket('my-bucket')
 
 
 # https://www.pulumi.com/registry/packages/google-native/
