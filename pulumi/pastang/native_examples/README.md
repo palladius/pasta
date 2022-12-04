@@ -6,3 +6,4 @@ copied code from the ONLY python code in Native:
 Docs on GNative:
 
 * [GNative docs](https://www.pulumi.com/registry/packages/google-native/installation-configuration/):
+* Also some sample 🐍 code on setting up a cluster [here](https://www.pulumi.com/blog/pulumiup-google-native-provider/).
