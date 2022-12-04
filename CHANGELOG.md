@@ -3,6 +3,7 @@
 TODO(ricc): import this to Rails once you learn how to move MD to HTML (should be super easy).
 
 ```
+2022-11-29 ricc 0.11.9 revamped pasta page
 2022-11-29 ricc 0.11.8 adding new pastas/sauces
 2022-11-29 ricc 0.11.7 fixed routing issue. Added code below
 2022-11-29 ricc 0.11.6 [minor] added small cron job bcs why not.

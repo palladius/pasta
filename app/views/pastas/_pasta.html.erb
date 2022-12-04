@@ -11,8 +11,16 @@
 
   <p>
     <strong>Wikipedia:</strong>
-    <!-- 📖-->
-    🕮 <%= link_to pasta, pasta.wikipedia_link  %>
+    <!-- 🕮📖-->
+     📖 <%= link_to pasta, pasta.wikipedia_link  %>
+  </p>
+
+
+  <p>
+    <strong>Compatible Sauces:</strong>
+    <% pasta.sauces.each do |sauce| %>
+       <li> <%= sauce %></li>
+    <% end %>
   </p>
 
 </div>

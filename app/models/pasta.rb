@@ -41,6 +41,10 @@ class Pasta < ApplicationRecord
     "https://en.wikipedia.org/wiki/#{name}"
   end
 
+  def sauces
+    PastaSauce.where(pasta_id: self.id)
+  end
+
   alias :link :wikipedia_link
 
   def self.emoji
