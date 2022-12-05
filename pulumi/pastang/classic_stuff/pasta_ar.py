@@ -1,0 +1,62 @@
+'''This will try to import EXISTING AR skaffolded iimage into a pulumi object.
+
+https://console.cloud.google.com/artifacts/docker/cicd-platinum-test032/europe-west3/pasta-and-friends32/skaf-pasta-ror7?e=-13802955&project=cicd-platinum-test032
+=> pulumi object
+'''
+# find skaf-pasta-ror7
+
+import pulumi
+import pulumi_gcp as gcp
+
+##################################
+# 1. Lets get the right repo :)
+##################################
+
+existing_repo_name  = 'pasta-and-friends32'
+existing_repo_region = 'europe-west3'
+#project_id = pulumi.Config().get('gcp:project')
+gcp_config = pulumi.Config('gcp')
+#PROJECT_ID=config.require("project")
+PROJECT_ID=gcp_config.require("project")
+
+# my_repo = gcp.artifactregistry.Repository("pulumi-useless-repo",
+#     description="example docker repository I will never use",
+#     format="DOCKER",
+#     location="us-central1",
+#     repository_id="pulumi-useless-repository")
+
+
+my_pasta_existing_repo = gcp.artifactregistry.get_repository(
+    location=existing_repo_region,
+    repository_id=existing_repo_name,
+)
+
+#pulumi.export('pasta_ar_useless_repo', my_repo.repository_id)
+pulumi.export('pasta_ar_existing_repo', my_pasta_existing_repo.repository_id)
+
+##################################
+# 2. now lets get the image :)
+##################################
+
+existing_image_name = 'skaf-pasta-ror7'
+
+# https://www.pulumi.com/registry/packages/gcp/api-docs/container/getregistryimage/
+# YIELDS:         europe-west3.gcr.io/cicd-platinum-test032/skaf-pasta-ror7
+# should be:      europe-west3-docker.pkg.dev/cicd-platinum-test032/pasta-and-friends32/skaf-pasta-ror7
+# works for container registry but not good for me :/
+
+# debian = gcp.container.get_registry_image(
+#         name=existing_image_name,
+#         region=existing_repo_region,
+
+# )
+# pulumi.export("gcrLocation", debian.image_url)
+
+ultimate_pasta_image = "{existing_repo_region}-docker.pkg.dev/{project_id}/{existing_repo_name}/{existing_image_name}".format(
+    existing_repo_name=existing_repo_name,
+    existing_repo_region=existing_repo_region,
+    existing_image_name=existing_image_name,
+    project_id=PROJECT_ID,
+)
+
+pulumi.export('ultimate_pasta_image', ultimate_pasta_image)

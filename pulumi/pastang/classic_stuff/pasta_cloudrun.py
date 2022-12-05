@@ -10,7 +10,7 @@ docs: https://www.pulumi.com/registry/packages/gcp/api-docs/cloudrun/service/#ou
 import pulumi
 import pulumi_gcp as gcp
 
-def infer_pantheon_url_from_service_id(cloudrun_service_id):
+def infer_cconsole_url_from_service_id(cloudrun_service_id):
     '''Very simple.
 
     Given this input: locations/europe-west1/namespaces/cicd-platinum-test032/services/pulumi-classic-hello-2c27e4a
@@ -76,7 +76,7 @@ pulumi.export('classic_run_service_statuses', default_service.statuses)
 pulumi.export('classic_run_service_url', default_service.statuses[0].url)
 # need lambda here..
 #x = lambda a : a + 10
-#output_lambda = lambda cloudrun_service_id: infer_pantheon_url_from_service_id(cloudrun_service_id)
+#output_lambda = lambda cloudrun_service_id: infer_cconsole_url_from_service_id(cloudrun_service_id)
 lambda_id_from_service = lambda service: service.id
 
 #     _,region,_,project_id,_,app_id = cloudrun_service_id.split('/')
@@ -85,11 +85,11 @@ lambda_mega_split = lambda service: 'https://console.cloud.google.com/run/detail
         project_id=service.id.split('/')[3],
         cloudrun_service_id=service.id.split('/')[5],
     )
-#pulumi.export('classic_run_service_magic_pantheon_url', output_lambda(default_service.id))
-#pulumi.export('classic_run_service_magic_pantheon_url', infer_pantheon_url_from_service_id(lambda_id_from_service(default_service))
-#pulumi.export('classic_run_service_magic_pantheon_url', lambda_mega_split default_service)
+#pulumi.export('classic_run_service_magic_cconsole_url', output_lambda(default_service.id))
+#pulumi.export('classic_run_service_magic_cconsole_url', infer_cconsole_url_from_service_id(lambda_id_from_service(default_service))
+#pulumi.export('classic_run_service_magic_cconsole_url', lambda_mega_split default_service)
 
 magic_url = default_service.id.apply(
-    lambda x: infer_pantheon_url_from_service_id(x)
+    lambda x: infer_cconsole_url_from_service_id(x)
 )
-pulumi.export('classic_run_service_magic_pantheon_url', magic_url)
+pulumi.export('classic_run_service_magic_cconsole_url', magic_url)

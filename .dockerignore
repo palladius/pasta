@@ -1,6 +1,7 @@
 # folders
 deploy/
 log/
+pulumi/pastang/venv/
 vecchiume/
 # files
 docker-compose.yml
