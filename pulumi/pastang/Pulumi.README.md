@@ -25,9 +25,8 @@ This contains a lot of interesting info from..
 * classic_run_service_id: ${outputs.classic_run_service_id}
 * classic_run_service_statuses: ${outputs.classic_run_service_statuses}
 * **Final URL**: **${outputs.classic_run_service_url}**
-* Magic Revisions PantheonURL: https://console.cloud.google.com/run/detail/europe-west1/pulumi-classic-hello-2c27e4a/revisions?project=cicd-platinum-test032 autoinfer from
-locations/europe-west1/namespaces/cicd-platinum-test032/services/pulumi-classic-hello-2c27e4a
-with lambda..
+* **Magic** Revisions Cloud Run page (**λ**): ${outputs.classic_run_service_magic_pantheon_url}
+
 ## Notes
 
 * to add new dependencies in python, do: `venv/bin/pip install -r requirements.txt` as per [URL](https://www.pulumi.com/docs/intro/languages/python/).
