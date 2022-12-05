@@ -72,9 +72,18 @@ PROJECT_ID=gcp_config.require("project")
 REGION=gcp_config.require("region")
 
 
+# THEORY:           europe-west3-docker.pkg.dev/cicd-platinum-test032/pasta-and-friends32/skaf-pasta-ror7
+# PRACTICE:  Image 'europe-west3-docker.pkg.dev/cicd-platinum-test032/pasta-and-friends32/skaf-pasta-ror7' not found.
+# => error, I was missing the LATEST :/
+
+# Memory limit of 512M exceeded with 515M used. Consider increasing the memory limit, see https://cloud.google.com/run/docs/configuring/memory-limits
+# https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits
+# => spec.containers[].resources.requests.memory
+
+
 runCloudRunNoAuth(
-    'pasta01',
-    'classic-pasta01',
+    'pasta03',
+    'classic-pasta03',
     REGION,
     ultimate_pasta_image,
 )

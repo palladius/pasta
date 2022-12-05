@@ -54,15 +54,53 @@ def runCloudRunNoAuth(
 #PROJECT_ID=config.require("project")
 #REGION=gcp_config.require("region")
 
+        # resources:
+        #   limits:
+        #     memory: 512Mi
+        #     cpu: 1000m
+    # added_memory = gcp.cloudrun.ServiceTemplateSpecContainerResources(
+    #     limits=[
+    #         "memory",
+    #         "1024Mi",
+    #     ],
+    #     #requests=,
+
+    # )
+
     default_service = gcp.cloudrun.Service(
         "pulumi" + cloud_run_service_name, # "pulumi-classic-hello",
         location=region, #"us-central1",
         template=gcp.cloudrun.ServiceTemplateArgs(
             spec=gcp.cloudrun.ServiceTemplateSpecArgs(
+                # spec.containers[].resources.requests.memory
                 containers=[gcp.cloudrun.ServiceTemplateSpecContainerArgs(
                     image=image_path,
+                    # doc here: https://github.com/pulumi/pulumi-gcp/blob/master/sdk/go/gcp/cloudrun/service.go
+                    # resources=gcp.cloudrun.ServiceTemplateSpecContainerResourcesArray(
+                    #     limits=[
+                    #          "memory",
+                    #          "1024Mi",
+                    #     ],
+                    #     # #requests=,
+
+                    # ),
+                    # envs=[
+                    #     # copied from https://github.com/pulumi/examples/blob/master/gcp-py-cloudrun-cloudsql/__main__.py
+                    #     ServiceTemplateSpecContainerEnvArgs(
+                    #         name="DATABASE_URL",
+                    #         value="blah blah blah",
+                    #     ),
+                    #     ServiceTemplateSpecContainerEnvArgs(
+                    #         name="RAILS_ENV",
+                    #         value="development",
+                    #     ),
+                    # ],
                 )],
             ),
+        # traffics=[gcp.cloudrun.ServiceTrafficArgs(
+        #     percent=100,
+        #     latest_revision=True,
+        # )]),
         ))
     # allow everyone
     noauth_iam_policy = gcp.organizations.get_iam_policy(
