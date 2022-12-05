@@ -8,6 +8,8 @@ https://console.cloud.google.com/artifacts/docker/cicd-platinum-test032/europe-w
 import pulumi
 import pulumi_gcp as gcp
 
+from classic_stuff.cloudrun_function import runCloudRunNoAuth
+
 ##################################
 # 1. Lets get the right repo :)
 ##################################
@@ -60,3 +62,25 @@ ultimate_pasta_image = "{existing_repo_region}-docker.pkg.dev/{project_id}/{exis
 )
 
 pulumi.export('ultimate_pasta_image', ultimate_pasta_image)
+
+
+#########
+# 3. call pasta CloudRun
+
+gcp_config = pulumi.Config('gcp')
+PROJECT_ID=gcp_config.require("project")
+REGION=gcp_config.require("region")
+
+
+runCloudRunNoAuth(
+    'pasta01',
+    'classic-pasta01',
+    REGION,
+    ultimate_pasta_image,
+)
+runCloudRunNoAuth(
+    'hello01',
+    'classic-hello01',
+    REGION,
+    "us-docker.pkg.dev/cloudrun/container/hello"
+)
