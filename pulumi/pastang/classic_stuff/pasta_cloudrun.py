@@ -39,7 +39,7 @@ def infer_pantheon_url_from_service_id(cloudrun_service_id):
     return 'https://console.cloud.google.com/run/detail/{region}/{cloudrun_service_id}/revisions?project={project_id}'.format(
         region=region,
         project_id=project_id,
-        cloudrun_service_id=cloudrun_service_id,
+        cloudrun_service_id=app_id,
     )
 
 #LOCATION = "us-central1"
@@ -93,10 +93,3 @@ magic_url = default_service.id.apply(
     lambda x: infer_pantheon_url_from_service_id(x)
 )
 pulumi.export('classic_run_service_magic_pantheon_url', magic_url)
-
-# pulumi.export('classic_run_service_magic_pantheon_url', lambda default_service: 'https://console.cloud.google.com/run/detail/{region}/{cloudrun_service_id}/revisions?project={project_id}'.format(
-#         region=default_service.id.split('/')[1],
-#         project_id=default_service.id.split('/')[3],
-#         cloudrun_service_id=default_service.id.split('/')[5],
-#     )
-# )
