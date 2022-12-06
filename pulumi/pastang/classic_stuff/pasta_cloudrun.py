@@ -73,20 +73,6 @@ noauth_iam_policy = gcp.cloudrun.IamPolicy("noauthIamPolicy",
 pulumi.export('classic_run_service_id', default_service.id)
 pulumi.export('classic_run_service_statuses', default_service.statuses)
 pulumi.export('classic_run_service_url', default_service.statuses[0].url)
-# need lambda here..
-#x = lambda a : a + 10
-#output_lambda = lambda cloudrun_service_id: infer_cconsole_url_from_service_id(cloudrun_service_id)
-lambda_id_from_service = lambda service: service.id
-
-#     _,region,_,project_id,_,app_id = cloudrun_service_id.split('/')
-# lambda_mega_split = lambda service: 'https://console.cloud.google.com/run/detail/{region}/{cloudrun_service_id}/revisions?project={project_id}'.format(
-#         region=service.id.split('/')[1],
-#         project_id=service.id.split('/')[3],
-#         cloudrun_service_id=service.id.split('/')[5],
-#     )
-#pulumi.export('classic_run_service_magic_cconsole_url', output_lambda(default_service.id))
-#pulumi.export('classic_run_service_magic_cconsole_url', infer_cconsole_url_from_service_id(lambda_id_from_service(default_service))
-#pulumi.export('classic_run_service_magic_cconsole_url', lambda_mega_split default_service)
 
 magic_url = default_service.id.apply(
     lambda x: infer_cconsole_url_from_service_id(x)

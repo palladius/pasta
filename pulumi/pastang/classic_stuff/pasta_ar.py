@@ -63,9 +63,13 @@ ultimate_pasta_image = "{existing_repo_region}-docker.pkg.dev/{project_id}/{exis
 
 pulumi.export('ultimate_pasta_image', ultimate_pasta_image)
 
+#########
+# 3. take existing CloudRun created with skaffold (sku-pastang-cloudrun )
+
+# TODO
 
 #########
-# 3. call pasta CloudRun
+# 4. call pasta CloudRun
 
 gcp_config = pulumi.Config('gcp')
 PROJECT_ID=gcp_config.require("project")
@@ -86,6 +90,7 @@ runCloudRunNoAuth(
     'classic-pasta03',
     REGION,
     ultimate_pasta_image,
+    opts=ResourceOptions(depends_on=[ultimate_pasta_image])
 )
 runCloudRunNoAuth(
     'hello01',
