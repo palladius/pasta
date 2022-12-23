@@ -3,10 +3,11 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
-
+* Tails `7.0.4`
 * Ruby version: `3.1.2`
-* System dependencies
+* System dependencies@
+    * gem 'devise', for easy auth.
+    * gem 'bootstrap', dont know why
 
  <img src='https://github.com/palladius/pasta/raw/master/doc/pastang-matrix-screenshot.png' width='100%' align='right' />
 

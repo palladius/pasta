@@ -1,4 +1,5 @@
 # this is me cheekily installing another app :)
+apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
   name: sku-pastang
@@ -21,6 +22,6 @@ spec:
         - name: MESSAGGIO_OCCASIONALE
           value: |
             Vediamo se 🍄 funge.
-            This is something I tested just 30m ago in VanillaApp.
+            This is something I tested just 30m ago in VanillaApp and want to apply to Pasta.
             Something i learnt is that ACCESS to this is not regualted from this YAML
             but instead from the IAM permission you give to the runner (or sth similar).

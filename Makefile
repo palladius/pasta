@@ -69,3 +69,8 @@ test-apps:
 	./test-app.sh
 
 verify: test-apps
+
+.PHONY: pulumi
+
+pulumi:
+	make -C pulumi/pastang/ up
