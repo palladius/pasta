@@ -11,6 +11,10 @@ gem 'devise'
 #gem 'rails-bootstrap'
 gem 'bootstrap', '~> 5.2.2'
 #gem 'jquery-rails'           # I believe this is useless
+# Lets get Spanner to work with Pasta!
+gem 'activerecord-spanner-adapter'
+# to get password from spanner from .envrc
+gem 'dotenv-rails'
 ############
 
 

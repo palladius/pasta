@@ -9,7 +9,8 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
-development:
+# TODO(ricc): restore afetr spanner works and move spanner to prod :)
+development-old:
   <<: *default
   database: db/development.sqlite3
 
@@ -23,3 +24,13 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+
+# https://cloud.google.com/blog/topics/developers-practitioners/scale-your-ruby-applications-active-record-support-cloud-spanner
+# <%= ENV.fetch("GOOGLE_SPANNER_PROJECT") { 10 } %>
+development:
+  adapter: "spanner"
+  project: <%= ENV.fetch("GOOGLE_SPANNER_PROJECT") %>
+  instance: <%= ENV.fetch("GOOGLE_SPANNER_INSTANCE") %>
+  #credentials: "<google credentails file path>"
+  #database: pastang2023-gsql
+  database:  <%= ENV.fetch("GOOGLE_SPANNER_DATABASE") %>

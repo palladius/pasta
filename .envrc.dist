@@ -1,0 +1,13 @@
+
+#!/bin/bash
+
+################################
+# Activate: direnv allow .
+################################
+
+# this is PRIVATE and not publicly available :)
+GOOGLE_APPLICATION_CREDENTIALS='TODO'
+
+GOOGLE_SPANNER_PROJECT='<your project id>>'
+GOOGLE_SPANNER_INSTANCE='my-spanner-instance'
+GOOGLE_SPANNER_DATABASE='my-spanner-dbname'

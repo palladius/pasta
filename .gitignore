@@ -39,3 +39,4 @@
 
 /node_modules
 .echodo_history
+.envrc

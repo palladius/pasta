@@ -87,7 +87,7 @@ GOOD_CONDIMENTS = [
   %w{ pappardelle    bolognese cinghiale boscaiola funghi } ,  # http://it.wikipedia.org/wiki/Pappardelle
   %w{ penne          aglio_olio amatriciana bolognese norma piselli puttanesca quattro_formaggi radicchio  } ,
   %w{ rigatoni       norma gricia bolognese boscaiola carbonara zozzona } ,
-  %w{ risotto        funghi zafferano frutti_di_mare },
+  %w{ risotto        carbonara funghi zafferano frutti_di_mare },
   %w{ spaghetti      aglio_olio amatriciana carbonara nero_di_seppia norma pesto pomodoro puttanesca scoglio tonno frutti_di_mare },
   %w{ strozzapreti    cinghiale pesto ragu }, # removed canocchie to simplify
   %w{ tagliatelle    bolognese funghi gamberetti_zucchine nero_di_seppia panna_funghi prosciutto burro_e_tartufo }, # http://it.wikipedia.org/wiki/Tagliatelle
@@ -174,6 +174,7 @@ ANECDOTAL_INFORMATION = [
   [:bigoli, :luganega, "💭 famous fraternity song: Me piaze i bigoli con la luganega https://www.folkmusicworld.com/me-piaze-bigoli-con-la-luganega-musica-folk-trentina"],
   [:spaghetti, :bolognese, "💭 This is as insulting to Italians as Pineapple on pizza. Some sites to prove this: http://146.148.31.85/joomla/index.php?option=com_content&view=article&id=177:spaghetti-bolognese-dont-exist&catid=30:english-contents&Itemid=67 and https://www.italymammamia.com/spaghetti-bolognese-does-not-exist-in-italy.html and https://www.insider.com/spaghetti-bolognese-does-not-exist-says-mayor-of-bologna-italy-2019-3#:~:text=Rather%20than%20%22spaghetti%20bolognese%2C%22,their%20equivalent%20meat%2Dbased%20sauce.&text=However%20it's%20rarely%20served%20with,the%20sauce%2C%20such%20as%20tagliatelle"],
   [:tagliatelle, :bolognese, "This is the most typical way to use Ragu Bolognese as a pasta in Bologna: homemade egg tagliatelle! Did you know Emilia is famous for egg pasta with distinct yellow color? google 'Emiliane Barilla' if you dont believe me"],
+  [:risotto, :carbonara, "I recently learnt this is also ok: https://blog.giallozafferano.it/pippicalzina/risotto-alla-carbonara/"]
 ]
 
   # check everything is ok
