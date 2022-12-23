@@ -3,12 +3,19 @@
 
 ################################
 # Activate: direnv allow .
+#
+# Instructions:
+# 1. copy the .envrc.dist file into .envrc
+# 2. edit away!
+# 3. try to activate as per above.
+# 4. Try now: echo $GOOGLE_APPLICATION_CREDENTIALS
 ################################
 ENVRC_VERSION="0.2_20221223"
 
 # this is PRIVATE and not publicly available :)
-GOOGLE_APPLICATION_CREDENTIALS='TODO'
+# To create a GAC, see here: https://cloud.google.com/bigquery/docs/quickstarts/quickstart-client-libraries
+GOOGLE_APPLICATION_CREDENTIALS='path/to/local/project-key-hash.json'
 
-GOOGLE_SPANNER_PROJECT='<your project id>>'
+GOOGLE_SPANNER_PROJECT='your-project-id'
 GOOGLE_SPANNER_INSTANCE='my-spanner-instance'
 GOOGLE_SPANNER_DATABASE='my-spanner-dbname'
