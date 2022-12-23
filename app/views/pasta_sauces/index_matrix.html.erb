@@ -2,8 +2,8 @@
 
 <%= render 'pasta_sauces/index_selector' %>
 <%
-    @pastas =  PastaSauce.all.map{|x| x.pasta}.uniq.sort
-    @sauces =  PastaSauce.all.map{|x| x.sauce}.uniq.sort
+    @pastas =  @passta_sauces_cached.map{|x| x.pasta}.uniq.sort
+    @sauces =  @passta_sauces_cached.map{|x| x.sauce}.uniq.sort
 %>
 
 <table border="1">

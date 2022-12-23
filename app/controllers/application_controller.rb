@@ -3,6 +3,12 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   #before_action :authenticate_user!
 
+  # https://stackoverflow.com/questions/4187985/display-page-load-time-in-rails-3
+  before_action :set_start_time
+  def set_start_time
+    @start_time = Time.now.to_f
+  end
+
   protected
 
   # https://stackoverflow.com/questions/37341967/rails-5-undefined-method-for-for-devise-on-line-devise-parameter-sanitizer

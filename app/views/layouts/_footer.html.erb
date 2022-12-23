@@ -12,4 +12,7 @@
         <%= ENV.fetch 'DESCRIPTION', 'No ENV[DESCRIPTION] provided 😌'  %><br/>
         <%= ENV.fetch 'MESSAGGIO_OCCASIONALE', 'No ENV[MESSAGGIO_OCCASIONALE] provided 😌'  %>
       </div>
+      Page Rendered in <%= sprintf('%.3f', (Time.now.to_f - @start_time) ) %> seconds
     </div>
+
+

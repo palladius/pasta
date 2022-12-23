@@ -11,6 +11,8 @@ class PastaSaucesController < ApplicationController
     index
   end
   def index_matrix
+    @passta_sauces_cached = PastaSauce.all
+    # I have a feeling I can do better and already get ALL the pasta instead of getting shitloads of single ones.
     index
   end
 
