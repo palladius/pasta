@@ -1,6 +1,9 @@
 <div align='center' class='pasta_entities' >
-  [<% ApplicationHelper::PastaModels.each{ |entity| %>
+  [
+<% ApplicationHelper::PastaModels.each{ |entity| %>
 	<%= entity.emoji rescue '⚠️' %>
-	<%= link_to( entity.to_s.tableize, "/" + entity.to_s.tableize ) %>
-  <% } %>]
+	  <%= link_to( entity.to_s.tableize, "/" + entity.to_s.tableize ) %>
+  <% } %>
+  | <%= link_to( "👀 About", '/welcome/about' ) %>
+]
 </div>

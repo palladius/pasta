@@ -15,6 +15,8 @@ gem 'bootstrap', '~> 5.2.2'
 gem 'activerecord-spanner-adapter'
 # to get password from spanner from .envrc
 gem 'dotenv-rails'
+# to get Markdown to HTML in one specific page (will uninsyall at the first problem!)
+gem 'commonmarker'
 ############
 
 

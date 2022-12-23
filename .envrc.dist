@@ -4,6 +4,7 @@
 ################################
 # Activate: direnv allow .
 ################################
+ENVRC_VERSION="0.2_20221223"
 
 # this is PRIVATE and not publicly available :)
 GOOGLE_APPLICATION_CREDENTIALS='TODO'

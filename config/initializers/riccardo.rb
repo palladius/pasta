@@ -1,3 +1,8 @@
+require 'dotenv'
+
+# if it fails, probably this jeopardiozes production..
+# TODO(ricc): take action if it fails or not.
+DotEnvLoadedOk = Dotenv.load('.envrc')
 
 
 Rails.application.configure do
@@ -26,6 +31,5 @@ ENV_EMOJI = (Rails.env == 'production' ? '🌳' : '👷‍♂️') # 🚧⚠️
 
 # butstrap da manuale: https://github.com/twbs/bootstrap-rubygem
 Rails.application.config.assets.precompile += %w(bootstrap.js popper.js)
-
 
 

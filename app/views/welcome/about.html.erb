@@ -1,0 +1,22 @@
+
+<h1>👀 About this app</h1>
+
+
+<p>
+    Pasta App was born on a grey and uggy saturday morning in Dublin, after I reailzed that outside of Italy not everyone
+knows the dogmas of pasta association.
+    </p>
+
+
+<h2>DB info</h2>
+
+<li>DB Adapter: <b><%=  Rails.configuration.database_configuration[Rails.env]['adapter'] %></b>
+<li>DB Name: <b><%=  Rails.configuration.database_configuration[Rails.env]['database'] %></b>
+
+<!--
+<h2>CHANGELOG</h2>
+-->
+<%
+require 'commonmarker'
+%>
+<%= CommonMarker.render_html(File.read('./CHANGELOG.md')).html_safe %>

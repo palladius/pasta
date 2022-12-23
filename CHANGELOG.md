@@ -1,9 +1,10 @@
 # CHANGELOG
 
-TODO(ricc): import this to Rails once you learn how to move MD to HTML (should be super easy).
+Note this file is also available under the `/welcome/about` route.
 
 ```
-2022-11-29 ricc 0.11.10 BEtter README. Added `Cloud Spanner` gem
+2022-12-23 ricc 0.11.11 Changelog is now reality!
+2022-12-23 ricc 0.11.10 Better README. Added `Cloud Spanner` gem
 2022-11-29 ricc 0.11.9 revamped pasta page
 2022-11-29 ricc 0.11.8 adding new pastas/sauces
 2022-11-29 ricc 0.11.7 fixed routing issue. Added code below

@@ -11,77 +11,77 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_11_24_205458) do
-  create_table "events", force: :cascade do |t|
+  create_table "events", id: { limit: 8 }, force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.time "created_at", null: false
+    t.time "updated_at", null: false
   end
 
-  create_table "ingredient_sauces", force: :cascade do |t|
-    t.boolean "necessary", default: true
-    t.integer "sauce_id"
-    t.integer "ingredient_id"
-    t.text "notes"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "ingredient_sauces", id: { limit: 8 }, force: :cascade do |t|
+    t.boolean "necessary"
+    t.integer "sauce_id", limit: 8
+    t.integer "ingredient_id", limit: 8
+    t.string "notes"
+    t.time "created_at", null: false
+    t.time "updated_at", null: false
   end
 
-  create_table "ingredients", force: :cascade do |t|
+  create_table "ingredients", id: { limit: 8 }, force: :cascade do |t|
     t.string "name"
-    t.text "description"
+    t.string "description"
     t.string "tags"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.time "created_at", null: false
+    t.time "updated_at", null: false
     t.string "emoji"
   end
 
-  create_table "pasta_sauces", force: :cascade do |t|
-    t.boolean "appropriate", default: true
-    t.integer "vote", default: 50
-    t.text "notes"
-    t.integer "pasta_id"
-    t.integer "sauce_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["pasta_id"], name: "index_pasta_sauces_on_pasta_id"
-    t.index ["sauce_id"], name: "index_pasta_sauces_on_sauce_id"
+  create_table "pasta_sauces", id: { limit: 8 }, force: :cascade do |t|
+    t.boolean "appropriate"
+    t.integer "vote", limit: 8
+    t.string "notes"
+    t.integer "pasta_id", limit: 8
+    t.integer "sauce_id", limit: 8
+    t.time "created_at", null: false
+    t.time "updated_at", null: false
+    t.index ["pasta_id"], name: "index_pasta_sauces_on_pasta_id", order: { pasta_id: :asc }
+    t.index ["sauce_id"], name: "index_pasta_sauces_on_sauce_id", order: { sauce_id: :asc }
   end
 
-  create_table "pastas", force: :cascade do |t|
+  create_table "pastas", id: { limit: 8 }, force: :cascade do |t|
     t.string "name"
-    t.text "description"
-    t.boolean "active", default: true
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "description"
+    t.boolean "active"
+    t.time "created_at", null: false
+    t.time "updated_at", null: false
     t.string "emoji"
   end
 
-  create_table "sauces", force: :cascade do |t|
+  create_table "sauces", id: { limit: 8 }, force: :cascade do |t|
     t.string "name"
-    t.text "description"
-    t.boolean "active", default: true
-    t.string "color", default: "rosso"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "description"
+    t.boolean "active"
+    t.string "color"
+    t.time "created_at", null: false
+    t.time "updated_at", null: false
     t.string "emoji"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
+  create_table "users", id: { limit: 8 }, force: :cascade do |t|
+    t.string "email", null: false
+    t.string "encrypted_password", null: false
     t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
+    t.time "reset_password_sent_at"
+    t.time "remember_created_at"
     t.string "name"
-    t.string "likes", default: "chocolate, salmon, @meat"
-    t.string "dislikes", default: "@vegetables, @tin_tuna"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.boolean "admin", default: false, null: false
+    t.string "likes"
+    t.string "dislikes"
+    t.time "created_at", null: false
+    t.time "updated_at", null: false
+    t.boolean "admin", null: false
     t.string "username"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["username"], name: "index_users_on_username", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, order: { email: :asc }
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, order: { reset_password_token: :asc }
+    t.index ["username"], name: "index_users_on_username", unique: true, order: { username: :asc }
   end
 
 end
