@@ -3,7 +3,7 @@
 Note this file is also available under the `/welcome/about` route.
 
 ```
-2022-12-23 ricc 0.11.11 Changelog is now reality!
+2022-12-23 ricc 0.11.11 Changelog is now reality! Added page rendering. Moved Spanner to **PROD**.
 2022-12-23 ricc 0.11.10 Better README. Added `Cloud Spanner` gem
 2022-11-29 ricc 0.11.9 revamped pasta page
 2022-11-29 ricc 0.11.8 adding new pastas/sauces

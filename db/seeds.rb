@@ -22,7 +22,8 @@ class Array
 end
 
 SEED_VER = '1.4-20221124'
-DESTROY_ALL_BEFORE_SEEDING = true
+#DESTROY_ALL_BEFORE_SEEDING = false # in PROD to Spanner we shouldnt do this :) In dev we should..
+DESTROY_ALL_BEFORE_SEEDING = Rails.env <> 'production'
 
 BAD_CONDIMENTS = [
   %w{spaghetti      bolognese us_carbonara }, # 🤢 Seriously you had finished all tagliatelle, fusilli, and penne in the house?!?
@@ -139,11 +140,11 @@ INGREDIENTS_WITH_EMOJI = {
   :tomato_sauce => ['vegetable', '🥫'], #
   :corn         => ['vegetable, illegal_with_pasta', '🌽'],
 
-
   :pinenuts => ['nuts','🥜'],
   :peanuts => ['nuts','🥜'],
   #:pine_nuts => ['nuts','🥜'],
 
+  # FISH
   :fresh_tuna   => ['fish', '🍣'], #
   :tin_tuna     => ['fish', '🐟'],
   :octopus      => ['fish', '🐙'], #
@@ -155,6 +156,9 @@ INGREDIENTS_WITH_EMOJI = {
   :wine         => ['alcohol', '🍷'],
   :red_wine     => ['alcohol', '🍷'],
   :white_wine   => ['alcohol', '🥂'],
+
+  # weird
+  :truffle       => ['vegetable', '🍄'],
 }
 
 INGREDIENT_SAUCES = {
@@ -165,7 +169,7 @@ INGREDIENT_SAUCES = {
   :sorrentina => %w{ mozzarella pomodoro },
   :pesto => %w{ basil oil pinenuts parmigiano },
   :norma => %w{ melanzane pomodoro ricotta }, # https://it.wikipedia.org/wiki/Pasta_alla_Norma
-
+  :burro_e_tartufo => %w{ butter truffle },
 }
 
 # TODO(ricc): add this anecdotal in find_or_create.. by adding this to the info and surfacing the info in the matrix with a comicbook

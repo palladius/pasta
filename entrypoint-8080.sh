@@ -42,7 +42,7 @@ if printenv RAILS_ENV | grep -q production ; then
         rm tmp/pids/server.pid
     fi
 
-    #RAILS_ENV=production pleonastic :) 
+    #RAILS_ENV=production pleonastic :)
     rails assets:precompile
     #source .env # Nope, already done my friend.
     #source .env
@@ -57,7 +57,8 @@ if printenv RAILS_ENV | grep -q production ; then
     # You can always call CMD "bundle install && bundle exec rake db:migrate" no wait you cant
     #bundle install
     rake tmp:clear # https://github.com/rails/sprockets-rails/issues/458
-    bundle exec rake db:migrate db:seed
+    #bundle exec rake db:migrate db:seed
+    bundle exec rake db:migrate # no db:seed in prod..
 
     #bundle exec rails s -b 0.0.0.0 -p $MYPORT
 else

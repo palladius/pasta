@@ -3,17 +3,52 @@ class PastaSaucesController < ApplicationController
 
   # GET /pasta_sauces
   def index
-    @pasta_sauces = PastaSauce.all
+    @pasta_sauces ||= PastaSauce.all
   end
 
   # These are just two VIEW variants if index()...
   def index_boring
-    index
+    @pasta_sauces ||= PastaSauce.all
   end
   def index_matrix
-    @passta_sauces_cached = PastaSauce.all
+    @pasta_sauces_cached = slow_result_ps # PastaSauce.all
+    @pastas = slow_result_pastas # Pasta.all #  @pasta_sauces_cached.map{|x| x.pasta}.uniq.sort
+    @sauces = slow_result_sauces # Sauce.all #  @pasta_sauces_cached.map{|x| x.sauce}.uniq.sort
     # I have a feeling I can do better and already get ALL the pasta instead of getting shitloads of single ones.
-    index
+    #pasta_slow_results
+  end
+  # def old_index_matrix
+  #   @pasta_sauces_cached = PastaSauce.all
+  #   @pastas =  @pasta_sauces_cached.map{|x| x.pasta}.uniq.sort
+  #   @sauces =  @pasta_sauces_cached.map{|x| x.sauce}.uniq.sort
+  #   # I have a feeling I can do better and already get ALL the pasta instead of getting shitloads of single ones.
+  #   index
+  # end
+
+
+  # # https://sean-handley.medium.com/one-second-page-loads-with-rails-ffb1ba4aa19f
+  # def pasta_slow_results
+  #   Rails.cache.fetch("slow_api_results", expires_in: 10.minutes) do
+  #   #  slow_api_call
+  #     @pasta_sauces_cached = PastaSauce.all
+  #     @pastas =  @pasta_sauces_cached.map{|x| x.pasta}.uniq.sort
+  #     @sauces =  @pasta_sauces_cached.map{|x| x.sauce}.uniq.sort
+  #   end
+  # end
+  def slow_result_ps
+    Rails.cache.fetch("slow_all_pastasauces", expires_in: 10.minutes) do
+      PastaSauce.all
+    end
+  end
+  def slow_result_pastas
+    Rails.cache.fetch("slow_all_pastas", expires_in: 10.minutes) do
+      Pasta.all
+    end
+  end
+  def slow_result_sauces
+    Rails.cache.fetch("slow_all_sauces", expires_in: 10.minutes) do
+      Sauce.all # @pasta_sauces_cached.map{|x| x.sauce}.uniq.sort
+    end
   end
 
   # GET /pasta_sauces/1
