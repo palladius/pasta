@@ -11,12 +11,17 @@ knows the dogmas of pasta association.
 <h2>DB info</h2>
 
 <li>DB Adapter: <b><%=  Rails.configuration.database_configuration[Rails.env]['adapter'] %></b>
-<li>DB Name: <b><%=  Rails.configuration.database_configuration[Rails.env]['database'] %></b>
+<li>DB Name: <b><%=  Rails.configuration.database_configuration[Rails.env]['database'] %></b></li>
+
+Spannometric DB Size: 
+
+<li># Pastas: <b><%= Pasta.all.count %></b>
+<li># Sauces: <b><%= Sauce.all.count %></b>
+<li># Pastas/Sauces (martrix): <b><%=  PastaSauce.all.count %></b>
+
 
 <!--
-<h2>CHANGELOG</h2>
+    <h2>CHANGELOG</h2>
 -->
-<%
-require 'commonmarker'
-%>
+<% require 'commonmarker' %>
 <%= CommonMarker.render_html(File.read('./CHANGELOG.md')).html_safe %>

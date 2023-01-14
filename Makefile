@@ -25,9 +25,8 @@ macosx-docker-build:
 
 # https://www.docker.com/blog/faster-multi-platform-builds-dockerfile-cross-compilation-guide/
 docker-push: docker-build
+	# apologies this is a Riccardo only problem. 
 	echo WARNING If you are on a arm64 Mac you will push BAD docker... FIXME.
-	#exit 42
-	#Note this is a ricc only problem apologies everyone else..
 	uname | grep Linux && echo 'OK Linux no probs of my Mac weird cross compiling.'
 	# push latest version
 	docker tag pasta-ror7:v$(VERSION) palladius/pastang:v$(VERSION)
