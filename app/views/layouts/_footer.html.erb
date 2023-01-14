@@ -1,18 +1,27 @@
-    <div class="container bg-white border pb-3">
+
+
+<div class="container bg-white border pb-3  " >
       <%= render :partial => "layouts/model_links" %>
-      <div class="alert alert-warning" >
+      <div class="alert alert-warning" align='center'  >
         <%= image_tag 'logo.png', class: 'img-fluid' %>
         <b><%= FANCY_APP_NAME %></b>
         v<b><%= APP_VERSION rescue :NoAppVersion %></b>
         (<%= ENV_EMOJI %><%= ENV.fetch 'RAILS_ENV', :NoRailsEnvWtf %>)
         @ 💻 <tt><%= Socket.gethostname %></tt>
         😺 <tt><a href="https://github.com/palladius/pasta" >palladius/pasta</a></tt>
+        <br/>
+        <!-- https://getbootstrap.com/docs/5.0/content/typography/ -->
+        <small class="text-muted">
+          🤔 <%= APP_DESCRIPTION %>
+        </small> 
+
       </div>
       <div class="alert alert-primary" >
         <%= ENV.fetch 'DESCRIPTION', 'No ENV[DESCRIPTION] provided 😌'  %><br/>
         <%= ENV.fetch 'MESSAGGIO_OCCASIONALE', 'No ENV[MESSAGGIO_OCCASIONALE] provided 😌'  %>
       </div>
-      Page Rendered in <%= sprintf('%.3f', (Time.now.to_f - @start_time) ) %> seconds
+      Page Rendered in <b><%= sprintf('%.3f', (Time.now.to_f - @start_time) ) %></b> seconds. 
+      Who said Ruby was slow?!? 🐷
     </div>
 
 

@@ -20,8 +20,11 @@ Rails.application.configure do
 
 end
 
+DefaultAppDescripotion = 'This is a Pasta application to teach non-italians how to associarte a certaion Pasta to a certain sauce. And,  most im portantly, how to do it WRONG'
+
 APP_NAME = 'Pasta DoneWell'
 APP_NAME_WITH_EMOJI = "🍝#{APP_NAME}"
+APP_DESCRIPTION = ENV.fetch 'APP_DESCRIPTION', DefaultAppDescripotion
 FANCY_APP_NAME = "#{APP_NAME_WITH_EMOJI} 💎7 (TM)"
 
 APP_VERSION = File.read("#{Rails.root}/VERSION").chomp
