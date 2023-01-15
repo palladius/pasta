@@ -10,9 +10,15 @@
   </p>
 
   <p>
-    <strong>Best with:</strong>
+    <strong>⭐️ Best with:</strong>
     <%= render_most_appropriate_pasta_for_sauce(sauce) %>
   </p>
+
+  <h2>👍 Goes with (if any)</h2>
+
+  <% PastaSauce.where(sauce_id: sauce.id ).each do |ps|  %>
+   -  <%= link_to ps,ps %><br/>
+  <% end %>
 
   <h2>🛒 Ingredients (if any)</h2>
   <% @ingredients.each do |ingredient|  %>
