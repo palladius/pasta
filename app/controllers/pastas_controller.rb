@@ -4,6 +4,7 @@ class PastasController < ApplicationController
   # GET /pastas
   def index
     @pastas = Pasta.all
+    #@pastas = Pasta.where(active: false)
   end
 
   # GET /pasta/1

@@ -23,11 +23,10 @@ test:
 
 production:
   adapter: "spanner"
-  project: <%= ENV.fetch("GOOGLE_SPANNER_PROJECT") %>
-  instance: <%= ENV.fetch("GOOGLE_SPANNER_INSTANCE") %>
+  project: <%= ENV.fetch("GOOGLE_SPANNER_PROJECT", 'spanner-project-unset') %>
+  instance: <%= ENV.fetch("GOOGLE_SPANNER_INSTANCE", 'spanner-instance-unset') %>
   #credentials: "<google credentails file path>"
-  #database: pastang2023-gsql
-  database:  <%= ENV.fetch("GOOGLE_SPANNER_DATABASE") %>
+  database:  <%= ENV.fetch("GOOGLE_SPANNER_DATABASE", 'spanner-database-unset') %>
 
 # https://cloud.google.com/blog/topics/developers-practitioners/scale-your-ruby-applications-active-record-support-cloud-spanner
 

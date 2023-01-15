@@ -3,7 +3,9 @@ class SaucesController < ApplicationController
 
   # GET /sauces
   def index
-    @sauces = Sauce.all
+    #@sauces = Sauce.all
+    @sauces =  Sauce.where(active: true)
+
   end
 
   # GET /sauces/1

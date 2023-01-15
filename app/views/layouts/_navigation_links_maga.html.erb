@@ -7,7 +7,10 @@
     <%= link_to "#{Pasta.emoji} Pastas", pastas_path, class: 'nav-link' %>
   </li>
   <li class="nav-item">
-  <%= link_to "#{Sauce.emoji} Pasta/Sauces", pasta_sauces_path, class: 'nav-link' %>
+    <%= link_to "#{Sauce.emoji} Sauces", sauces_path, class: 'nav-link' %>
+  </li>
+  <li class="nav-item">
+  <%= link_to "#{Sauce.emoji} Pasta+Sauces", pasta_sauces_path, class: 'nav-link' %>
   </li>
   <li class="nav-item">
   <%= link_to "#{Ingredient.emoji} Ingredients", ingredients_path, class: 'nav-link' %>
@@ -18,7 +21,7 @@
 
 
   <!--
-    
+
   Riccardo: Maybe I can put this BELOW on footer side..
 
   <li class="nav-item">
@@ -39,11 +42,11 @@
 
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <!-- 🧑‍🦱 User --> 
+      <!-- 🧑‍🦱 User -->
       <%= render_user_salutation_short() %>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-      <!-- 
+      <!--
         <a class="dropdown-item" href="#">Action</a>
         <a class="dropdown-item" href="#">Another action</a>
         <a class="dropdown-item" href="#">Something else here</a>
@@ -67,4 +70,3 @@
     <input class="form-control mr-sm-2" type="search" placeholder="Bucatini" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>
-  

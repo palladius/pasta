@@ -12,6 +12,9 @@ class Sauce < ApplicationRecord
 
   has_many :ingredients
   validates_uniqueness_of :name, :message => "must be unique"
+  #has_one :pasta, :trough => :most_appropriate_pasta_id
+  belongs_to :pasta, :foreign_key => :most_appropriate_pasta_id, optional: true
+
 
   def to_html()
     "<font color='#{smart_color}' >#{to_s}</font>\n"
@@ -64,6 +67,11 @@ class Sauce < ApplicationRecord
 
   def view_permitted?(field)
     true
+  end
+
+  def best_with()
+    #Pasta.first rescue nil
+    self.pasta
   end
 
   def self.emoji

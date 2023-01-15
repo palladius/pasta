@@ -3,18 +3,22 @@
 <table class='table'>
   <thead>
     <th>Name</th>
+    <th>best_with</th>
     <th>Description</th>
-    <th>Active</th>
-    
+
     <th colspan=3>Actions</th>
   </thead>
   <tbody>
     <% @sauces.each do |sauce| %>
       <tr>
         <td><%= sauce.name %></td>
+        <td>
+          <%#= link_to sauce.best_with,sauce.best_with %>
+        <%= render_most_appropriate_pasta_for_sauce(sauce) %>
+
+        </td>
         <td><%= sauce.description %></td>
-        <td><%= sauce.active %></td>
-      
+
         <td><%= link_to "Show", sauce_path(sauce) %></td>
         <td><%= link_to "Edit", edit_sauce_path(sauce) %></td>
         <td>

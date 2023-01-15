@@ -23,7 +23,7 @@ end
 
 SEED_VER = '1.4-20221124'
 #DESTROY_ALL_BEFORE_SEEDING = false # in PROD to Spanner we shouldnt do this :) In dev we should..
-DESTROY_ALL_BEFORE_SEEDING = Rails.env <> 'production'
+DESTROY_ALL_BEFORE_SEEDING = Rails.env != 'production'
 
 BAD_CONDIMENTS = [
   %w{spaghetti      bolognese us_carbonara }, # 🤢 Seriously you had finished all tagliatelle, fusilli, and penne in the house?!?
@@ -93,6 +93,7 @@ GOOD_CONDIMENTS = [
   %w{ strozzapreti    cinghiale pesto ragu }, # removed canocchie to simplify
   %w{ tagliatelle    bolognese funghi gamberetti_zucchine nero_di_seppia panna_funghi prosciutto burro_e_tartufo }, # http://it.wikipedia.org/wiki/Tagliatelle
   %w{ tagliolini     scoglio gamberetti_zucchine nero_di_seppia panna_funghi burro_e_tartufo salmone },
+  %w{ tonnarelli     cacio_e_pepe carbonara }, # sinonimo di spaghetti alla chitarra https://it.wikipedia.org/wiki/Spaghetti_alla_chitarra
   %w{ tortellini     brodo panna },
   %w{ tortelloni     pomodoro burro_salvia },
  ]
@@ -179,6 +180,30 @@ ANECDOTAL_INFORMATION = [
   [:spaghetti, :bolognese, "💭 This is as insulting to Italians as Pineapple on pizza. Some sites to prove this: http://146.148.31.85/joomla/index.php?option=com_content&view=article&id=177:spaghetti-bolognese-dont-exist&catid=30:english-contents&Itemid=67 and https://www.italymammamia.com/spaghetti-bolognese-does-not-exist-in-italy.html and https://www.insider.com/spaghetti-bolognese-does-not-exist-says-mayor-of-bologna-italy-2019-3#:~:text=Rather%20than%20%22spaghetti%20bolognese%2C%22,their%20equivalent%20meat%2Dbased%20sauce.&text=However%20it's%20rarely%20served%20with,the%20sauce%2C%20such%20as%20tagliatelle"],
   [:tagliatelle, :bolognese, "This is the most typical way to use Ragu Bolognese as a pasta in Bologna: homemade egg tagliatelle! Did you know Emilia is famous for egg pasta with distinct yellow color? google 'Emiliane Barilla' if you dont believe me"],
   [:risotto, :carbonara, "I recently learnt this is also ok: https://blog.giallozafferano.it/pippicalzina/risotto-alla-carbonara/"]
+]
+
+# Best pasta for a certain sauce (note thaty I havent modelled the best sauce for a certain pasta yet. Sounds arrogant to me)
+# Note that first I should have the sauce, buts its more readabale the other way around (at least for italian genitives).
+# So its f(2) = 1.
+BEST_WITH = [
+  %w{bigoli luganega},
+  %w{trenette pesto},
+  %w{tagliatelle bolognese},
+  %w{tagliatelle ragu},
+  %w{bucatini amatriciana},
+  %w{spaghetti carbonara},
+  %w{rigatoni gricia}, # Or MEzzeManiche: https://www.casapappagallo.it/ricette/gricia or rigatoni https://www.tavolartegusto.it/ricetta/pasta-alla-gricia/
+  %w{gramigna salsiccia},
+  %w{risotto  zafferano},
+  %w{tonnarelli cacio_e_pepe},
+  #  Norma -<> Maccheroni: https://it.wikipedia.org/wiki/Pasta_alla_Norma, sedani: https://ricette.giallozafferano.it/Spaghetti-alla-Norma.html
+  %w{rigatoni norma}, # https://fooby.ch/it/ricette/21710/pasta-alla-norma-?startAuto1=0 and https://www.cucchiaio.it/ricetta/ricetta-pasta-norma/
+  %w{penne quattro_formaggi},
+  %w{tagliolini salmone},
+  %w{gnocchi        sorrentina},
+  %w{rigatoni zozzona}, # https://ricette.giallozafferano.it/Pasta-alla-zozzona.html + https://www.cucchiaio.it/ricetta/pasta-alla-zozzona/ + https://a-modo-mio.it/pasta-alla-zozzona/
+  %w{spaghetti scoglio},
+] %w{spaghetti puttanesca},
 ]
 
   # check everything is ok
@@ -303,6 +328,13 @@ ANECDOTAL_INFORMATION.each do |pasta_sym, sauce_sym, anecdote|
   end
 end
 
+BEST_WITH.each do |pasta_sym, sauce_sym|
+  p = Pasta.find_by_name(pasta_sym.to_s)
+  s = Sauce.find_by_name(sauce_sym.to_s)
+  s.pasta = p
+  s.save
+end
+
 # Sample events. what I think its in the name :)
 Event.new(name: 'Why the hell did I add events to a Pasta app?!?').save
 
@@ -310,4 +342,4 @@ Event.new(name: 'Why the hell did I add events to a Pasta app?!?').save
 User.create(:name => 'ste' , :email => 'ste@example.com' , :likes => 'muller_thurgau', :dislikes => '@cheese' )
 User.create(:name => 'ric' , :email => 'ric@example.com' , :likes => 'chocolate, salmon', :dislikes => '@vegetable' )
 
-puts "All done 2022"
+puts "👍 All done 2023"
