@@ -12,11 +12,13 @@ gem 'devise'
 gem 'bootstrap', '~> 5.2.2'
 #gem 'jquery-rails'           # I believe this is useless
 # Lets get Spanner to work with Pasta!
-gem 'activerecord-spanner-adapter'
+#gem 'activerecord-spanner-adapter'
 # to get password from spanner from .envrc
 gem 'dotenv-rails'
 # to get Markdown to HTML in one specific page (will uninsyall at the first problem!)
 gem 'commonmarker'
+# paination, like will_paginate but still maintained :) https://github.com/kaminari/kaminari
+gem 'kaminari'
 ############
 
 

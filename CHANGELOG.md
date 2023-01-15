@@ -3,7 +3,8 @@
 Note this file is also available under the `/welcome/about` route.
 
 ```
-2023-01-14 ricc 0.11.12 Added some CSS color to the footer. Updated my linux workstgation on aspirina. 
+2023-01-15 ricc 0.11.13 Added `kamniari` for pagination, plus introducing the concept of BEST pasta for a certain sauce
+2023-01-14 ricc 0.11.12 Added some CSS color to the footer. Updated my linux workstgation on aspirina.
 2022-12-23 ricc 0.11.11 Changelog is now reality! Added page rendering. Moved Spanner to **PROD**.
 2022-12-23 ricc 0.11.10 Better README. Added `Cloud Spanner` gem
 2022-11-29 ricc 0.11.9 revamped pasta page
