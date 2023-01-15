@@ -25,8 +25,7 @@
             <td>
                 <%#= PastaSauce.find_all_by_pasta_and_sauce(pasta, sauce) %>
                 <%#= render_matrix_cell PastaSauce.where(:pasta => pasta,:sauce => sauce).first %>
-                <%= cell_pasta_sauce(pasta, sauce) %>
-
+                <%= matrix_cell_pasta_sauce(pasta, sauce) %>
             </td>
         <% end %>
         </tr>

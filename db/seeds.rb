@@ -200,11 +200,14 @@ BEST_WITH = [
   %w{rigatoni norma}, # https://fooby.ch/it/ricette/21710/pasta-alla-norma-?startAuto1=0 and https://www.cucchiaio.it/ricetta/ricetta-pasta-norma/
   %w{penne quattro_formaggi},
   %w{tagliolini salmone},
-  %w{gnocchi        sorrentina},
+  %w{gnocchi sorrentina},
   %w{rigatoni zozzona}, # https://ricette.giallozafferano.it/Pasta-alla-zozzona.html + https://www.cucchiaio.it/ricetta/pasta-alla-zozzona/ + https://a-modo-mio.it/pasta-alla-zozzona/
   %w{spaghetti scoglio},
   %w{spaghetti puttanesca},
-  %w{spaghetti aglio_oglio},
+  %w{spaghetti aglio_olio},
+  %w{ garganelli  boscaiola },
+  %w{ tagliolini burro_e_tartufo },
+
 ]
 
   # check everything is ok
@@ -330,6 +333,7 @@ ANECDOTAL_INFORMATION.each do |pasta_sym, sauce_sym, anecdote|
 end
 
 BEST_WITH.each do |pasta_sym, sauce_sym|
+  puts "Associating #{pasta_sym} tpo #{sauce_sym}: "
   p = Pasta.find_by_name(pasta_sym.to_s)
   s = Sauce.find_by_name(sauce_sym.to_s)
   s.pasta = p

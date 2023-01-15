@@ -39,12 +39,18 @@ class PastaSauce < ActiveRecord::Base
     self.notes =~ /^💭/
   end
 
+  def best_pasta_for_this_sauce?
+    self.sauce.pasta == self.pasta # most appropriate combo for that sauce
+  end
+
   def appropriate_emoji
     if anecdote_present?
       return appropriate ? '💭👍' : '💭🤮'
     end
     # appropriate ? '👍' : '⛔️'
-    appropriate ? '👍' : '🤮'
+    ret = appropriate ? '👍' : '🤮'
+    ret += '⭐️' if best_pasta_for_this_sauce?
+    ret
   end
 
   def to_html
