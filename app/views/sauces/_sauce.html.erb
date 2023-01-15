@@ -10,8 +10,8 @@
   </p>
 
   <p>
-    <strong>Active:</strong>
-    <%= sauce.active %>
+    <strong>Best with:</strong>
+    <%= render_most_appropriate_pasta_for_sauce(sauce) %>
   </p>
 
   <h2>🛒 Ingredients (if any)</h2>

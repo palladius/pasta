@@ -203,7 +203,8 @@ BEST_WITH = [
   %w{gnocchi        sorrentina},
   %w{rigatoni zozzona}, # https://ricette.giallozafferano.it/Pasta-alla-zozzona.html + https://www.cucchiaio.it/ricetta/pasta-alla-zozzona/ + https://a-modo-mio.it/pasta-alla-zozzona/
   %w{spaghetti scoglio},
-] %w{spaghetti puttanesca},
+  %w{spaghetti puttanesca},
+  %w{spaghetti aglio_oglio},
 ]
 
   # check everything is ok
