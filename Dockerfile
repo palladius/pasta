@@ -54,8 +54,10 @@ RUN bundle config set --local path 'vendor/bundle'
 # COPY --from=gem-cache /usr/local/bundle /usr/local/bundle
 # TODO cache also this https://blog.saeloun.com/2022/07/12/docker-cache.html
 # RUN --mount=type=cache,target=/usr/local/bundle \
-RUN echo Riccardo add cache here too. neded to catch train
-RUN bundle install
+#RUN echo Riccardo add cache here too. neded to catch train
+#RUN bundle install
+RUN --mount=type=cache,target=/opt/pasta/vendor/bundle  \
+   bundle install
 # or try: RUN bundle check || bundle install
 # Then I add the rest
 ADD . $APP_HOME

@@ -73,7 +73,7 @@ GOOD_CONDIMENTS_WORLDWIDE = {
 }
 
 GOOD_CONDIMENTS = [
-  %w{ agnolotti      burro_salvia bolognese brodo }, # http://it.wikipedia.org/wiki/Agnolotti_piemontesi
+  %w{ agnolotti      burro_e_salvia bolognese brodo }, # http://it.wikipedia.org/wiki/Agnolotti_piemontesi
   %w{ bucatini       amatriciana pomodoro },
   %w{ bigoli         luganega },
   #%w{ chitarre       caspio }, # caviar and beans, only my mum knows...
@@ -87,6 +87,7 @@ GOOD_CONDIMENTS = [
   %w{ paccheri       bolognese }, # http://it.wikipedia.org/wiki/Paccheri
   %w{ pappardelle    bolognese cinghiale boscaiola funghi } ,  # http://it.wikipedia.org/wiki/Pappardelle
   %w{ penne          aglio_olio amatriciana bolognese norma piselli puttanesca quattro_formaggi radicchio  } ,
+  %w{ ravioli        burro_e_salvia quattro_formaggi pomodoro } ,
   %w{ rigatoni       norma gricia bolognese boscaiola carbonara zozzona } ,
   %w{ risotto        carbonara funghi zafferano frutti_di_mare },
   %w{ spaghetti      aglio_olio amatriciana carbonara nero_di_seppia norma pesto pomodoro puttanesca scoglio tonno frutti_di_mare },
@@ -95,7 +96,7 @@ GOOD_CONDIMENTS = [
   %w{ tagliolini     scoglio gamberetti_zucchine nero_di_seppia panna_funghi burro_e_tartufo salmone },
   %w{ tonnarelli     cacio_e_pepe carbonara }, # sinonimo di spaghetti alla chitarra https://it.wikipedia.org/wiki/Spaghetti_alla_chitarra
   %w{ tortellini     brodo panna },
-  %w{ tortelloni     pomodoro burro_salvia },
+  %w{ tortelloni     pomodoro burro_e_salvia },
  ]
 
 INGREDIENTS_WITH_EMOJI = {
@@ -201,12 +202,15 @@ BEST_WITH = [
   %w{penne quattro_formaggi},
   %w{tagliolini salmone},
   %w{gnocchi sorrentina},
-  %w{rigatoni zozzona}, # https://ricette.giallozafferano.it/Pasta-alla-zozzona.html + https://www.cucchiaio.it/ricetta/pasta-alla-zozzona/ + https://a-modo-mio.it/pasta-alla-zozzona/
-  %w{spaghetti scoglio},
-  %w{spaghetti puttanesca},
-  %w{spaghetti aglio_olio},
+  %w{ravioli      burro_e_salvia},
+  %w{rigatoni     zozzona}, # https://ricette.giallozafferano.it/Pasta-alla-zozzona.html + https://www.cucchiaio.it/ricetta/pasta-alla-zozzona/ + https://a-modo-mio.it/pasta-alla-zozzona/
+  %w{spaghetti    scoglio},
+  %w{spaghetti    puttanesca},
+  %w{spaghetti    aglio_olio},
   %w{ garganelli  boscaiola },
-  %w{ tagliolini burro_e_tartufo },
+  %w{ tagliolini  burro_e_tartufo },
+  %w{ tortellini  brodo },
+
 
 ]
 

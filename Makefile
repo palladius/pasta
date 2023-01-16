@@ -62,6 +62,10 @@ get-skaffold-pods:
 	echo Try also: ./test-app.sh
 	make test-apps
 
+# install gems locally -> will expedite the Dockerfile a balus!
+install:
+	bundle config set --local path 'vendor/bundle'
+	bundle install
 
 test-apps:
 	echo Testing load balancers
