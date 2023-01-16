@@ -167,9 +167,9 @@ INGREDIENT_SAUCES = {
   :us_carbonara => %w{ eggs bacon cream onions },
   :bolognese => %w{ tomato minced_meat wine onion carrots celery }, #someone puts milk
   :chicken => %w{ cream chicken },
-  :sorrentina => %w{ mozzarella pomodoro },
+  :sorrentina => %w{ mozzarella tomado },
   :pesto => %w{ basil oil pinenuts parmigiano },
-  :norma => %w{ melanzane pomodoro ricotta }, # https://it.wikipedia.org/wiki/Pasta_alla_Norma
+  :norma => %w{ melanzane tomado ricotta }, # https://it.wikipedia.org/wiki/Pasta_alla_Norma
   :burro_e_tartufo => %w{ butter truffle },
 }
 

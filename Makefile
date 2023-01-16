@@ -15,7 +15,7 @@ db-recreate-DANGEOURS:
 	./destroy-and-recreate.sh
 
 docker-build:
-	docker build -t pasta-ror7:v$(VERSION) .
+	DOCKER_BUILDKIT=1 docker build -t pasta-ror7:v$(VERSION) .
 
 docker-run: docker-build
 	docker run -it -p 8080:8080 pasta-ror7:v$(VERSION) ./entrypoint-8080.sh
@@ -25,7 +25,7 @@ macosx-docker-build:
 
 # https://www.docker.com/blog/faster-multi-platform-builds-dockerfile-cross-compilation-guide/
 docker-push: docker-build
-	# apologies this is a Riccardo only problem. 
+	# apologies this is a Riccardo only problem.
 	echo WARNING If you are on a arm64 Mac you will push BAD docker... FIXME.
 	uname | grep Linux && echo 'OK Linux no probs of my Mac weird cross compiling.'
 	# push latest version

@@ -4,9 +4,15 @@ FROM ruby:3.1.2-slim
 # HAs Ubumntu, ruby1.8, ... and I trust the guy who built it :P
 #FROM palladius/septober:v1.2
 
+# https://docs.docker.com/build/cache/
+# requires DOCKER_BUILDKIT=1
+# RUN \
+#     --mount=type=cache,target=/var/cache/apt \
+#     apt-get update && apt-get install -y git
 
-RUN apt-get update \
- && apt-get install -qq -y --no-install-recommends \
+RUN --mount=type=cache,target=/var/cache/apt \
+   apt-get update \
+   && apt-get install -qq -y --no-install-recommends \
     build-essential \
     nodejs \
     libpq-dev \
@@ -44,6 +50,11 @@ RUN gem install bundler
 # [DEPRECATED] The `--path` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set --local path 'vendor/bundle'`, and stop using this flag
 #RUN bundle install --path vendor/bundle
 RUN bundle config set --local path 'vendor/bundle'
+
+# COPY --from=gem-cache /usr/local/bundle /usr/local/bundle
+# TODO cache also this https://blog.saeloun.com/2022/07/12/docker-cache.html
+# RUN --mount=type=cache,target=/usr/local/bundle \
+RUN echo Riccardo add cache here too. neded to catch train
 RUN bundle install
 # or try: RUN bundle check || bundle install
 # Then I add the rest
