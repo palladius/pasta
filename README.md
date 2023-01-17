@@ -16,13 +16,12 @@ application up and running.
 ## New ideas
 
 * (From Roberto) do the same with france and UK (maybe a namespace): fish and chips.
-* [ricc] add emoji for every pasta and ingredients (default: 🍝)
 
 ## Dockerization
 
 I just fixed it. Try:
 
-```docker run -it -p 8080:8080 palladius/pastang:v0.5```
+```docker run -it -p 8080:8080 palladius/pastang:v$*(VERSION)```
 
 or something similar
 
