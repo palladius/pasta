@@ -15,7 +15,7 @@ db-recreate-DANGEOURS:
 	./destroy-and-recreate.sh
 
 docker-build:
-	DOCKER_BUILDKIT=1 docker build -t pasta-ror7:v$(VERSION) .
+	DOCKER_BUILDKIT=1 time docker build -t pasta-ror7:v$(VERSION) .
 
 docker-run: docker-build
 	docker run -it -p 8080:8080 pasta-ror7:v$(VERSION) ./entrypoint-8080.sh
