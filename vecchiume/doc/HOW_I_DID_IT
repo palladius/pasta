@@ -1,6 +1,0 @@
-== INSTALL
-
-
- script/generate hobo_model_resource pasta name:string description:text active:boolean
- # edito model mettendo bool a default true...
- ruby script/generate hobo_migration
