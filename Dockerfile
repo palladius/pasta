@@ -1,3 +1,13 @@
+#
+# 2023-01-17 Found about docker caching and it changed my life! https://blog.saeloun.com/2022/07/12/docker-cache.html
+#
+#
+#
+#
+#
+
+
+
 FROM ruby:3.1.2-slim
 #FROM ruby:3.1.2
 

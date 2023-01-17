@@ -51,7 +51,9 @@ if printenv RAILS_ENV | grep -q production ; then
     #    source .env.production
     #fi
     #https://www.digitalocean.com/community/tutorials/containerizing-a-ruby-on-rails-application-for-development-with-docker-compose
+    # 17jan23: gives issue https://github.com/gilbarbara/react-joyride/issues/131
     yarn install --check-files
+
 
     # Lets try to REMOVE them to make start FASTER.
     # You can always call CMD "bundle install && bundle exec rake db:migrate" no wait you cant
