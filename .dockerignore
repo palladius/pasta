@@ -6,8 +6,6 @@ vecchiume/
 # files
 docker-compose.yml
 BUGS.md
-CHANGELOG.md
 Makefile
-README.md
 # Security issue!
 .envrc
