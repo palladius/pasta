@@ -12,6 +12,7 @@ build:
       timezone: "Local"
   artifacts:
   - image: skaf-pasta-ror7
+#  - image: skpasta-dev
     docker:
       dockerfile: Dockerfile
 manifests:
@@ -69,6 +70,7 @@ profiles:
     - deploy/run/*.yaml
   deploy:
     cloudrun:
+      # TODO do a better job here to abstract projectid :)
       projectid: cicd-platinum-test032
       region: europe-west1
   # TODO when i figured out how to get programmatically the CloudRun URL :)

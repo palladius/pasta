@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: skpasta-dev
-        image: skaf-pasta-ror7 # skpasta-dev
+        image: skaf-pasta-ror7
         ports:
         - containerPort: 8080
         env:

@@ -213,6 +213,7 @@ BEST_WITH = [
 
   # Anything with TUNA: https://www.lacucinaitaliana.it/news/in-primo-piano/pasta-al-tonno-in-15-ricette/
   # Nero di seppia: depends on cuisine: sicily vs venezia https://it.wikipedia.org/wiki/Nero_di_seppia
+  #%w{ trofie pesto }, # I dont want to add trofie just for this..
 
 ]
 

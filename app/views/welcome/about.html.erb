@@ -13,7 +13,7 @@ knows the dogmas of pasta association.
 <li>DB Adapter: <b><%=  Rails.configuration.database_configuration[Rails.env]['adapter'] %></b>
 <li>DB Name: <b><%=  Rails.configuration.database_configuration[Rails.env]['database'] %></b></li>
 
-Spannometric DB Size: 
+Spannometric DB Size:
 
 <li># Pastas: <b><%= Pasta.all.count %></b>
 <li># Sauces: <b><%= Sauce.all.count %></b>
@@ -24,4 +24,4 @@ Spannometric DB Size:
     <h2>CHANGELOG</h2>
 -->
 <% require 'commonmarker' %>
-<%= CommonMarker.render_html(File.read('./CHANGELOG.md')).html_safe %>
+<%= CommonMarker.render_html(File.read(Rails.root + './CHANGELOG.md')).html_safe %>

@@ -77,3 +77,10 @@ verify: test-apps
 
 pulumi:
 	make -C pulumi/pastang/ up
+
+#####################################
+# Skaffold experiments
+#####################################
+
+skaffold-dev-local:
+	./skaffold-dev-local.sh

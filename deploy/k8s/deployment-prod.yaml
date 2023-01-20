@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: skpasta-prod
-        image: skaf-pasta-ror7 # skpasta-prod
+        image: skaf-pasta-ror7
         # command:
         # - "./entrypoint-8080.sh"
         env:
