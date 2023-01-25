@@ -16,6 +16,7 @@ Rails.application.configure do
   config.hosts << "localhost"
   config.hosts << "pastang-dev.palladi.us"
   config.hosts << "pastang.palladi.us"
+  config.hosts << /.*\.corp\.google\.com/
   config.hosts << /pasta.*\.palladi\.us/
 
 end
