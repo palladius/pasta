@@ -9,15 +9,22 @@
 # 3. try to activate as per above.
 # 4. Try now: echo $GOOGLE_APPLICATION_CREDENTIALS
 ################################
-ENVRC_VERSION="0.2_20221223"
+export ENVRC_VERSION="0.3_20230125"
 
 # this is PRIVATE and not publicly available :)
 # To create a GAC, see here: https://cloud.google.com/bigquery/docs/quickstarts/quickstart-client-libraries
-GOOGLE_APPLICATION_CREDENTIALS='path/to/local/project-key-hash.json'
+export GOOGLE_APPLICATION_CREDENTIALS='path/to/local/project-key-hash.json'
 
-GOOGLE_SPANNER_PROJECT='your-project-id'
-GOOGLE_SPANNER_INSTANCE='my-spanner-instance'
-GOOGLE_SPANNER_DATABASE='my-spanner-dbname'
+export GOOGLE_SPANNER_PROJECT='your-project-id'
+export GOOGLE_SPANNER_INSTANCE='my-spanner-instance'
+export GOOGLE_SPANNER_DATABASE='my-spanner-dbname'
 
 #nope - this is useless, not working :/
 #BUNDLE_PATH='vendor/envrc-bundle/'
+
+export DESCRIPTION='[CHANGEME] This is an awesome pasta app to teach you how to combine tagliatelle with best sauce.'
+export MESSAGGIO_OCCASIONALE='[CHANGEME] This is my default occasional message for my app'
+
+# https://skaffold.dev/docs/environment/image-registries/
+export KUBECTL_CONNECT_CMD='gcloud container clusters get-credentials CLUSTERNAME --zone ZOEN --project PROJECTID'
+export SKAFFOLD_DEFAULT_REPO="your-path-to-skaffold-repo"

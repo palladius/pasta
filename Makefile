@@ -39,6 +39,9 @@ find-interesting-changes:
 	echo These are things it took me a while to fix, and are important and hard to see changes..
 	rgrep Ric2022 .
 
+run-dev: 
+	rails s
+
 run-prod-directly:
 	RAILS_ENV=production \
 	 RICCARDO_SECRET_KEY_BASE=0a2780996c36bef4a8728d3676665a6f \
@@ -84,3 +87,11 @@ pulumi:
 
 skaffold-dev-local:
 	./skaffold-dev-local.sh
+
+
+run-latest-docker-prod: 
+	docker run -it -p 8080:8080 \
+		--env RAILS_ENV=production \
+		--env RICCARDO_SECRET_KEY_BASE=0a2780996c36bef4a8728d3676665a6f \
+		--env MESSAGGIO_OCCASIONALE='This is the latest Pasta PROD from DockerHub ran from Makefile' \
+		palladius/pastang:latest ./entrypoint-8080.sh
