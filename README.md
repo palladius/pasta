@@ -1,12 +1,14 @@
 # README
 
-<img src='https://github.com/palladius/pasta/raw/master/doc/tagliatelle_on_rails.png' width='50%' align='right' />
+<img src='https://github.com/palladius/pasta/raw/master/doc/tagliatelle-red-green-yellow.png' width='50%' align='right' />
 
 Welcome to my Pasta on Rails with self-dockerized app (still working only 95%).
 
 This has a nice db/seed.rb teaching you all about Italian best practices, but if you're American or, worse, British,
 knowck yourself out by adding onion and cream to yuour carbonara. Nobody will die - except a Neapolitan at every
 `git commit` 🤪.
+
+You can also find some goodies to deploy to GCP (eg Cloud Run).
 
 # INSTALL
 
@@ -15,7 +17,7 @@ Self: 🗣️ [go/pasta-restore](http://go/pasta-restore)
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-<img src='https://github.com/palladius/pasta/raw/master/doc/tagliatelle-red-green-yellow.png' width='50%' align='left' />
+<img src='https://github.com/palladius/pasta/raw/master/doc/tagliatelle_on_rails.png' width='30%' align='left' />
 
 * Rails `7.0.4`
 * Ruby version: `3.1.2`
@@ -30,7 +32,6 @@ application up and running.
 
 ## Dockerization
 
-<img src='https://github.com/palladius/pasta/raw/master/doc/pastang-matrix-screenshot.png' width='100%' align='right' />
 
 Yay! I just fixed it. Try:
 
@@ -91,6 +92,8 @@ rails generate migration add_username_to_users username:string:uniq
 
 ## Running
 
+<img src='https://github.com/palladius/pasta/raw/master/doc/pastang-matrix-screenshot.png' width='70%' align='right' />
+
 * Cloud run: just created the `run` config:
 
 ```bash
@@ -99,3 +102,4 @@ skaffold build -p run
 skaffold render -p run
 skaffold run -p run
 ```
+
