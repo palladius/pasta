@@ -17,7 +17,8 @@ build:
       dockerfile: Dockerfile
 manifests:
   rawYaml:
-  - deploy/k8s/*.yaml
+  #- deploy/k8s/*.yaml
+  - deploy/k8s-minimalistic/*.yaml
 deploy:
   kubectl: {}
 portForward:

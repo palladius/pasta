@@ -3,6 +3,7 @@
 Note this file is also available under the `/welcome/about` route.
 
 ```
+2023-01-15 ricc 0.11.15 minor adding Google corp to ok hosts :) to test prod. TODO have an env commasep to do this..
 2023-01-15 ricc 0.11.14 fixed bug in /welcome/about. Also better dockerization (or worse?)
 2023-01-15 ricc 0.11.13 Added `kamniari` for pagination, plus introducing the concept of BEST pasta for a certain sauce
 2023-01-14 ricc 0.11.12 Added some CSS color to the footer. Updated my linux workstgation on aspirina.
