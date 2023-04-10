@@ -1,17 +1,18 @@
 # README
 
+<img src='https://github.com/palladius/pasta/raw/master/doc/tagliatelle_on_rails.png' width='50%' align='right' />
+
 Self: 🗣️ [go/pasta-restore](http://go/pasta-restore)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-* Tails `7.0.4`
+* Rails `7.0.4`
 * Ruby version: `3.1.2`
-* System dependencies@
+* System dependencies:
     * gem 'devise', for easy auth.
     * gem 'bootstrap', dont know why
-
- <img src='https://github.com/palladius/pasta/raw/master/doc/pastang-matrix-screenshot.png' width='100%' align='right' />
+    * ...
 
 ## New ideas
 
@@ -19,9 +20,11 @@ application up and running.
 
 ## Dockerization
 
-I just fixed it. Try:
+<img src='https://github.com/palladius/pasta/raw/master/doc/pastang-matrix-screenshot.png' width='100%' align='right' />
 
-```docker run -it -p 8080:8080 palladius/pastang:v$*(VERSION)```
+Yay! I just fixed it. Try:
+
+```docker run -it -p 8080:8080 palladius/pastang:v$(cat VERSION)```
 
 or something similar
 
