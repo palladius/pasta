@@ -2,10 +2,20 @@
 
 <img src='https://github.com/palladius/pasta/raw/master/doc/tagliatelle_on_rails.png' width='50%' align='right' />
 
+Welcome to my Pasta on Rails with self-dockerized app (still working only 95%).
+
+This has a nice db/seed.rb teaching you all about Italian best practices, but if you're American or, worse, British,
+knowck yourself out by adding onion and cream to yuour carbonara. Nobody will die - except a Neapolitan at every
+`git commit` 🤪.
+
+# INSTALL
+
 Self: 🗣️ [go/pasta-restore](http://go/pasta-restore)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
+
+<img src='https://github.com/palladius/pasta/raw/master/doc/tagliatelle-red-green-yellow.png' width='50%' align='left' />
 
 * Rails `7.0.4`
 * Ruby version: `3.1.2`
