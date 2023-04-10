@@ -1,6 +1,6 @@
 # README
 
-<img src='https://github.com/palladius/pasta/raw/master/doc/tagliatelle-red-green-yellow.png' width='50%' align='right' />
+<img src='https://github.com/palladius/pasta/raw/master/doc/tagliatelle-red-green-yellow.png' width='40%' align='right' />
 
 Welcome to my Pasta on Rails with self-dockerized app (still working only 95%).
 
