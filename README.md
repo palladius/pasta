@@ -5,7 +5,7 @@
 Welcome to my Pasta on Rails with self-dockerized app (still working only 95%).
 
 This has a nice db/seed.rb teaching you all about Italian best practices, but if you're American or, worse, British,
-knowck yourself out by adding onion and cream to yuour carbonara. Nobody will die - except a Neapolitan at every
+knock yourself out by adding onion and cream to yuour carbonara. Nobody will die - except a Neapolitan at every
 `git commit` 🤪.
 
 You can also find some goodies to deploy to GCP (eg Cloud Run).
