@@ -37,7 +37,11 @@ Yay! I just fixed it. Try:
 
 ```docker run -it -p 8080:8080 palladius/pastang:v$(cat VERSION)```
 
-or something similar
+Note this will give you access to a `bash` shell. To run the app comfortably, try this:
+
+```bash
+🍝 docker run -it -p 8080:8080 palladius/pastang rails server -p 8080 -b 0.0.0.0
+```
 
 ## skaffold.dev
 
